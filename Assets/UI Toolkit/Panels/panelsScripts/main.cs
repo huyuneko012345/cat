@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
 public class main : MonoBehaviour
 {
-    // Start is called before the first frame update
     private void Awake() {
-        // VisualElement root = GetComponent<>
+         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
+         root.Q<Button>("back").clicked +=()=>SceneManager.LoadScene("start");
     }
 }
