@@ -16,8 +16,9 @@ public class sidebarController : MonoBehaviour
         sidebar=root.Q<VisualElement>("sidebar");
         Vector2 offset=sidebar.layout.position;
 
-
-        sidebar.experimental.animation.Position(new Vector3(0,0,0),2000);
+        Vector3 pos=offset;
+        Debug.Log(pos);
+        sidebar.experimental.animation.Position(-pos,2000);
 
     };
  }
