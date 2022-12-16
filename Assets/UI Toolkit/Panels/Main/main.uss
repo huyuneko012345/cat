@@ -1,0 +1,24 @@
+#left {
+    width: 40%;
+    height: 100%;
+    flex-wrap: wrap;
+}
+
+#sidebar {
+    background-color: rgb(166, 24, 13);
+    height: 100%;
+    width: 100%;
+    top: auto;
+    font-size: 0;
+    display: flex;
+    visibility: visible;
+    overflow: visible;
+    left: -100%;
+    translate: 0 254px;
+    transition-property: opacity;
+    transition-duration: 0.75s;
+    transition-timing-function: ease-out-back;
+}
+.pop-animation-hide {
+    opacity: 0;
+}
