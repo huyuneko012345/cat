@@ -18,6 +18,8 @@ public class sidebarController : MonoBehaviour
 
         Vector3 pos=offset;
         Debug.Log(pos);
+        var check=root.Q<Toggle>("check");
+            Debug.Log(check);
         sidebar.experimental.animation.Position(-pos,2000);
 
     };
