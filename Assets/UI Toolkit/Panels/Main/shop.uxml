@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="shop" style="background-color: rgb(255, 204, 204); width: 80%; height: 80%; translate: 0 0; transform-origin: center; left: 10%; top: 5%; right: 10%; bottom: 15%;">
+        <ui:Label text="ショップ" display-tooltip-when-elided="true" style="width: 100%; -unity-text-align: upper-center; font-size: 80%; height: 10%;" />
+        <ui:ScrollView name="item-scroll" picking-mode="Ignore" style="width: 90%; left: 5%; height: 30%; background-color: rgb(144, 14, 101); top: 2%; right: 5%; flex-wrap: wrap;" />
+    </ui:VisualElement>
+</ui:UXML>
