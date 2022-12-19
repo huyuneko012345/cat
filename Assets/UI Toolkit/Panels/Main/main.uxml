@@ -15,7 +15,7 @@
                 <ui:VisualElement style="width: 22%; -unity-background-scale-mode: stretch-to-fill; justify-content: space-between; align-items: center; background-image: url(&apos;project://database/Assets/UI%20Toolkit/images/item.png?fileID=2800000&amp;guid=f49e5b02c25def94684cac87c309abc0&amp;type=3#item&apos;);" />
                 <ui:Label text="持ち物" display-tooltip-when-elided="true" style="margin-left: 20%; background-color: rgba(0, 0, 0, 0); color: rgb(255, 255, 255); width: 20%; font-size: 60%;" />
             </ui:Button>
-            <ui:Button display-tooltip-when-elided="true" name="cat-lIst" style="top: 6%; height: 7%; background-color: rgb(0, 59, 255); font-size: 83px; margin-top: 33px; margin-bottom: 0; flex-direction: row; justify-content: flex-start; align-items: stretch;">
+            <ui:Button display-tooltip-when-elided="true" name="cat-list" style="top: 6%; height: 7%; background-color: rgb(0, 59, 255); font-size: 83px; margin-top: 33px; margin-bottom: 0; flex-direction: row; justify-content: flex-start; align-items: stretch;">
                 <ui:VisualElement style="width: 22%; -unity-background-scale-mode: stretch-to-fill; justify-content: space-between; align-items: center; background-image: url(&apos;project://database/Assets/UI%20Toolkit/images/catList.png?fileID=2800000&amp;guid=a124b4fdbae98f24ebddc69cd27e0908&amp;type=3#catList&apos;);" />
                 <ui:Label text="猫リスト" display-tooltip-when-elided="true" style="margin-left: 20%; background-color: rgba(0, 0, 0, 0); color: rgb(255, 255, 255); width: 20%; font-size: 60%;" />
             </ui:Button>
