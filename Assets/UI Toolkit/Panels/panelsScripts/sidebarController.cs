@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class sidebarController : MonoBehaviour
+public class SidebarController : MonoBehaviour
 {
     private VisualElement sidebar;
-    private int _mainPopupIndex=-1;
-     private const string POPUP_ANIMATION = "pop_animation-hide";
+
+     private bool  flg=false;
+
+     [SerializeField]public float speed=10f;
  void Awake()
  {
     var root=GetComponent<UIDocument>().rootVisualElement;
@@ -18,9 +20,15 @@ public class sidebarController : MonoBehaviour
 
         Vector3 pos=offset;
         Debug.Log(pos);
-        var check=root.Q<Toggle>("check");
-            Debug.Log(check);
-        sidebar.experimental.animation.Position(-pos,2000);
+        if(flg){
+            //サイドバー戻す
+                    sidebar.experimental.animation.Position(pos,1000);
+                    flg=false;
+        }else{
+            //サイドバー表示
+                    sidebar.experimental.animation.Position(-pos,1000);
+                    flg=true;
+        }
 
     };
  }

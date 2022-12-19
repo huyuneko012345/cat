@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
-public class main : MonoBehaviour
+public class Main : MonoBehaviour
 {
     private void Awake() {
          VisualElement root = GetComponent<UIDocument>().rootVisualElement;
