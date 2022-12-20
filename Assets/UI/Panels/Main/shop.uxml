@@ -1,6 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="shop" style="background-color: rgb(255, 204, 204); width: 80%; height: 80%; translate: 0 0; transform-origin: center; left: 10%; top: 5%; right: 10%; bottom: 15%;">
         <ui:Label text="ショップ" display-tooltip-when-elided="true" style="width: 100%; -unity-text-align: upper-center; font-size: 80%; height: 10%; background-color: rgba(0, 0, 0, 0); color: rgb(0, 0, 0);" />
-        <ui:ListView focusable="true" name="list" selection-type="Single" show-alternating-row-backgrounds="ContentOnly" style="width: 90%; left: 5%; background-color: rgb(67, 241, 33); flex-direction: row; flex-wrap: wrap; overflow: visible; flex-shrink: 2; flex-grow: 0;" />
+        <ui:ScrollView name="scroll" style="flex-direction: column-reverse; flex-wrap: wrap; width: 90%; left: 5%; height: 100%; background-color: rgb(185, 185, 185);">
+            <ui:VisualElement name="list" style="flex-direction: row; flex-wrap: wrap; width: 100%; height: 808px; background-color: rgba(59, 183, 70, 255);" />
+        </ui:ScrollView>
     </ui:VisualElement>
 </ui:UXML>
