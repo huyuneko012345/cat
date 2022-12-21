@@ -33,7 +33,7 @@ public class DataListController
             screenHeight=m_DataList.contentRect.height;
             
             Button button = new Button();
-            button.name="a"
+            button.name="a";
             button.text = "item" + 1;
             button.style.backgroundColor = Color.red;
             button.style.width = screenWidth*0.4f ;
