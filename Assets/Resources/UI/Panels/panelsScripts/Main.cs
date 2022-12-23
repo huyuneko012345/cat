@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using ui =UnityEngine.UI;
 
 
 
@@ -26,9 +27,13 @@ public class Main : MonoBehaviour
 
             show(parent, dialog);
 
-            GameObject content=GameObject.Find("content-background");
+        GameObject contentBackGround=GameObject.Find("content-background");
         GameObject viewPrefab=(GameObject)Resources.Load("UI/Prefabs/ShopView");
-        GameObject _scroll=Instantiate(viewPrefab,content.transform);
+        GameObject itemButtonPrefab=(GameObject)Resources.Load("UI/Prefabs/itemButtonPrefab");
+
+        Instantiate(viewPrefab,contentBackGround.transform);
+        GameObject content=GameObject.Find("Content");
+        Instantiate(itemButtonPrefab,content.transform);
             // root.Add(elem);
             // Debug.Log("asd3");
             // root.RemoveAt(root.childCount-1);     
