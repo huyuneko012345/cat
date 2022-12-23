@@ -26,7 +26,7 @@ public class Main : MonoBehaviour
 
             show(parent, dialog);
 
-            GameObject content=GameObject.Find("background");
+            GameObject content=GameObject.Find("content-background");
         GameObject viewPrefab=(GameObject)Resources.Load("UI/Prefabs/ShopView");
         GameObject _scroll=Instantiate(viewPrefab,content.transform);
             // root.Add(elem);
