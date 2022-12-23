@@ -12,6 +12,7 @@ public class Main : MonoBehaviour
 
     [SerializeField] private Canvas parent;
     [SerializeField] private Dialog dialog;
+
     private void Awake()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
@@ -25,7 +26,9 @@ public class Main : MonoBehaviour
 
             show(parent, dialog);
 
-
+            GameObject content=GameObject.Find("background");
+        GameObject viewPrefab=(GameObject)Resources.Load("UI/Prefabs/ShopView");
+        GameObject _scroll=Instantiate(viewPrefab,content.transform);
             // root.Add(elem);
             // Debug.Log("asd3");
             // root.RemoveAt(root.childCount-1);     
