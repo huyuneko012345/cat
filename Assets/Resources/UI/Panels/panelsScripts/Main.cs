@@ -29,7 +29,7 @@ public class Main : MonoBehaviour
 
         GameObject contentBackGround=GameObject.Find("content-background");
         GameObject viewPrefab=(GameObject)Resources.Load("UI/Prefabs/ShopView");
-        GameObject itemButtonPrefab=(GameObject)Resources.Load("UI/Prefabs/itemButtonPrefab");
+        GameObject itemButtonPrefab=(GameObject)Resources.Load("UI/Prefabs/itemButton");
 
         Instantiate(viewPrefab,contentBackGround.transform);
         GameObject content=GameObject.Find("Content");
