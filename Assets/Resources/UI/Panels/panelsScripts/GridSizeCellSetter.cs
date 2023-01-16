@@ -58,7 +58,7 @@ public class GridSizeCellSetter : MonoBehaviour
 
     private void UpdateCellSize()
     {
-
+        // TODO 空白の調整をする
         gridLayout.cellSize = new Vector2(CellWidth,CellHeight);
         int paddingLeft=(int)(contentWidth*0.05);
         int paddingRight=(int)(contentWidth*0.05);
