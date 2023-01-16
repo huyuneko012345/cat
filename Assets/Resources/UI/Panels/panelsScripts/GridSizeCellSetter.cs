@@ -17,7 +17,7 @@ public class GridSizeCellSetter : MonoBehaviour
             //     - gridLayout.spacing.y * (rowCount - 1)) / rowCount);
 
 
-            return (int)((rectTransform.rect.height*0.2));
+            return (int)(contentHeigth*0.3);
         }
     }
 
@@ -29,7 +29,7 @@ public class GridSizeCellSetter : MonoBehaviour
 
             // return (int)((rectTransform.rect.width - (gridLayout.padding.left + gridLayout.padding.right)
             //     - gridLayout.spacing.x * (columnCount - 1)) / columnCount);
-                        return (int)((rectTransform.rect.width*0.3));
+                        return (int)(contentWidth*0.4);
 
         }
     }
@@ -37,11 +37,22 @@ public class GridSizeCellSetter : MonoBehaviour
     private RectTransform rectTransform;
     private GridLayoutGroup gridLayout;
 
+    
+    private float contentHeigth{
+        get{
+            return (int)rectTransform.rect.height;
+        }
+    }
+
+    private float contentWidth{
+        get{
+            return (int)rectTransform.rect.width;
+        }
+    }
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
         gridLayout = GetComponent<GridLayoutGroup>();
-        
         UpdateCellSize();
     }
 
@@ -49,9 +60,12 @@ public class GridSizeCellSetter : MonoBehaviour
     {
 
         gridLayout.cellSize = new Vector2(CellWidth,CellHeight);
-        int paddingLeft=(int)(CellWidth*0.05);
-        int paddingRight=(int)(CellWidth*0.05);
-        gridLayout.padding=new RectOffset(paddingLeft,paddingRight,10,10);
+        int paddingLeft=(int)(contentWidth*0.05);
+        int paddingRight=(int)(contentWidth*0.05);
+        int paddingTop=(int)(contentHeigth*0.1);
+        int paddingBottom=(int)(contentHeigth*0.2);
+        gridLayout.padding=new RectOffset(paddingLeft,paddingRight,paddingTop,paddingBottom);
+        gridLayout.spacing=new Vector2(contentWidth*0.3f,contentHeigth*0.2f);
     }
 
 
