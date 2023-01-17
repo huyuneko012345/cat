@@ -65,7 +65,7 @@ public class GridSizeCellSetter : MonoBehaviour
         int paddingTop=(int)(contentHeigth*0.1);
         int paddingBottom=(int)(contentHeigth*0.2);
         gridLayout.padding=new RectOffset(paddingLeft,paddingRight,paddingTop,paddingBottom);
-        gridLayout.spacing=new Vector2(contentWidth*0.3f,contentHeigth*0.2f);
+        gridLayout.spacing=new Vector2(contentWidth*0.1f,contentHeigth*0.2f);
     }
 
 
