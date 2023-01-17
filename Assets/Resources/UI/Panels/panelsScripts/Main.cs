@@ -37,10 +37,11 @@ public class Main : MonoBehaviour
             GameObject content = GameObject.Find("Content");
 
             setDialogName(shopDialogName);
-            for (int i=0;i<10;i++){
-            Instantiate(itemButtonPrefab, content.transform);
+            for (int i = 0; i < 10; i++)
+            {
+                Instantiate(itemButtonPrefab, content.transform);
             }
-            
+
         };
 
 
@@ -58,9 +59,9 @@ public class Main : MonoBehaviour
             GameObject content = GameObject.Find("Content");
 
             setDialogName(itemsDialogName);
-           
-                Instantiate(itemButtonPrefab, content.transform);
-            
+
+            Instantiate(itemButtonPrefab, content.transform);
+
 
 
 
@@ -72,6 +73,14 @@ public class Main : MonoBehaviour
             show(parent, dialog);
             GameObject contentBackGround = GameObject.Find("content-background");
             setDialogName(missonDialogName);
+
+            GameObject viewPrefab = (GameObject)Resources.Load("UI/Prefabs/MissionView");
+            GameObject MissionPrefab = (GameObject)Resources.Load("UI/Prefabs/Mission");
+
+            Instantiate(viewPrefab, contentBackGround.transform);
+            GameObject content = GameObject.Find("Content");
+            Instantiate(MissionPrefab, content.transform);
+
 
         };
 
