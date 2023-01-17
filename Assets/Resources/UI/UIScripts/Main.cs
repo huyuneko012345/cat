@@ -30,8 +30,8 @@ public class Main : MonoBehaviour
             show(parent, dialog);
 
             GameObject contentBackGround = GameObject.Find("content-background");
-            GameObject viewPrefab = (GameObject)Resources.Load("UI/Prefabs/ShopView");
-            GameObject itemButtonPrefab = (GameObject)Resources.Load("UI/Prefabs/itemButton");
+            GameObject viewPrefab = (GameObject)Resources.Load("UI/Prefabs/Shop/ShopView");
+            GameObject itemButtonPrefab = (GameObject)Resources.Load("UI/Prefabs/Shop/ShopItemButton");
 
             Instantiate(viewPrefab, contentBackGround.transform);
             GameObject content = GameObject.Find("Content");
@@ -51,9 +51,10 @@ public class Main : MonoBehaviour
             Debug.Log(itemsDialogName);
 
             show(parent, dialog);
+
             GameObject contentBackGround = GameObject.Find("content-background");
-            GameObject viewPrefab = (GameObject)Resources.Load("UI/Prefabs/ShopView");
-            GameObject itemButtonPrefab = (GameObject)Resources.Load("UI/Prefabs/itemButton");
+            GameObject viewPrefab = (GameObject)Resources.Load("UI/Prefabs/Shop/ShopView");
+            GameObject itemButtonPrefab = (GameObject)Resources.Load("UI/Prefabs/Shop/ShopItemButton");
 
             Instantiate(viewPrefab, contentBackGround.transform);
             GameObject content = GameObject.Find("Content");
@@ -74,8 +75,8 @@ public class Main : MonoBehaviour
             GameObject contentBackGround = GameObject.Find("content-background");
             setDialogName(missonDialogName);
 
-            GameObject viewPrefab = (GameObject)Resources.Load("UI/Prefabs/MissionView");
-            GameObject MissionPrefab = (GameObject)Resources.Load("UI/Prefabs/Mission");
+            GameObject viewPrefab = (GameObject)Resources.Load("UI/Prefabs/Mission/MissionView");
+            GameObject MissionPrefab = (GameObject)Resources.Load("UI/Prefabs/Mission/Mission");
 
             Instantiate(viewPrefab, contentBackGround.transform);
             GameObject content = GameObject.Find("Content");

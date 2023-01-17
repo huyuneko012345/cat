@@ -12,4 +12,5 @@ public class DialogUtil
         public static readonly string settingDialogName="設定";
         public static readonly string helpDialogName="ヘルプ";
     }
+  
 }
