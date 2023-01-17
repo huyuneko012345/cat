@@ -25,7 +25,6 @@ public class DataListController
         float screenWidth = 0f;
         
 
-        float screenHeightPer = 10f;
         float screenHeight = 0f;
         
         m_DataList.RegisterCallback<GeometryChangedEvent>(v=>{
