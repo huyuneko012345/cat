@@ -93,9 +93,9 @@ public class GridSizeCellSetter : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         gridLayout = GetComponent<GridLayoutGroup>();
         UpdateCellSize();
-        UpdatePaddingSize();
-        UpdateRectSize();
-        UpdatespacingSize();
+        // UpdatePaddingSize();
+        // UpdateRectSize();
+        // UpdatespacingSize();
 
     }
 

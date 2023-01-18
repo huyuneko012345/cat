@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 [CreateAssetMenu]
-public class ItemData : ScriptableObject
+public class ItemDetaBase : ScriptableObject
 {
-    public string item_name;   
-    public string text;
+   public List<Item>itemDataList= new List<Item>();
 }

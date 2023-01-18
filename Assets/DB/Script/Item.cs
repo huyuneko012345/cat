@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using System;
-
+[CreateAssetMenu]
 [Serializable]
-public class item 
+public class Item : ScriptableObject
 {
- public GameObject item_obj;
- public string text;
+    public string _name;
+    public string text;
 }
