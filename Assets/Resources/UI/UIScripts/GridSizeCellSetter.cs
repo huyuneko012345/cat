@@ -3,13 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[ExecuteAlways]
 public class GridSizeCellSetter : MonoBehaviour
 {
-    
-    // [SerializeField] private int rowPer = 40;
-    // [SerializeField] private int columnPer = 10;
-    
-    public float CellHeight
+    private const int MINNUM = 0;
+    private const int MAXNUM = 1;
+
+    [Range(MINNUM, MAXNUM)][SerializeField] private float CellWidthPer = 0.8f;
+    [Range(MINNUM, MAXNUM)][SerializeField] private float CellHeightPer = 0.3f;
+    [Range(MINNUM, MAXNUM)][SerializeField] private float LeftRightPer = 0.02f;
+    [Range(MINNUM, MAXNUM)][SerializeField] private float spacingWidthPer = 0.18f;
+    [Range(MINNUM, MAXNUM)][SerializeField] private float spacingHeightPer = 0.2f;
+    [Range(MINNUM, MAXNUM)][SerializeField] private float paddingTopPer = 0.2f;
+    [Range(MINNUM, MAXNUM)][SerializeField] private float paddingButtomPer = 0.2f;
+
+
+
+
+
+
+    private float CellHeight
     {
         get
         {
@@ -17,55 +30,92 @@ public class GridSizeCellSetter : MonoBehaviour
             //     - gridLayout.spacing.y * (rowCount - 1)) / rowCount);
 
 
-            return (int)(contentHeigth*0.3);
+            return (float)(contentHeight * CellHeightPer);
         }
     }
 
-    public int CellWidth
+
+    private float CellWidth
     {
         get
         {
-                                Debug.Log("よこ幅＝"+rectTransform.rect.width*.01);
+            return (float)(contentWidth * (CellWidthPer / 2.0));
 
-            // return (int)((rectTransform.rect.width - (gridLayout.padding.left + gridLayout.padding.right)
-            //     - gridLayout.spacing.x * (columnCount - 1)) / columnCount);
-                        return (int)(contentWidth*0.4);
+        }
+    }
 
+    private float leftRight
+    {
+        get
+        {
+            return contentWidth * (LeftRightPer / 2.0f);
         }
     }
 
     private RectTransform rectTransform;
     private GridLayoutGroup gridLayout;
 
-    
-    private float contentHeigth{
-        get{
+
+    private float contentHeight
+    {
+        get
+        {
             return (int)rectTransform.rect.height;
         }
     }
 
-    private float contentWidth{
-        get{
+    private float contentWidth
+    {
+        get
+        {
             return (int)rectTransform.rect.width;
         }
     }
-    void Start()
+    
+    private int PaddingTop
+    {
+        get
+        {
+            return (int)(contentHeight * paddingTopPer);
+        }
+    }
+
+    private int PaddingButtom
+    {
+        get
+        {
+            return (int)(contentHeight * paddingButtomPer);
+        }
+    }
+
+    void OnValidate()
     {
         rectTransform = GetComponent<RectTransform>();
         gridLayout = GetComponent<GridLayoutGroup>();
         UpdateCellSize();
+        UpdatePaddingSize();
+        UpdateRectSize();
+        UpdatespacingSize();
+
     }
 
     private void UpdateCellSize()
     {
-        // TODO 空白の調整をする
-        gridLayout.cellSize = new Vector2(CellWidth,CellHeight);
-        int paddingLeft=(int)(contentWidth*0.05);
-        int paddingRight=(int)(contentWidth*0.05);
-        int paddingTop=(int)(contentHeigth*0.1);
-        int paddingBottom=(int)(contentHeigth*0.2);
-        gridLayout.padding=new RectOffset(paddingLeft,paddingRight,paddingTop,paddingBottom);
-        gridLayout.spacing=new Vector2(contentWidth*0.1f,contentHeigth*0.2f);
+        gridLayout.cellSize = new Vector2(CellWidth, CellHeight);
+    }
+    private void UpdateRectSize()
+    {
+        rectTransform.offsetMin = new Vector2(leftRight, 10);
+        rectTransform.offsetMax = new Vector2(-leftRight, 0f);
+    }
+    private void UpdatespacingSize()
+    {
+        gridLayout.spacing = new Vector2(contentWidth * spacingWidthPer, contentHeight * spacingHeightPer);
+    }
+    private void UpdatePaddingSize()
+    {
+        gridLayout.padding.top = PaddingTop;
+        gridLayout.padding.bottom = PaddingButtom;
     }
 
 
