@@ -11,11 +11,11 @@ public class GridSizeCellSetter : MonoBehaviour
 
     [Range(MINNUM, MAXNUM)][SerializeField] private float CellWidthPer = 0.8f;
     [Range(MINNUM, MAXNUM)][SerializeField] private float CellHeightPer = 0.3f;
-    [Range(MINNUM, MAXNUM)][SerializeField] private float LeftRightPer = 0.02f;
-    [Range(MINNUM, MAXNUM)][SerializeField] private float spacingWidthPer = 0.18f;
-    [Range(MINNUM, MAXNUM)][SerializeField] private float spacingHeightPer = 0.2f;
-    [Range(MINNUM, MAXNUM)][SerializeField] private float paddingTopPer = 0.2f;
-    [Range(MINNUM, MAXNUM)][SerializeField] private float paddingButtomPer = 0.2f;
+    // [Range(MINNUM, MAXNUM)][SerializeField] private float LeftRightPer = 0.02f;
+    // [Range(MINNUM, MAXNUM)][SerializeField] private float spacingWidthPer = 0.18f;
+    // [Range(MINNUM, MAXNUM)][SerializeField] private float spacingHeightPer = 0.2f;
+    // [Range(MINNUM, MAXNUM)][SerializeField] private float paddingTopPer = 0.2f;
+    // [Range(MINNUM, MAXNUM)][SerializeField] private float paddingButtomPer = 0.2f;
 
 
 
@@ -26,10 +26,6 @@ public class GridSizeCellSetter : MonoBehaviour
     {
         get
         {
-            // return (int)((rectTransform.rect.height - (gridLayout.padding.top + gridLayout.padding.bottom)
-            //     - gridLayout.spacing.y * (rowCount - 1)) / rowCount);
-
-
             return (float)(contentHeight * CellHeightPer);
         }
     }
@@ -44,13 +40,13 @@ public class GridSizeCellSetter : MonoBehaviour
         }
     }
 
-    private float leftRight
-    {
-        get
-        {
-            return contentWidth * (LeftRightPer / 2.0f);
-        }
-    }
+    // private float leftRight
+    // {
+    //     get
+    //     {
+    //         return contentWidth * (LeftRightPer / 2.0f);
+    //     }
+    // }
 
     private RectTransform rectTransform;
     private GridLayoutGroup gridLayout;
@@ -60,7 +56,7 @@ public class GridSizeCellSetter : MonoBehaviour
     {
         get
         {
-            return (int)rectTransform.rect.height;
+            return (float)rectTransform.sizeDelta.y*(-1);
         }
     }
 
@@ -68,25 +64,25 @@ public class GridSizeCellSetter : MonoBehaviour
     {
         get
         {
-            return (int)rectTransform.rect.width;
+            return (float)rectTransform.sizeDelta.x*(-1);
         }
     }
     
-    private int PaddingTop
-    {
-        get
-        {
-            return (int)(contentHeight * paddingTopPer);
-        }
-    }
+    // private int PaddingTop
+    // {
+    //     get
+    //     {
+    //         return (int)(contentHeight * paddingTopPer);
+    //     }
+    // }
 
-    private int PaddingButtom
-    {
-        get
-        {
-            return (int)(contentHeight * paddingButtomPer);
-        }
-    }
+    // private int PaddingButtom
+    // {
+    //     get
+    //     {
+    //         return (int)(contentHeight * paddingButtomPer);
+    //     }
+    // }
 
     void OnValidate()
     {
@@ -101,22 +97,23 @@ public class GridSizeCellSetter : MonoBehaviour
 
     private void UpdateCellSize()
     {
+        
         gridLayout.cellSize = new Vector2(CellWidth, CellHeight);
     }
-    private void UpdateRectSize()
-    {
-        rectTransform.offsetMin = new Vector2(leftRight, 10);
-        rectTransform.offsetMax = new Vector2(-leftRight, 0f);
-    }
-    private void UpdatespacingSize()
-    {
-        gridLayout.spacing = new Vector2(contentWidth * spacingWidthPer, contentHeight * spacingHeightPer);
-    }
-    private void UpdatePaddingSize()
-    {
-        gridLayout.padding.top = PaddingTop;
-        gridLayout.padding.bottom = PaddingButtom;
-    }
+    // private void UpdateRectSize()
+    // {
+    //     rectTransform.offsetMin = new Vector2(leftRight, 10);
+    //     rectTransform.offsetMax = new Vector2(-leftRight, 0f);
+    // }
+    // private void UpdatespacingSize()
+    // {
+    //     gridLayout.spacing = new Vector2(contentWidth * spacingWidthPer, contentHeight * spacingHeightPer);
+    // }
+    // private void UpdatePaddingSize()
+    // {
+    //     gridLayout.padding.top = PaddingTop;
+    //     gridLayout.padding.bottom = PaddingButtom;
+    // }
 
 
 }
