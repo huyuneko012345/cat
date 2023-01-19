@@ -15,12 +15,11 @@ public class shopConroller : MonoBehaviour
         ItemDetaBase itemDataBase=(ItemDetaBase)Resources.Load("DB/ItemDB");
         GameObject itemButtonPrefab = (GameObject)Resources.Load(SHOPITEMBUTTON);
         List<Item> itemList=itemDataBase.itemDataList;
-        int count=itemList.Count;
-        for (int i = 0; i < count; i++)
+    foreach(Item item in itemList)
         {
             GameObject itemButton=Instantiate(itemButtonPrefab, content.transform);
             TextMeshProUGUI name=itemButton.GetComponentInChildren<TextMeshProUGUI>();
-            name.text=itemList[i]._name;
+            name.text=item._name;
         }
     }
 }
