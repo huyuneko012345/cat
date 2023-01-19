@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
-using static GridUtils;
+using static GridUtils.PrefabName;
 
 [ExecuteAlways]
 public class GridSizeSetter : MonoBehaviour
@@ -56,7 +56,7 @@ public class GridSizeSetter : MonoBehaviour
     }
 
 
-    private GameObject viewport =GameObject.Find(GridUtils.viewport);
+    private GameObject viewport;
     private RectTransform rectTransform;
     private GridLayoutGroup gridLayout;
 
@@ -96,6 +96,7 @@ public class GridSizeSetter : MonoBehaviour
 
     void OnValidate()
     {
+        viewport=GameObject.Find(VIEWPORT);
         rectTransform=viewport.GetComponent<RectTransform>();
         gridLayout = GetComponent<GridLayoutGroup>();
         UpdateCellSize();
