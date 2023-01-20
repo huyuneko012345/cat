@@ -10,7 +10,7 @@ using TMPro;
 public class MissionController : MonoBehaviour
 {
     private List<Mission>todayMission;
-    // private List<Mission>missionList;
+     private List<Mission>missionList;
     public void addMission()
     {
         

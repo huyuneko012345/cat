@@ -107,9 +107,9 @@ public class Main : MonoBehaviour
     {
         return (string.Join("/", date.Year.ToString(), date.Month.ToString(), date.Day.ToString()));
     }
-    //本日ログインしたか返す
-    // ログインしてる:true
-    //ログインしてない:false
+    //最終ログインが今日？
+    // 今日:true
+    //今日ではない:false
     private static bool isLoginToday()
     {
         if (today == latestLogin)
