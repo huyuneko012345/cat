@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd43a7a04e69bcf4cab47de337b11d58, type: 3}
   m_Name: MissionDB
   m_EditorClassIdentifier: 
-  MissionDataList: []
+  MissionDataList:
+  - {fileID: 11400000, guid: 4bd953978e51790469d1dfb7f20d6b29, type: 2}
+  - {fileID: 11400000, guid: 23d65e6ee215cff40a59159d3f5141be, type: 2}
+  - {fileID: 11400000, guid: d2cee3ae496f52c4db0dfe3dc1e830cf, type: 2}
+  - {fileID: 11400000, guid: 0ecc1cd2e289cbf4a9ee1e091ba1540d, type: 2}
+  - {fileID: 11400000, guid: 2ea9a287798ef4f41b905e4ba015ea8b, type: 2}
+  - {fileID: 11400000, guid: ed34b39b14ef544459d2f18c87d6ea86, type: 2}

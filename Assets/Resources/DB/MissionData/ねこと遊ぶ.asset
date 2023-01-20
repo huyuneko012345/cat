@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4844c05141fcae4fb45de22e2deda0f, type: 3}
   m_Name: "\u306D\u3053\u3068\u904A\u3076"
   m_EditorClassIdentifier: 
-  missionName: 
-  count: 
+  missionName: "\u306D\u3053\u3068\u904A\u3076"
+  MaxCount: 5
+  count: 0
+  fp: 100

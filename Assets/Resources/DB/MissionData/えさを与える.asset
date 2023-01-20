@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: "\u3048\u3055\u3092\u4E0E\u3048\u308B"
   m_EditorClassIdentifier: 
   missionName: "\u3048\u3055\u3092\u4E0E\u3048\u308B"
-  MaxCount: 0
+  MaxCount: 1
   count: 0
+  fp: 100
