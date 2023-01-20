@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
-using ui = UnityEngine.UI;
 using TMPro;
 using static DialogUtil.DialogName;
 using static DialogUtil.PrefabName;
@@ -18,6 +16,13 @@ public class Main : MonoBehaviour
     [SerializeField] private Canvas parent;
     [SerializeField] private Dialog dialog;
 
+    private static string latestLogin;
+
+    private static string today;
+    void Start()
+    {
+        today = DateTimeString(System.DateTime.Now);
+    }
     private void Awake()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
@@ -39,16 +44,19 @@ public class Main : MonoBehaviour
 
             addView(SHOPVIEW, ITEMSDIALOGNAME);
 
-            
+
 
         };
 
         root.Q<Button>("mission").clicked += () =>
         {
             addView(MISSIONVIEW, MISSONDIALOGNAME);
-            MissionController mission=new MissionController();
+            MissionController mission = new MissionController();
+            if(!isLoginToday()){
+                mission.pickMission();
+            }
             mission.addMission();
-           
+
 
 
         };
@@ -95,4 +103,21 @@ public class Main : MonoBehaviour
         TextMeshProUGUI _text = nameObj.GetComponent<TextMeshProUGUI>();
         _text.text = name;
     }
+    private string DateTimeString(DateTime date)
+    {
+        return (string.Join("/", date.Year.ToString(), date.Month.ToString(), date.Day.ToString()));
+    }
+    //本日ログインしたか返す
+    // ログインしてる:true
+    //ログインしてない:false
+    private static bool isLoginToday()
+    {
+        if (today == latestLogin)
+        {
+            return true;
+        }
+        latestLogin=String.Copy(today);
+        return false;
+    }
+
 }
