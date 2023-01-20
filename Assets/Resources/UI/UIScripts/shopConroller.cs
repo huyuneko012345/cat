@@ -3,24 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static DialogUtil.FIlePath;
+using static DialogUtil.PrefabName;
+
 using TMPro;
 
 
 
-public class shopConroller : MonoBehaviour
+public class ShopConroller : MonoBehaviour
 {
 
-    public void addItem(GameObject content)
+
+    public void addItem()
     {
-        ItemDetaBase itemDataBase=(ItemDetaBase)Resources.Load("DB/ItemDB");
+        GameObject content = GameObject.Find(CONTENT);
+        ItemDetaBase itemDataBase = (ItemDetaBase)Resources.Load("DB/ItemDB");
         GameObject itemButtonPrefab = (GameObject)Resources.Load(SHOPITEMBUTTON);
-        List<Item> itemList=itemDataBase.itemDataList;
-    foreach(Item item in itemList)
+        List<Item> itemList = itemDataBase.itemDataList;
+        foreach (Item item in itemList)
         {
-            GameObject itemButton=Instantiate(itemButtonPrefab, content.transform);
-            TextMeshProUGUI name=itemButton.GetComponentInChildren<TextMeshProUGUI>();
-            Image img=itemButton.GetComponentInChildren<Image>();
-            name.text=item._name;
+            GameObject itemButton = Instantiate(itemButtonPrefab, content.transform);
+            TextMeshProUGUI name = itemButton.GetComponentInChildren<TextMeshProUGUI>();
+            Image img = itemButton.GetComponentInChildren<Image>();
+            name.text = item._name;
         }
     }
 }

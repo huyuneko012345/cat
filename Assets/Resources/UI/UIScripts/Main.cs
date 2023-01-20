@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using ui = UnityEngine.UI;
 using TMPro;
 using static DialogUtil.DialogName;
-using static DialogUtil.UsingPrefabName;
+using static DialogUtil.PrefabName;
 using static DialogUtil.FIlePath;
 
 
@@ -27,68 +27,39 @@ public class Main : MonoBehaviour
 
         root.Q<Button>("shop-button").clicked += () =>
         {
-            Debug.Log(SHOPDIALOGNAME);
+            addView(SHOPVIEW, SHOPDIALOGNAME);
 
-            show(parent, dialog);
-            GameObject contentBackGround = GameObject.Find(CONTETNTBACKGROUND);
-            GameObject viewPrefab = (GameObject)Resources.Load(SHOPVIEW);
-
-            Instantiate(viewPrefab, contentBackGround.transform);
-            shopConroller shop=new shopConroller();
-
-            setDialogName(SHOPDIALOGNAME);
-            GameObject content = GameObject.Find(CONTENT);
-
-            shop.addItem(content);
+            ShopConroller shopConroller = new ShopConroller();
+            shopConroller.addItem();
         };
 
 
         root.Q<Button>("item").clicked += () =>
         {
 
-            Debug.Log(ITEMSDIALOGNAME);
+            addView(SHOPVIEW, ITEMSDIALOGNAME);
 
-            show(parent, dialog);
-
-            GameObject contentBackGround = GameObject.Find("content-background");
-            GameObject viewPrefab = (GameObject)Resources.Load("UI/Prefabs/Shop/ShopView");
-            GameObject itemButtonPrefab = (GameObject)Resources.Load("UI/Prefabs/Shop/ShopItemButton");
-
-            Instantiate(viewPrefab, contentBackGround.transform);
-            GameObject content = GameObject.Find("Content");
-
-            setDialogName(ITEMSDIALOGNAME);
-
-            Instantiate(itemButtonPrefab, content.transform);
-
-
-
+            
 
         };
 
         root.Q<Button>("mission").clicked += () =>
         {
-            Debug.Log(MISSONDIALOGNAME);
-            show(parent, dialog);
-            GameObject contentBackGround = GameObject.Find("content-background");
-            setDialogName(MISSONDIALOGNAME);
-
-            GameObject viewPrefab = (GameObject)Resources.Load("UI/Prefabs/Mission/MissionView");
-            GameObject MissionPrefab = (GameObject)Resources.Load("UI/Prefabs/Mission/Mission");
-
-            Instantiate(viewPrefab, contentBackGround.transform);
-            GameObject content = GameObject.Find("Content");
-            Instantiate(MissionPrefab, content.transform);
+            addView(MISSIONVIEW, MISSONDIALOGNAME);
+            MissionController mission=new MissionController();
+            mission.addMission();
+           
 
 
         };
 
         root.Q<Button>("setting").clicked += () =>
         {
-            Debug.Log(SETTINGDIALOGNAME);
-            show(parent, dialog);
-            GameObject contentBackGround = GameObject.Find("content-background");
-            setDialogName(SETTINGDIALOGNAME);
+            addView(SettingView, SETTINGDIALOGNAME);
+            GameObject MissionPrefab = (GameObject)Resources.Load(SETTING);
+            GameObject content = GameObject.Find("Content");
+            Instantiate(MissionPrefab, content.transform);
+
         };
 
         root.Q<Button>("help").clicked += () =>
@@ -101,7 +72,18 @@ public class Main : MonoBehaviour
 
 
     }
-    public void show(Canvas parent, Dialog dialog)
+
+    private void addView(string viewPath, string DialogName)
+    {
+        show(parent, dialog);
+
+        GameObject contentBackGround = GameObject.Find(CONTETNTBACKGROUND);
+        GameObject viewPrefab = (GameObject)Resources.Load(viewPath);
+        Instantiate(viewPrefab, contentBackGround.transform);
+        setDialogName(DialogName);
+
+    }
+    private void show(Canvas parent, Dialog dialog)
     {
         var _dialog = Instantiate(dialog);
         _dialog.transform.SetParent(parent.transform, false);

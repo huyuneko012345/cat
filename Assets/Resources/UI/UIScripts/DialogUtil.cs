@@ -16,14 +16,18 @@ public sealed class DialogUtil
         private static string BASEPATH="UI/Prefabs/";
         private static string SHOPBASE="Shop/";
         private static string MISSIONBASE="Mission/";
+        private static string SETTINGBASE="Setting/";
 
 
         public static readonly string SHOPVIEW=BASEPATH+SHOPBASE+"ShopView";
         public static readonly string SHOPITEMBUTTON=BASEPATH+SHOPBASE+"ShopItemButton";
         public static readonly string MISSIONVIEW=BASEPATH+MISSIONBASE+"MissionView";
         public static readonly string MISSION=BASEPATH+MISSIONBASE+"Mission";
+        public static readonly string SettingView=BASEPATH+SETTINGBASE+"SettingView";
+        public static readonly string SETTING=BASEPATH+SETTINGBASE+"Setting";
+
     }
-    public static class UsingPrefabName{
+    public static class PrefabName{
         public static readonly string CONTETNTBACKGROUND="content-background";
         public static readonly string CONTENT="Content";
 

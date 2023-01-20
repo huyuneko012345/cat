@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc4f2f9f058cca24eb76a3dd3c3e5a94, type: 3}
-  m_Name: "\u306D\u305A\u307F"
+  m_Script: {fileID: 11500000, guid: e4844c05141fcae4fb45de22e2deda0f, type: 3}
+  m_Name: "\u306A\u3067\u308B"
   m_EditorClassIdentifier: 
-  _name: "\u306D\u305A\u307F"
-  text: "\u3053\u308C\u306F\u306D\u305A\u307F"
-  image: {fileID: 21300000, guid: 10154f543f5c304488400b88c958f84d, type: 3}
+  missionName: 
+  MaxCount: 0
+  count: 0

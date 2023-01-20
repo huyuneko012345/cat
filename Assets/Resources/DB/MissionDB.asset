@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc4f2f9f058cca24eb76a3dd3c3e5a94, type: 3}
-  m_Name: "\u306D\u305A\u307F"
+  m_Script: {fileID: 11500000, guid: fd43a7a04e69bcf4cab47de337b11d58, type: 3}
+  m_Name: MissionDB
   m_EditorClassIdentifier: 
-  _name: "\u306D\u305A\u307F"
-  text: "\u3053\u308C\u306F\u306D\u305A\u307F"
-  image: {fileID: 21300000, guid: 10154f543f5c304488400b88c958f84d, type: 3}
+  MissionDataList: []
