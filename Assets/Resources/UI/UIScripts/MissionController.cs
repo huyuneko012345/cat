@@ -4,7 +4,7 @@ using UnityEngine;
 using static DialogUtil.FIlePath;
 using static DialogUtil.PrefabName;
 using TMPro;
-
+using UnityEngine.UI;
 
 
 public class MissionController : MonoBehaviour
@@ -24,6 +24,9 @@ public class MissionController : MonoBehaviour
         var buttom=missionPanel.transform.GetChild(1).GetChild(1);
         TextMeshProUGUI missionName= top.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>(); 
         TextMeshProUGUI progressRate= top.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>(); 
+        Slider slider=buttom.transform.Find("Slider").GetComponent<Slider>();
+        slider.maxValue=mission.MaxCount;
+        slider.value=mission.count;
 
         missionName.text=mission.missionName;
         progressRate.text=(string.Join("/",mission.count,mission.MaxCount));

@@ -23,7 +23,9 @@ public class ShopConroller : MonoBehaviour
         {
             GameObject itemButton = Instantiate(itemButtonPrefab, content.transform);
             TextMeshProUGUI name = itemButton.GetComponentInChildren<TextMeshProUGUI>();
-            Image img = itemButton.GetComponentInChildren<Image>();
+            var button = itemButton.transform.Find("Button");
+            Image img= button.GetComponent<Image>();
+            img.sprite=item.image;
             name.text = item._name;
         }
     }
