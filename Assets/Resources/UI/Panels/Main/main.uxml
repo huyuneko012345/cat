@@ -10,7 +10,7 @@
     </ui:VisualElement>
     <ui:VisualElement name="left" picking-mode="Ignore" tabindex="1" style="translate: 0 0; transform-origin: center; width: 50%;">
         <ui:VisualElement tabindex="1" name="sidebar" picking-mode="Ignore" style="left: -100%; transform-origin: center; translate: 0 0; background-color: rgb(255, 18, 0);">
-            <ui:VisualElement name="backGround" style="width: 100%; height: 100%; position: absolute; background-color: rgb(255, 0, 0);" />
+            <ui:VisualElement name="backGround" picking-mode="Ignore" style="width: 100%; height: 100%; position: absolute; background-color: rgb(255, 0, 0);" />
             <ui:Button display-tooltip-when-elided="true" name="home" class="sidebar-button">
                 <ui:VisualElement class="sidebar-img" style="background-image: url(&apos;project://database/Assets/Resources/UI/images/Home.png?fileID=2800000&amp;guid=7013d0a85455ada44a42ebd1e0594627&amp;type=3#Home&apos;); width: 22%; height: auto;" />
                 <ui:Label text="ホーム" display-tooltip-when-elided="true" style="margin-left: 15%; background-color: rgba(0, 0, 0, 0); color: rgb(255, 255, 255); width: 20%; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; font-size: 60%;" />

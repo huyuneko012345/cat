@@ -9,14 +9,13 @@ using TMPro;
 
 public class MissionController : MonoBehaviour
 {
-    private List<Mission>todayMission;
-     private List<Mission>missionList;
+    private List<Mission>todayMissionList;
     public void addMission()
     {
         
         GameObject MissionPrefab = (GameObject)Resources.Load(MISSION);
         GameObject content = GameObject.Find(CONTENT);
-        foreach(Mission mission in todayMission){
+        foreach(Mission mission in todayMissionList){
 
         GameObject missionPanel  =Instantiate(MissionPrefab, content.transform);
         TextMeshProUGUI child= missionPanel.GetComponentInChildren<TextMeshProUGUI>(); 
@@ -33,12 +32,14 @@ public class MissionController : MonoBehaviour
         }
     }
     public void pickMission(){
+        todayMissionList=new List<Mission>();
         MissionDataBase missionDataBase=(MissionDataBase)Resources.Load("DB/MissionDB");
         List<Mission>missionList=new List<Mission>(missionDataBase.MissionDataList);
                 for(int i=0;i<5;i++){
 
         int index=Random.Range(0,missionList.Count);
-        todayMission.Add(missionList[index]);
+        todayMissionList.Add(missionList[index]);
+        missionList.RemoveAt(index);
                 }
     }
 }

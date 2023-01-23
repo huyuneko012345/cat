@@ -16,15 +16,25 @@ public class Main : MonoBehaviour
     [SerializeField] private Canvas parent;
     [SerializeField] private Dialog dialog;
 
+    private ShopConroller shopConroller;
+    private MissionController mission;
+
+
     private static string latestLogin;
 
     private static string today;
     void Start()
     {
-        today = DateTimeString(System.DateTime.Now);
+        shopConroller = gameObject.AddComponent<ShopConroller>();
+        mission = gameObject.AddComponent<MissionController>();
+        latestLogin = DateTimeString(System.DateTime.Now);
+        mission.pickMission();
     }
     private void Awake()
     {
+        // if(!isLoginToday()){
+        //     SceneManager.LoadScene("start");
+        // }
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
         root.Q<Button>("home").clicked += () => Debug.Log("home");
 
@@ -34,7 +44,6 @@ public class Main : MonoBehaviour
         {
             addView(SHOPVIEW, SHOPDIALOGNAME);
 
-            ShopConroller shopConroller = new ShopConroller();
             shopConroller.addItem();
         };
 
@@ -43,6 +52,8 @@ public class Main : MonoBehaviour
         {
 
             addView(SHOPVIEW, ITEMSDIALOGNAME);
+                        shopConroller.addItem();
+
 
 
 
@@ -51,10 +62,6 @@ public class Main : MonoBehaviour
         root.Q<Button>("mission").clicked += () =>
         {
             addView(MISSIONVIEW, MISSONDIALOGNAME);
-            MissionController mission = new MissionController();
-            if(!isLoginToday()){
-                mission.pickMission();
-            }
             mission.addMission();
 
 
@@ -103,7 +110,7 @@ public class Main : MonoBehaviour
         TextMeshProUGUI _text = nameObj.GetComponent<TextMeshProUGUI>();
         _text.text = name;
     }
-    private string DateTimeString(DateTime date)
+    private static string DateTimeString(DateTime date)
     {
         return (string.Join("/", date.Year.ToString(), date.Month.ToString(), date.Day.ToString()));
     }
@@ -112,11 +119,13 @@ public class Main : MonoBehaviour
     //今日ではない:false
     private static bool isLoginToday()
     {
+        today = DateTimeString(System.DateTime.Now);
+
         if (today == latestLogin)
         {
             return true;
         }
-        latestLogin=String.Copy(today);
+        latestLogin = String.Copy(today);
         return false;
     }
 
