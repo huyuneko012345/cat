@@ -16,7 +16,7 @@ public class Main : MonoBehaviour
     [SerializeField] private Canvas parent;
     [SerializeField] private Dialog dialog;
 
-    private ShopConroller shopConroller;
+    private ShopController shopConroller;
     private MissionController mission;
 
 
@@ -25,7 +25,7 @@ public class Main : MonoBehaviour
     private static string today;
     void Start()
     {
-        shopConroller = gameObject.AddComponent<ShopConroller>();
+        shopConroller = gameObject.AddComponent<ShopController>();
         mission = gameObject.AddComponent<MissionController>();
         latestLogin = DateTimeString(System.DateTime.Now);
         mission.pickMission();

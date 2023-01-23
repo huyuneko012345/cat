@@ -9,7 +9,7 @@ using TMPro;
 
 
 
-public class ShopConroller : MonoBehaviour
+public class ShopController : MonoBehaviour
 {
 
 
