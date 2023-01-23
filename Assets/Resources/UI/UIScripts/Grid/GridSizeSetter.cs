@@ -11,7 +11,7 @@ public class GridSizeSetter : MonoBehaviour
     private const int MINNUM = 0;
     private const int MAXNUM = 1;
 
-    [Range(MINNUM, MAXNUM)][SerializeField] private float CellWidthPer = 0.9f;
+    [Range(MINNUM, MAXNUM)][SerializeField] private float CellWidthPer = 0.8f;
     [Range(MINNUM, MAXNUM)][SerializeField] private float CellHeightPer = 0.3f;
     [Range(MINNUM, MAXNUM)][SerializeField] private float spacingWidthPer = 0.1f;
     [Range(MINNUM, MAXNUM)][SerializeField] private float spacingHeightPer = 0.2f;

@@ -18,6 +18,7 @@ public class Main : MonoBehaviour
 
     private ShopController shopConroller;
     private MissionController mission;
+    private MyItemController myItemController;
 
 
     private static string latestLogin;
@@ -27,6 +28,7 @@ public class Main : MonoBehaviour
     {
         shopConroller = gameObject.AddComponent<ShopController>();
         mission = gameObject.AddComponent<MissionController>();
+        myItemController=gameObject.AddComponent<MyItemController>();
         latestLogin = DateTimeString(System.DateTime.Now);
         mission.pickMission();
     }
@@ -44,7 +46,8 @@ public class Main : MonoBehaviour
         root.Q<Button>("shop-button").clicked += () =>
         {
             addView(SHOPVIEW, SHOPDIALOGNAME);
-
+            var content=GameObject.Find(CONTENT);
+            content.AddComponent<GridSizeSetter>();
             shopConroller.addItem();
         };
 
@@ -53,7 +56,9 @@ public class Main : MonoBehaviour
         {
 
             addView(SHOPVIEW, ITEMSDIALOGNAME);
-                        shopConroller.addItem();
+            var content=GameObject.Find(CONTENT);
+            content.AddComponent<GridSizeSetter>();
+            myItemController.addMyItem();
 
 
 

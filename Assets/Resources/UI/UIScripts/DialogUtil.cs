@@ -15,12 +15,15 @@ public sealed class DialogUtil
     public static class FIlePath{
         private static string BASEPATH="UI/Prefabs/";
         private static string SHOPBASE="Shop/";
+        private static string MYITEMBASE="MyItem/";
         private static string MISSIONBASE="Mission/";
         private static string SETTINGBASE="Setting/";
 
 
         public static readonly string SHOPVIEW=BASEPATH+SHOPBASE+"ShopView";
         public static readonly string SHOPITEMBUTTON=BASEPATH+SHOPBASE+"ShopItemButton";
+        public static readonly string MYITEMVIEW=BASEPATH+MYITEMBASE+"MyItemView";
+        public static readonly string MYITEMBUTTON=BASEPATH+MYITEMBASE+"MyItemButton";
         public static readonly string MISSIONVIEW=BASEPATH+MISSIONBASE+"MissionView";
         public static readonly string MISSION=BASEPATH+MISSIONBASE+"Mission";
         public static readonly string SettingView=BASEPATH+SETTINGBASE+"SettingView";

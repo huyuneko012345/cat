@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using static DialogUtil.FIlePath;
+using static DialogUtil.PrefabName;
+
+using TMPro;
 
 public class MyItemController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void addMyItem(){
+  GameObject content = GameObject.Find(CONTENT);
+        MyItemDB myItemDB = (MyItemDB)Resources.Load("DB/MyItemDB");
+        GameObject itemButtonPrefab = (GameObject)Resources.Load(MYITEMBUTTON);
+        List<MyItem> itemList = myItemDB.myItemList;
+        foreach (MyItem myItem in itemList)
+        {
+            GameObject itemButton = Instantiate(itemButtonPrefab, content.transform);
+            TextMeshProUGUI name = itemButton.GetComponentInChildren<TextMeshProUGUI>();
+            var button = itemButton.transform.Find("Button");
+            Image img= button.GetComponent<Image>();
+            img.sprite=myItem.item.image;
+            name.text = $"{myItem.item._name}({myItem.count})";
+        }
+        }
 }
