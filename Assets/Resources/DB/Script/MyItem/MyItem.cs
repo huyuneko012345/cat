@@ -6,6 +6,6 @@ using UnityEngine;
 [SerializeField]
 public class MyItem : ScriptableObject
 {
-    Item item;
-    int count;
+    public Item item;
+    public int count;
 }

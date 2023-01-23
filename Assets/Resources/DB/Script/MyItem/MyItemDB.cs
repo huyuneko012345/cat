@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class MyItemDB : MonoBehaviour
+public class MyItemDB : ScriptableObject
 {
-    List<MyItem>MyItemList=new List<MyItem>();
+    public List<MyItem>myItemList=new List<MyItem>();
 
 }
