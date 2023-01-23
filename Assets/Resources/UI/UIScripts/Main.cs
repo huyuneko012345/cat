@@ -32,6 +32,7 @@ public class Main : MonoBehaviour
     }
     private void Awake()
     {
+        //今日ログインしていない場合はスタート画面に戻る用
         // if(!isLoginToday()){
         //     SceneManager.LoadScene("start");
         // }
