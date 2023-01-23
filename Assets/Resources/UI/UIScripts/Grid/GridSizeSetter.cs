@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
-using static GridUtils.PrefabName;
-
+using static SizeSetterUtils.PrefabName;
 [ExecuteAlways]
 public class GridSizeSetter : MonoBehaviour
 {
-    private const int MINNUM = 0;
-    private const int MAXNUM = 1;
+     private const int MINNUM = 0;
+     private const int MAXNUM = 1;
 
     [Range(MINNUM, MAXNUM)][SerializeField] private float CellWidthPer = 0.8f;
     [Range(MINNUM, MAXNUM)][SerializeField] private float CellHeightPer = 0.3f;
@@ -22,6 +21,7 @@ public class GridSizeSetter : MonoBehaviour
 
     private float CellHeight
     {
+        
         get
         {
             return (float)(contentHeight * CellHeightPer);
