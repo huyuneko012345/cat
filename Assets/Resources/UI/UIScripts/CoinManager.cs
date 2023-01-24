@@ -16,9 +16,8 @@ public class CoinManager : MonoBehaviour
 
     [SerializeField] private Label coinText;
 
-    public void init(/*Action<int> onChengeCoin*/)
+    public void Init()
     {
-        // this.onChengeCoin += onChengeCoin;
         this.onChengeFP += (coin) =>
         {
             VisualElement root = GameObject.Find("UIDocument").GetComponent<UIDocument>().rootVisualElement;

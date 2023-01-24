@@ -26,13 +26,12 @@ public class Main : MonoBehaviour
     private static string today;
     void Start()
     {
-        shopConroller = gameObject.AddComponent<ShopController>();
         mission = gameObject.AddComponent<MissionController>();
         myItemController=gameObject.AddComponent<MyItemController>();
         latestLogin = DateTimeString(System.DateTime.Now);
         mission.pickMission();
-        CoinManager coinManager=new CoinManager();
-        coinManager.init();
+        CoinManager coinManager=gameObject.AddComponent<CoinManager>();
+        coinManager.Init();
     }
     private void Awake()
     {
@@ -47,9 +46,13 @@ public class Main : MonoBehaviour
 
         root.Q<Button>("shop-button").clicked += () =>
         {
+                    shopConroller = gameObject.AddComponent<ShopController>();
+
             addView(SHOP_VIEW, SHOPDIALOGNAME);
             var content=GameObject.Find(CONTENT);
             content.AddComponent<GridSizeSetter>();
+             CreateShopItem createShopItem =gameObject.GetComponent<CreateShopItem>();
+            createShopItem.Init();
             shopConroller.CreateItem();
         };
 
@@ -60,6 +63,7 @@ public class Main : MonoBehaviour
             addView(SHOP_VIEW, ITEMSDIALOGNAME);
             var content=GameObject.Find(CONTENT);
             content.AddComponent<GridSizeSetter>();
+           
             // myItemController.addMyItem();
 
 

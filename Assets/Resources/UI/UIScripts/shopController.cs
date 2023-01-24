@@ -13,7 +13,9 @@ using TMPro;
 public class ShopController : MonoBehaviour
 {
 
-
+ void Start() {
+    
+}
     public void CreateItem()
     {
         // GameObject content = GameObject.Find(CONTENT);
