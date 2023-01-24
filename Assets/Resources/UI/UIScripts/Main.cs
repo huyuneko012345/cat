@@ -31,6 +31,8 @@ public class Main : MonoBehaviour
         myItemController=gameObject.AddComponent<MyItemController>();
         latestLogin = DateTimeString(System.DateTime.Now);
         mission.pickMission();
+        CoinManager coinManager=new CoinManager();
+        coinManager.init();
     }
     private void Awake()
     {
