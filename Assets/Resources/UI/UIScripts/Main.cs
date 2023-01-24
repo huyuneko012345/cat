@@ -60,7 +60,7 @@ public class Main : MonoBehaviour
             addView(SHOP_VIEW, ITEMSDIALOGNAME);
             var content=GameObject.Find(CONTENT);
             content.AddComponent<GridSizeSetter>();
-            myItemController.addMyItem();
+            // myItemController.addMyItem();
 
 
 
