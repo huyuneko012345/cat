@@ -5,7 +5,7 @@ using UnityEngine;
 public class DBManager : MonoBehaviour
 {
     [SerializeField] private CatDataBase catDB;
-    [SerializeField] private ItemDetaBase itemDB;
+    // [SerializeField] private ItemDetaBase itemDB;
     [SerializeField] private MissionDataBase missionDB;
     [SerializeField] private MyItemDB MyItemDB;
 
@@ -14,10 +14,10 @@ public class DBManager : MonoBehaviour
     {
         catDB.catDataList.Add(cat);
     }
-    public void addItem(Item item)
-    {
-        itemDB.itemDataList.Add(item);
-    }
+    // public void addItem(Item item)
+    // {
+    //     itemDB.itemDataList.Add(item);
+    // }
     public void addMission(Mission mission)
     {
         missionDB.MissionDataList.Add(mission);

@@ -20,10 +20,10 @@ public sealed class DialogUtil
         private static string SETTINGBASE="Setting/";
 
 
-        public static readonly string SHOPVIEW=BASEPATH+SHOPBASE+"ShopView";
-        public static readonly string SHOPITEMBUTTON=BASEPATH+SHOPBASE+"ShopItemButton";
-        public static readonly string MYITEMVIEW=BASEPATH+MYITEMBASE+"MyItemView";
-        public static readonly string MYITEMBUTTON=BASEPATH+MYITEMBASE+"MyItemButton";
+        public static readonly string SHOP_VIEW=BASEPATH+SHOPBASE+"ShopView";
+        public static readonly string SHOP_ITEM_BUTTON=BASEPATH+SHOPBASE+"ShopItemButton";
+        public static readonly string MYITEM_VIEW=BASEPATH+MYITEMBASE+"MyItemView";
+        public static readonly string MYITEM_BUTTON=BASEPATH+MYITEMBASE+"MyItemButton";
         public static readonly string MISSIONVIEW=BASEPATH+MISSIONBASE+"MissionView";
         public static readonly string MISSION=BASEPATH+MISSIONBASE+"Mission";
         public static readonly string SettingView=BASEPATH+SETTINGBASE+"SettingView";

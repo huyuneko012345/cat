@@ -20,8 +20,8 @@ public class MyItemController : MonoBehaviour
             TextMeshProUGUI name = itemButton.GetComponentInChildren<TextMeshProUGUI>();
             var button = itemButton.transform.Find("Button");
             Image img= button.GetComponent<Image>();
-            img.sprite=myItem.item.image;
-            name.text = $"{myItem.item._name}({myItem.count})";
+            // img.sprite=myItem.item.image;
+            // name.text = $"{myItem.item.ItemName}({myItem.count})";
         }
         }
 }

@@ -47,17 +47,17 @@ public class Main : MonoBehaviour
 
         root.Q<Button>("shop-button").clicked += () =>
         {
-            addView(SHOPVIEW, SHOPDIALOGNAME);
+            addView(SHOP_VIEW, SHOPDIALOGNAME);
             var content=GameObject.Find(CONTENT);
             content.AddComponent<GridSizeSetter>();
-            shopConroller.addItem();
+            shopConroller.CreateItem();
         };
 
 
         root.Q<Button>("item").clicked += () =>
         {
 
-            addView(SHOPVIEW, ITEMSDIALOGNAME);
+            addView(SHOP_VIEW, ITEMSDIALOGNAME);
             var content=GameObject.Find(CONTENT);
             content.AddComponent<GridSizeSetter>();
             myItemController.addMyItem();
