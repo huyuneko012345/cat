@@ -30,8 +30,8 @@ public class Main : MonoBehaviour
         myItemController=gameObject.AddComponent<MyItemController>();
         latestLogin = DateTimeString(System.DateTime.Now);
         mission.pickMission();
-        CoinManager coinManager=gameObject.AddComponent<CoinManager>();
-        coinManager.Init();
+        FPManager fpManager=GetComponent<FPManager>();
+        fpManager.Init();
     }
     private void Awake()
     {
@@ -53,7 +53,7 @@ public class Main : MonoBehaviour
             content.AddComponent<GridSizeSetter>();
              CreateShopItem createShopItem =gameObject.GetComponent<CreateShopItem>();
             createShopItem.Init();
-            shopConroller.CreateItem();
+            // shopConroller.CreateItem();
         };
 
 
@@ -64,7 +64,7 @@ public class Main : MonoBehaviour
             var content=GameObject.Find(CONTENT);
             content.AddComponent<GridSizeSetter>();
            
-            // myItemController.addMyItem();
+            myItemController.addMyItem();
 
 
 

@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc4f2f9f058cca24eb76a3dd3c3e5a94, type: 3}
+  m_Script: {fileID: 11500000, guid: d690ee82a6ff4c84381fad3cb90b54d9, type: 3}
   m_Name: "\u306D\u3053\u3058\u3083\u3089\u3057"
   m_EditorClassIdentifier: 
-  id: 2
-  name: "\u306D\u3053\u3058\u3083\u3089\u3057"
-  text: "\u3053\u308C\u306F\u306D\u3053\u3058\u3083\u3089\u3057\u3067\u3059"
-  price: 500
-  image: {fileID: 21300000, guid: 4944b80422141754c9df8254f163d6da, type: 3}
+  item: {fileID: 11400000, guid: 4ef372bc83dca944c97b2a1b1fa48a84, type: 2}
+  count: 0

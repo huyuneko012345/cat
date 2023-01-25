@@ -7,7 +7,6 @@ public class ShowItemData : MonoBehaviour
     private Item item;
     public string name;
     public string text;
-
     public int price;
     public Sprite image;
     public void setItem(int id){
@@ -15,6 +14,7 @@ public class ShowItemData : MonoBehaviour
         this.name=item.name;
         this.text=item.text;
         this.price=item.price;
+        this.image=item.image;
     }
     public int GetPrice{
         get{

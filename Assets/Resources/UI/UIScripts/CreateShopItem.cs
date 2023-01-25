@@ -13,30 +13,33 @@ public class CreateShopItem : MonoBehaviour
     [SerializeField] private int[] itemIds;
 
     [SerializeField] private GameObject yesNoCanvas;
+    [SerializeField] private GameObject ItemescriptionCanvas;
 
     [SerializeField] private Text itemText;
 
     public Action<int> Init()
-    {   
+    {
         Action<int> onChangeFP = (fp) => { };
         foreach (int id in itemIds)
         {
             Transform item = Instantiate((GameObject)Resources.Load(SHOP_ITEM_BUTTON)).transform;
-            GameObject shopContent =GameObject.Find(CONTENT);
+            GameObject shopContent = GameObject.Find(CONTENT);
             item.SetParent(shopContent.transform, false);
             item.GetComponent<ShowItemData>().setItem(id);
-            ShowItemData itemData=item.GetComponent<ShowItemData>();
-            TextMeshProUGUI name= item.GetComponentInChildren<TextMeshProUGUI>();
-            name.text=itemData.name;
-            Image img= item.GetComponentInChildren<Button>().GetComponent<Image>();
-            img.sprite=itemData.image;
+            ShowItemData itemData = item.GetComponent<ShowItemData>();
+            TextMeshProUGUI name = item.GetComponentInChildren<TextMeshProUGUI>();
+            name.text = itemData.name;
+            Image img = item.Find("Button").GetComponent<Image>();
+            Debug.Log(itemData.image);
+            img.sprite = itemData.image;
             /*TODO*/
-            Button button = item.Find("").GetComponent<Button>();
+            Button button = item.Find("Button").GetComponent<Button>();
             Button shopItemButton = item.GetComponent<Button>();
             int key = id;
+            
             button.onClick.AddListener(() =>
             {
-
+                OpenItemDescription(key);
             });
             shopItemButton.onClick.AddListener(() =>
             {
@@ -62,13 +65,14 @@ public class CreateShopItem : MonoBehaviour
             itemText.text = "品切れ";
         }
     }
-    private void ChangeItemText(int id)
+    private void OpenItemDescription(int id)
     {
-        itemText.text = ItemMasterData.GetValue(id).text;
+        ItemescriptionCanvas.SetActive(true);
+        ItemescriptionCanvas.GetComponent<ShowItemData>().setItem(id);
     }
     private void OpenYesNoWindow(int id)
-    {   Debug.Log(id);
-        // ChangeItemText(id);
+    {
+        Debug.Log(id);
         yesNoCanvas.SetActive(true);
         yesNoCanvas.GetComponent<ShowItemData>().setItem(id);
     }
