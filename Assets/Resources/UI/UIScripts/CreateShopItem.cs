@@ -19,7 +19,7 @@ public class CreateShopItem : MonoBehaviour
 
     public Action<int> Init()
     {
-        // ItemMasterData itemMasterData = (ItemMasterData)Resources.Load("BD/ItemMasterData");
+        Debug.Log(itemMasterData);
         Item[] itemList = itemMasterData.GetItemList();
         Action<int> onChangeFP = (fp) => { };
 
@@ -28,6 +28,7 @@ public class CreateShopItem : MonoBehaviour
         foreach (Item item in itemList)
         {
             int id = item.GetId();
+            Debug.Log(id);
             Transform itemTransform = Instantiate((GameObject)Resources.Load(SHOP_ITEM_BUTTON)).transform;
             GameObject shopContent = GameObject.Find(CONTENT);
             itemTransform.SetParent(shopContent.transform, false);
