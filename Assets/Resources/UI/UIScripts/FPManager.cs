@@ -22,16 +22,16 @@ public class FPManager : MonoBehaviour
         {
             VisualElement root = GameObject.Find("UIDocument").GetComponent<UIDocument>().rootVisualElement;
             fpText = root.Q<Label>("FPText");
-            Debug.Log(fpText.text);
-            Debug.Log(fp.ToString());
             fpText.text = fp.ToString();
-            Debug.Log(fpText.text);
         };
 
         yesNoCanvas.transform.Find("Panel/YesNoPanel/ButtonPanel/Yes").GetComponent<UI.Button>().onClick.AddListener(() =>
         {
             SubFP(yesNoCanvas.GetComponent<ShowItemData>().GetPrice);
         });
+        //TODO あとで消す
+        //確認用
+        ChangeFP(0);
         this.onChengeFP(LoadFP());
     }
     private int LoadFP()
