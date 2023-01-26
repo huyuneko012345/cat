@@ -15,7 +15,7 @@ public class ShowItemData : MonoBehaviour
         this.item=ItemMasterData.GetValue(id);
         this.ItemName.text=item.name;
         this.text.text=item.text;
-        this.price.text=item.price.ToString();
+        this.price.text=$"{item.price.ToString()}FP";
         this.image.sprite=item.image;
     }
     public int GetPrice{
