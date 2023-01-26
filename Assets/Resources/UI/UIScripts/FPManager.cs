@@ -34,6 +34,26 @@ public class FPManager : MonoBehaviour
         ChangeFP(0);
         this.onChengeFP(LoadFP());
     }
+    public void Init(Action<int> onChengeFP)
+    {
+        Debug.Log(39);
+        this.onChengeFP+=onChengeFP;
+        // this.onChengeFP += (fp) =>
+        // {
+        //     VisualElement root = GameObject.Find("UIDocument").GetComponent<UIDocument>().rootVisualElement;
+        //     fpText = root.Q<Label>("FPText");
+        //     fpText.text = fp.ToString();
+        // };
+
+        // yesNoCanvas.transform.Find("Panel/YesNoPanel/ButtonPanel/Yes").GetComponent<UI.Button>().onClick.AddListener(() =>
+        // {
+        //     SubFP(yesNoCanvas.GetComponent<ShowItemData>().GetPrice);
+        // });
+        //TODO あとで消す
+        //確認用
+        // ChangeFP(0);
+        this.onChengeFP(LoadFP());
+    }
     private int LoadFP()
     {
         return PlayerPrefs.GetInt(FP_KEY, DEFAULT_FP);

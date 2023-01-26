@@ -20,6 +20,9 @@ public class CreateShopItem : MonoBehaviour
     public Action<int> Init()
     {
         Action<int> onChangeFP = (fp) => { };
+
+        
+;
         foreach (int id in itemIds)
         {
             Transform item = Instantiate((GameObject)Resources.Load(SHOP_ITEM_BUTTON)).transform;
@@ -40,11 +43,11 @@ public class CreateShopItem : MonoBehaviour
             {
                 OpenYesNoWindow(key);
             });
-            onChangeFP += (coin) =>
+            
+            onChangeFP += (fp) =>
             {
-                bool canBuy = coin >= ItemMasterData.GetValue(key).price;
-                Debug.Log(canBuy);
-                button.interactable = canBuy;
+                bool canBuy = fp >= ItemMasterData.GetValue(key).price;
+                // button.interactable = canBuy;
                 shopItemButton.interactable = canBuy;
             };
         }
@@ -68,7 +71,6 @@ public class CreateShopItem : MonoBehaviour
     }
     private void OpenYesNoWindow(int id)
     {
-        Debug.Log(id);
         yesNoCanvas.SetActive(true);
         yesNoCanvas.GetComponent<ShowItemData>().setItem(id);
     }

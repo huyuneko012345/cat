@@ -20,18 +20,18 @@ public class Main : MonoBehaviour
     private MissionController mission;
     private MyItemController myItemController;
 
-
+    private FPManager fpManager;
     private static string latestLogin;
 
     private static string today;
     void Start()
     {
-        mission = gameObject.AddComponent<MissionController>();
-        myItemController=gameObject.AddComponent<MyItemController>();
+        this.mission = gameObject.AddComponent<MissionController>();
+        this.myItemController=gameObject.AddComponent<MyItemController>();
         latestLogin = DateTimeString(System.DateTime.Now);
-        mission.pickMission();
-        FPManager fpManager=GetComponent<FPManager>();
-        fpManager.Init();
+        this.mission.pickMission();
+        this.fpManager=GetComponent<FPManager>();
+        this.fpManager.Init();
     }
     private void Awake()
     {
@@ -52,7 +52,7 @@ public class Main : MonoBehaviour
             var content=GameObject.Find(CONTENT);
             content.AddComponent<GridSizeSetter>();
              CreateShopItem createShopItem =gameObject.GetComponent<CreateShopItem>();
-            createShopItem.Init();
+            fpManager.Init(createShopItem.Init());
             // shopConroller.CreateItem();
         };
 
