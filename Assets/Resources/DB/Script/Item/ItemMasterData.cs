@@ -26,7 +26,13 @@ public class ItemMasterData : ScriptableObject
     public static int GetLength(){
         return dic.Count;
     }
+    public Item[] GetItemList(){
+    
+        return data;
+    
 }
+}
+
 
 
 [CreateAssetMenu]
@@ -40,5 +46,8 @@ public class Item : ScriptableObject
 
     public int price;
     public Sprite image;
+    public int GetId(){
+        return id;
+    }
 }
 

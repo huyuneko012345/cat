@@ -7,20 +7,28 @@ using TMPro;
 public class ShowItemData : MonoBehaviour
 {
     private Item item;
-    public TextMeshProUGUI ItemName;
-    public TextMeshProUGUI text;
-    public TextMeshProUGUI price;
-    public Image image;
-    public void setItem(int id){
-        this.item=ItemMasterData.GetValue(id);
-        this.ItemName.text=item.name;
-        this.text.text=item.text;
-        this.price.text=$"{item.price.ToString()}FP";
-        this.image.sprite=item.image;
+    [SerializeField] private TextMeshProUGUI ItemName;
+    [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private TextMeshProUGUI price;
+    [SerializeField] private Image image;
+    public void setItem(int id)
+    {
+        this.item = ItemMasterData.GetValue(id);
+        this.ItemName.text = item.name;
+        this.text.text = item.text;
+        this.price.text = $"{item.price.ToString()}FP";
+        this.image.sprite = item.image;
     }
-    public int GetPrice{
-        get{
+    public int GetPrice
+    {
+        get
+        {
             return item.price;
+        }
+    }
+    public Item GetItem{
+        get{
+            return item;
         }
     }
 }

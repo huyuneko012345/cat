@@ -9,7 +9,7 @@ using TMPro;
 
 public class MyItemController : MonoBehaviour
 {
-    public void addMyItem(){
+    public void CreateMyItem(){
   GameObject content = GameObject.Find(CONTENT);
         MyItemDB myItemDB = (MyItemDB)Resources.Load("DB/MyItemDB");
         GameObject itemButtonPrefab = (GameObject)Resources.Load(MYITEM_BUTTON);
@@ -25,4 +25,12 @@ public class MyItemController : MonoBehaviour
             }
         }
         }
+    public void addMyItem(Item item){
+        MyItemDB myItemDB=(MyItemDB)Resources.Load("DB/MyItemDB");
+        MyItem myItem=new MyItem();
+        myItem.item=item;
+        myItem.count+=1;
+        myItemDB.myItemList.Add(myItem);
+
+    }
 }

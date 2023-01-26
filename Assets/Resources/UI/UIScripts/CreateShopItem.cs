@@ -11,7 +11,7 @@ using TMPro;
 public class CreateShopItem : MonoBehaviour
 {
     [SerializeField] private int[] itemIds;
-
+    [SerializeField] private ItemMasterData itemMasterData;
     [SerializeField] private GameObject yesNoCanvas;
     [SerializeField] private GameObject ItemescriptionCanvas;
 
@@ -19,22 +19,24 @@ public class CreateShopItem : MonoBehaviour
 
     public Action<int> Init()
     {
+        // ItemMasterData itemMasterData = (ItemMasterData)Resources.Load("BD/ItemMasterData");
+        Item[] itemList = itemMasterData.GetItemList();
         Action<int> onChangeFP = (fp) => { };
 
-        
-;
-        foreach (int id in itemIds)
+
+        ;
+        foreach (Item item in itemList)
         {
-            Transform item = Instantiate((GameObject)Resources.Load(SHOP_ITEM_BUTTON)).transform;
+            int id = item.GetId();
+            Transform itemTransform = Instantiate((GameObject)Resources.Load(SHOP_ITEM_BUTTON)).transform;
             GameObject shopContent = GameObject.Find(CONTENT);
-            item.SetParent(shopContent.transform, false);
-            item.GetComponent<ShowItemData>().setItem(id);
-            var a= item.GetComponent<ShowItemData>();
-            
-            Button button = item.Find("Button").GetComponent<Button>();
-            Button shopItemButton = item.GetComponent<Button>();
+            itemTransform.SetParent(shopContent.transform, false);
+            itemTransform.GetComponent<ShowItemData>().setItem(id);
+
+            Button button = itemTransform.Find("Button").GetComponent<Button>();
+            Button shopItemButton = itemTransform.GetComponent<Button>();
             int key = id;
-            
+
             button.onClick.AddListener(() =>
             {
                 OpenItemDescription(key);
@@ -43,7 +45,7 @@ public class CreateShopItem : MonoBehaviour
             {
                 OpenYesNoWindow(key);
             });
-            
+
             onChangeFP += (fp) =>
             {
                 bool canBuy = fp >= ItemMasterData.GetValue(key).price;

@@ -16,7 +16,6 @@ public class Main : MonoBehaviour
     [SerializeField] private Canvas parent;
     [SerializeField] private Dialog dialog;
 
-    private ShopController shopConroller;
     private MissionController mission;
     private MyItemController myItemController;
 
@@ -46,14 +45,12 @@ public class Main : MonoBehaviour
 
         root.Q<Button>("shop-button").clicked += () =>
         {
-                    shopConroller = gameObject.AddComponent<ShopController>();
 
             addView(SHOP_VIEW, SHOPDIALOGNAME);
             var content=GameObject.Find(CONTENT);
             content.AddComponent<GridSizeSetter>();
              CreateShopItem createShopItem =gameObject.GetComponent<CreateShopItem>();
             fpManager.Init(createShopItem.Init());
-            // shopConroller.CreateItem();
         };
 
 
@@ -64,7 +61,7 @@ public class Main : MonoBehaviour
             var content=GameObject.Find(CONTENT);
             content.AddComponent<GridSizeSetter>();
            
-            myItemController.addMyItem();
+            myItemController.CreateMyItem();
 
 
 
