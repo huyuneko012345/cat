@@ -26,12 +26,14 @@ public class CreateShopItem : MonoBehaviour
             GameObject shopContent = GameObject.Find(CONTENT);
             item.SetParent(shopContent.transform, false);
             item.GetComponent<ShowItemData>().setItem(id);
-            ShowItemData itemData = item.GetComponent<ShowItemData>();
-            TextMeshProUGUI name = item.GetComponentInChildren<TextMeshProUGUI>();
-            name.text = itemData.name;
-            Image img = item.Find("Button").GetComponent<Image>();
-            Debug.Log(itemData.image);
-            img.sprite = itemData.image;
+            var a= item.GetComponent<ShowItemData>();
+            Debug.Log(a.ItemName);
+            // ShowItemData itemData = item.GetComponent<ShowItemData>();
+            // TextMeshProUGUI name = item.GetComponentInChildren<TextMeshProUGUI>();
+            // name.text = itemData.name;
+            // Image img = item.Find("Button").GetComponent<Image>();
+            // Debug.Log(itemData.image);
+            // img.sprite = itemData.image;
             /*TODO*/
             Button button = item.Find("Button").GetComponent<Button>();
             Button shopItemButton = item.GetComponent<Button>();
