@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 using static DialogUtil.FIlePath;
 using static DialogUtil.PrefabName;
+
 
 using TMPro;
 
 public class MyItemController : MonoBehaviour
 {
+    [SerializeField]private MyItemDB myItemDB;
     public void CreateMyItem(){
   GameObject content = GameObject.Find(CONTENT);
-        MyItemDB myItemDB = (MyItemDB)Resources.Load("DB/MyItemDB");
+        // MyItemDB myItemDB = (MyItemDB)Resources.Load("DB/MyItemDB");
         GameObject itemButtonPrefab = (GameObject)Resources.Load(MYITEM_BUTTON);
         List<MyItem> itemList = myItemDB.myItemList;
         foreach (MyItem myItem in itemList)
@@ -27,10 +30,19 @@ public class MyItemController : MonoBehaviour
         }
     public void addMyItem(Item item){
         MyItemDB myItemDB=(MyItemDB)Resources.Load("DB/MyItemDB");
-        MyItem myItem=new MyItem();
-        myItem.item=item;
-        myItem.count+=1;
-        myItemDB.myItemList.Add(myItem);
+        foreach(MyItem myItem in myItemDB.myItemList){
+            if(item.GetId()==myItem.item.GetId()){
+                myItem.addCount(1);
+                return;
+            }
+            var obj=ScriptableObject.CreateInstance<MyItem>();
+            obj.item=item;
+            obj.count=1;
+            string fileName=$"{item.name}.asset";
+            string path="Assets/Resources/DB/MyItem";
+
+        }
+        
 
     }
 }
