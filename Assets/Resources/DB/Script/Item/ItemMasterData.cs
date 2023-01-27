@@ -35,19 +35,4 @@ public class ItemMasterData : ScriptableObject
 
 
 
-[CreateAssetMenu]
-[Serializable]
-public class Item : ScriptableObject     
-{
-
-    public int id;
-    public string name;
-    public string text;
-
-    public int price;
-    public Sprite image;
-    public int GetId(){
-        return id;
-    }
-}
 

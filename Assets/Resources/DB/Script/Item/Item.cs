@@ -1,18 +1,23 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
 
-// using System;
-// [CreateAssetMenu]
-// [Serializable]
-// public class Item : ScriptableObject
-// {
-//     public int id;
-//     public string ItemName;
-//     public string text;
+[CreateAssetMenu]
+[Serializable]
+public class Item : ScriptableObject     
+{
 
-//     public int price;
-//     public Sprite image;
-    
-// }
+    public int id;
+    public string name;
+    public string text;
+
+    public int price;
+    public Sprite image;
+
+    public GameObject prefab;
+    public int GetId(){
+        return id;
+    }
+}
+
