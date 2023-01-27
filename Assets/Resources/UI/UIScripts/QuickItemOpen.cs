@@ -9,6 +9,9 @@ public class QuickItemOpen : MonoBehaviour
     Di.Stopwatch sw;
     
     TimeSpan ts; 
+    private Vector3 clickPosition;
+
+    [NonSerialized]public GameObject _prefab;
 
 
 public void PushDown(){
@@ -23,6 +26,13 @@ public void PushUp(){
     if(isSec()){
         Debug.Log("開いた");
     }
+}
+
+public void onClick(){
+    ShowItemData showItemData=GetComponent<ShowItemData>();
+    Item item= showItemData.GetItem;
+    _prefab=item.prefab;
+
 }
 void Awake()
 {
