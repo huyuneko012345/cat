@@ -11,9 +11,9 @@ public class QuickItemOpen : MonoBehaviour
     TimeSpan ts; 
     private Vector3 clickPosition;
 
-    [NonSerialized]public GameObject _prefab;
+    /*[NonSerialized]*/public GameObject _prefab;
 
-
+    private bool flg=false;
 public void PushDown(){
     
     sw.Start();    
@@ -29,9 +29,10 @@ public void PushUp(){
 }
 
 public void onClick(){
-    ShowItemData showItemData=GetComponent<ShowItemData>();
-    Item item= showItemData.GetItem;
-    _prefab=item.prefab;
+    // ShowItemData showItemData=GetComponent<ShowItemData>();
+    // _prefab=showItemData.GetPrefab;
+    flg=true;
+    Debug.Log("クリックされた");
 
 }
 void Awake()
@@ -44,6 +45,23 @@ public  bool isSec(){
     return true;
     }
     return false;
+}
+void Update()
+{
+    if(flg){
+        if(Input.GetMouseButtonDown(0)){
+        clickPosition=Input.mousePosition;
+        clickPosition.z=10f;
+        try{
+            Instantiate(_prefab,new Vector3(100,100,100),_prefab.transform.rotation);
+        }catch(NullReferenceException){
+            Debug.Log("生成できないよ");
+            return;
+        }
+        flg=false;
+       
+    }
+    }
 }
 }
 

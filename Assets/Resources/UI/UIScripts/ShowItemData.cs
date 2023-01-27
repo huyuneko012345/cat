@@ -11,6 +11,8 @@ public class ShowItemData : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private TextMeshProUGUI price;
     [SerializeField] private Image image;
+
+    private GameObject _prefab;
     public void setItem(int id)
     {
         this.item = ItemMasterData.GetValue(id);
@@ -18,6 +20,7 @@ public class ShowItemData : MonoBehaviour
         this.text.text = item.text;
         this.price.text = $"{item.price.ToString()}FP";
         this.image.sprite = item.image;
+        this._prefab=item.prefab;
     }
     public int GetPrice
     {
@@ -31,4 +34,10 @@ public class ShowItemData : MonoBehaviour
             return item;
         }
     }
+    public GameObject GetPrefab{
+        get{
+            return _prefab;
+        }
+    }
+    
 }
