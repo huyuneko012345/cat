@@ -21,12 +21,11 @@ public class Main : MonoBehaviour
 
     private FPManager fpManager;
     private static string latestLogin;
-
     private static string today;
     void Start()
     {
         this.mission = gameObject.AddComponent<MissionController>();
-        this.myItemController=gameObject.AddComponent<MyItemController>();
+        this.myItemController=GetComponent<MyItemController>();
         latestLogin = DateTimeString(System.DateTime.Now);
         this.mission.pickMission();
         this.fpManager=GetComponent<FPManager>();
@@ -57,7 +56,7 @@ public class Main : MonoBehaviour
         root.Q<Button>("item").clicked += () =>
         {
 
-            addView(SHOP_VIEW, ITEMSDIALOGNAME);
+            addView(MYITEM_VIEW, ITEMSDIALOGNAME);
             var content=GameObject.Find(CONTENT);
             content.AddComponent<GridSizeSetter>();
            

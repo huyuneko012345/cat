@@ -28,9 +28,7 @@ public class CreateShopItem : MonoBehaviour
         foreach (Item item in itemList)
         {
             int id = item.GetId();
-            Debug.Log(id);
             Transform itemTransform = Instantiate((GameObject)Resources.Load(SHOP_ITEM_BUTTON)).transform;
-            Debug.Log(itemTransform);
             GameObject shopContent = GameObject.Find(CONTENT);
             itemTransform.SetParent(shopContent.transform, false);
             itemTransform.GetComponent<ShowItemData>().setItem(id);

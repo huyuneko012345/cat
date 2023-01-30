@@ -96,9 +96,11 @@ public class GridSizeSetter : MonoBehaviour
 
     void OnValidate()
     {
-        viewport=GameObject.Find(VIEWPORT);
+        viewport=GetComponent<ViewPortUtil>().GetViewPort;
+        Debug.Log(viewport);
         rectTransform=viewport.GetComponent<RectTransform>();
         gridLayout = GetComponent<GridLayoutGroup>();
+        Debug.Log(rectTransform.rect.width);
         UpdateCellSize();
         UpdatespacingSize();
         UpdatePaddingBottom();
@@ -115,8 +117,7 @@ public class GridSizeSetter : MonoBehaviour
 
     private void UpdatespacingSize()
     {
-        Debug.Log(spacingHeightPer);
-        Debug.Log(SpacingHeight);
+       
         gridLayout.spacing = new Vector2(SpacingWidth, SpacingHeight);
     }
 

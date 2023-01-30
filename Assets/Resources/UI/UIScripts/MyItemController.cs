@@ -12,14 +12,17 @@ using TMPro;
 public class MyItemController : MonoBehaviour
 {
     [SerializeField]private MyItemDB myItemDB;
+    [SerializeField]private GameObject buttonPrefab;
     public void CreateMyItem(){
   GameObject content = GameObject.Find(CONTENT);
         // MyItemDB myItemDB = (MyItemDB)Resources.Load("DB/MyItemDB");
-        GameObject itemButtonPrefab = (GameObject)Resources.Load(MYITEM_BUTTON);
+        // GameObject itemButtonPrefab = (GameObject)Resources.Load(MYITEM_BUTTON);
+        Debug.Log(myItemDB);
         List<MyItem> itemList = myItemDB.myItemList;
         foreach (MyItem myItem in itemList)
-        {   if(myItem.count>0){
-            GameObject itemButton = Instantiate(itemButtonPrefab, content.transform);
+        {   if(myItem.count>=0){
+            Debug.Log(myItem.item.name);
+            GameObject itemButton = Instantiate(buttonPrefab, content.transform);
             TextMeshProUGUI name = itemButton.GetComponentInChildren<TextMeshProUGUI>();
             var button = itemButton.transform.Find("Button");
             Image img= button.GetComponent<Image>();

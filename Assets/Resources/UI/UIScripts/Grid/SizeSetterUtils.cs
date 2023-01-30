@@ -10,6 +10,8 @@ public class SizeSetterUtils
     public class PrefabName{
         public static readonly string VIEWPORT="Viewport";
 
+        public GameObject viewport;
+        
     }
 
 
