@@ -6,6 +6,7 @@ using UnityEngine;
 [SerializeField]
 public class Mission : ScriptableObject
 {
+   public int id;
    public string missionName;
    public int MaxCount ;
 

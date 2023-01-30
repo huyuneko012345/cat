@@ -20,15 +20,26 @@ public class Main : MonoBehaviour
     private MyItemController myItemController;
 
     private FPManager fpManager;
-    private static string latestLogin;
+    private const string LAST_LOGIN_KEY = "LastLogin";
+    private static string lastLogin = "2023/1/29";
+    private static string lastLogin2 = "2023/1/29";
     private static string today;
     void Start()
     {
         this.mission = gameObject.AddComponent<MissionController>();
-        this.myItemController=GetComponent<MyItemController>();
-        latestLogin = DateTimeString(System.DateTime.Now);
-        this.mission.pickMission();
-        this.fpManager=GetComponent<FPManager>();
+        this.myItemController = GetComponent<MyItemController>();
+            PlayerPrefs.DeleteKey(LAST_LOGIN_KEY);
+            lastLogin = PlayerPrefs.GetString(LAST_LOGIN_KEY,"2022/1/11");
+        
+        Debug.Log(lastLogin);
+        today = DateTimeString(System.DateTime.Now);
+        if (!isLoginToday())
+        {
+            this.mission.pickMission();
+            MissionController.ClearValue(5, 1);
+        }
+
+        this.fpManager = GetComponent<FPManager>();
         this.fpManager.Init();
     }
     private void Awake()
@@ -46,9 +57,9 @@ public class Main : MonoBehaviour
         {
 
             addView(SHOP_VIEW, SHOPDIALOGNAME);
-            var content=GameObject.Find(CONTENT);
+            var content = GameObject.Find(CONTENT);
             content.AddComponent<GridSizeSetter>();
-             CreateShopItem createShopItem =gameObject.GetComponent<CreateShopItem>();
+            CreateShopItem createShopItem = gameObject.GetComponent<CreateShopItem>();
             fpManager.Init(createShopItem.Init());
         };
 
@@ -57,9 +68,9 @@ public class Main : MonoBehaviour
         {
 
             addView(MYITEM_VIEW, ITEMSDIALOGNAME);
-            var content=GameObject.Find(CONTENT);
+            var content = GameObject.Find(CONTENT);
             content.AddComponent<GridSizeSetter>();
-           
+
             myItemController.CreateMyItem();
 
 
@@ -129,11 +140,12 @@ public class Main : MonoBehaviour
     {
         today = DateTimeString(System.DateTime.Now);
 
-        if (today == latestLogin)
+        if (today == lastLogin)
         {
             return true;
         }
-        latestLogin = String.Copy(today);
+        lastLogin = String.Copy(today);
+        PlayerPrefs.SetString(LAST_LOGIN_KEY,lastLogin);
         return false;
     }
 
