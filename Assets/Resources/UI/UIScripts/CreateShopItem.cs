@@ -20,9 +20,9 @@ public class CreateShopItem : MonoBehaviour
     public Action<int> Init(int typeId = 1)
     {
         var panel = GameObject.Find("ContentPanel").transform;
-        var shopTab = GameObject.Find("ItemTab(Clone)");
+        var ItemTab = GameObject.Find("ItemTab(Clone)");
         DeleteItem();
-        if (!shopTab)
+        if (!ItemTab)
         {
             Transform tabTransform = Instantiate((GameObject)Resources.Load("UI/prefabs/ItemTab")).transform;
             tabTransform.SetParent(panel, false);

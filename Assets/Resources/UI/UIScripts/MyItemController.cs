@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,13 +14,21 @@ public class MyItemController : MonoBehaviour
 {
     [SerializeField]private MyItemDB myItemDB;
     [SerializeField]private GameObject buttonPrefab;
-    public void CreateMyItem(){
+    public void CreateMyItem(int typeId=1){
   GameObject content = GameObject.Find(CONTENT);
-        // MyItemDB myItemDB = (MyItemDB)Resources.Load("DB/MyItemDB");
-        // GameObject itemButtonPrefab = (GameObject)Resources.Load(MYITEM_BUTTON);
-        Debug.Log(myItemDB);
+        
+var panel = GameObject.Find("ContentPanel").transform;
+        var ItemTab = GameObject.Find("ItemTab(Clone)");
+        DeleteItem();
+        if (!ItemTab)
+        {
+            Transform tabTransform = Instantiate((GameObject)Resources.Load("UI/prefabs/ItemTab")).transform;
+            tabTransform.SetParent(panel, false);
+        }
         List<MyItem> itemList = myItemDB.myItemList;
-        foreach (MyItem myItem in itemList)
+        List<MyItem> myItemTypeList=itemList.FindAll(item=>item.item.typeId==typeId);
+        Debug.Log(String.Join(",",myItemTypeList));
+        foreach (MyItem myItem in myItemTypeList)
         {   if(myItem.count>=0){
             Debug.Log(myItem.item.name);
             GameObject itemButton = Instantiate(buttonPrefab, content.transform);
@@ -31,21 +40,28 @@ public class MyItemController : MonoBehaviour
             }
         }
         }
-    public void addMyItem(Item item){
-        MyItemDB myItemDB=(MyItemDB)Resources.Load("DB/MyItemDB");
-        foreach(MyItem myItem in myItemDB.myItemList){
-            if(item.GetId()==myItem.item.GetId()){
-                myItem.addCount(1);
-                return;
-            }
-            var obj=ScriptableObject.CreateInstance<MyItem>();
-            obj.item=item;
-            obj.count=1;
-            string fileName=$"{item.name}.asset";
-            string path="Assets/Resources/DB/MyItem";
+    // public void addMyItem(Item item){
+    //     MyItemDB myItemDB=(MyItemDB)Resources.Load("DB/MyItemDB");
+    //     foreach(MyItem myItem in myItemDB.myItemList){
+    //         if(item.GetId()==myItem.item.GetId()){
+    //             myItem.addCount(1);
+    //             return;
+    //         }
+    //         var obj=ScriptableObject.CreateInstance<MyItem>();
+    //         obj.item=item;
+    //         obj.count=1;
+    //         string fileName=$"{item.name}.asset";
+    //         string path="Assets/Resources/DB/MyItem";
 
-        }
+    //     }
         
 
+    // }
+    private void DeleteItem(){
+        var itembuttons=GameObject.FindGameObjectsWithTag("MyItemButton");
+       foreach(var itemButton in itembuttons){
+         Destroy(itemButton);   
+       }
+       
     }
 }
