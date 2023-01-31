@@ -211,7 +211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4cbd197f9db86141be89ce71cd9171b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catPrefab: {fileID: 6377167441326149525, guid: 78487a83b429c5a40a806b580083e080, type: 3}
 --- !u!1 &156154421
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,7 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1281387535}
-  dialog: {fileID: 2989243277673138708, guid: 5c8b6cb4697243049820f2c72472168c, type: 3}
+  dialog: {fileID: 1706146565959877495, guid: 5c8b6cb4697243049820f2c72472168c, type: 3}
 --- !u!114 &1067055535
 MonoBehaviour:
   m_ObjectHideFlags: 0
