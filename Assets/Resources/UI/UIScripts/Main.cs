@@ -60,7 +60,7 @@ public class Main : MonoBehaviour
             var content = GameObject.Find(CONTENT);
             content.AddComponent<GridSizeSetter>();
             CreateShopItem createShopItem = gameObject.GetComponent<CreateShopItem>();
-            fpManager.Init(createShopItem.Init());
+            fpManager.Init(createShopItem.Init(1));
         };
 
 

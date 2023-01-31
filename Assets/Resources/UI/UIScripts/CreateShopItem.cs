@@ -17,15 +17,54 @@ public class CreateShopItem : MonoBehaviour
 
     [SerializeField] private Text itemText;
 
-    public Action<int> Init()
-    {
+    // public Action<int> Init()
+    // {
+    //     Debug.Log(itemMasterData);
+    //     Item[] itemList = itemMasterData.GetItemList();
+    //     Action<int> onChangeFP = (fp) => { };
+
+
+    //     ;
+    //     foreach (Item item in itemList)
+    //     {
+    //         int id = item.GetId();
+    //         Transform itemTransform = Instantiate((GameObject)Resources.Load(SHOP_ITEM_BUTTON)).transform;
+    //         GameObject shopContent = GameObject.Find(CONTENT);
+    //         itemTransform.SetParent(shopContent.transform, false);
+    //         itemTransform.GetComponent<ShowItemData>().setItem(id);
+
+    //         Button button = itemTransform.Find("Button").GetComponent<Button>();
+    //         Button shopItemButton = itemTransform.GetComponent<Button>();
+    //         int key = id;
+
+    //         button.onClick.AddListener(() =>
+    //         {
+    //             OpenItemDescription(key);
+    //         });
+    //         shopItemButton.onClick.AddListener(() =>
+    //         {
+    //             OpenYesNoWindow(key);
+    //         });
+
+    //         onChangeFP += (fp) =>
+    //         {
+    //             bool canBuy = fp >= ItemMasterData.GetValue(key).price;
+    //             // button.interactable = canBuy;
+    //             shopItemButton.interactable = canBuy;
+    //         };
+    //     }
+    //     return onChangeFP;
+    // }
+    public Action<int> Init(int typeId=1)
+    {   var panel=GameObject.Find("ContentPanel").transform;
+        Transform tabTransform=Instantiate((GameObject)Resources.Load("UI/prefabs/Shop/ShopTab")).transform;
+        tabTransform.SetParent(panel,false);
         Debug.Log(itemMasterData);
-        Item[] itemList = itemMasterData.GetItemList();
+        List<Item>itemList=new List<Item>(itemMasterData.GetItemList());
+        List<Item> itemTypeList=itemList.FindAll(item=>item.typeId==typeId);
         Action<int> onChangeFP = (fp) => { };
 
-
-        ;
-        foreach (Item item in itemList)
+        foreach (Item item in itemTypeList)
         {
             int id = item.GetId();
             Transform itemTransform = Instantiate((GameObject)Resources.Load(SHOP_ITEM_BUTTON)).transform;

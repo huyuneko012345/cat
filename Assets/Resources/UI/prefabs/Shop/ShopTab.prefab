@@ -283,8 +283,9 @@ GameObject:
   - component: {fileID: 7882758883285953873}
   - component: {fileID: 4189130264996962102}
   - component: {fileID: 3900663417375566278}
+  - component: {fileID: 643037887}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: ObjButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,7 +393,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7882758883285953873}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 905138928}
+        m_TargetAssemblyTypeName: ShopTabButtonController, Assembly-CSharp
+        m_MethodName: OnObjButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3900663417375566278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,6 +426,19 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: 1
   m_LayoutPriority: 1
+--- !u!114 &643037887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2483148546218010403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da79f82b2eddb54785289954c6f81e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeId: 3
 --- !u!1 &2624830065112561214
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +450,7 @@ GameObject:
   - component: {fileID: 2624830065112561213}
   - component: {fileID: 2624830065112561187}
   - component: {fileID: 2624830065112561212}
+  - component: {fileID: 905138928}
   m_Layer: 5
   m_Name: ShopTab
   m_TagString: Untagged
@@ -488,6 +515,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &905138928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2624830065112561214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 812a9dfa2ec81a84da55cd942102db7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2624830065275644217
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,8 +540,10 @@ GameObject:
   - component: {fileID: 2624830065275644221}
   - component: {fileID: 2624830065275644222}
   - component: {fileID: 2624830065275644223}
+  - component: {fileID: 681711409}
+  - component: {fileID: 681711414}
   m_Layer: 5
-  m_Name: Button
+  m_Name: FoodButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,6 +672,48 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: 1
   m_LayoutPriority: 1
+--- !u!114 &681711409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2624830065275644217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da79f82b2eddb54785289954c6f81e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeId: 1
+--- !u!114 &681711414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2624830065275644217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 905138928}
+          m_TargetAssemblyTypeName: ShopTabButtonController, Assembly-CSharp
+          m_MethodName: OnFoodButtonClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2624830065395485396
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,7 +807,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 171.4
+  m_fontSize: 160
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -779,8 +862,9 @@ GameObject:
   - component: {fileID: 1188138769030367806}
   - component: {fileID: 3623431187866980652}
   - component: {fileID: 5478866544245360274}
+  - component: {fileID: 1177272133}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ToyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -888,7 +972,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1188138769030367806}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 905138928}
+        m_TargetAssemblyTypeName: ShopTabButtonController, Assembly-CSharp
+        m_MethodName: OnToyButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5478866544245360274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,3 +1005,16 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: 1
   m_LayoutPriority: 1
+--- !u!114 &1177272133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6087516918433898432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da79f82b2eddb54785289954c6f81e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeId: 2

@@ -9,6 +9,7 @@ public class Item : ScriptableObject
 {
 
     public int id;
+    public int typeId;
     public string name;
     public string text;
 

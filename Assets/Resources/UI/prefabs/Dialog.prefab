@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 5011342779592600576}
   - component: {fileID: 5011342779592600577}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: ContentPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
