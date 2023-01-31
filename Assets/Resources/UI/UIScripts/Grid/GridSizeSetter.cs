@@ -97,10 +97,8 @@ public class GridSizeSetter : MonoBehaviour
     void OnValidate()
     {
         viewport=GetComponent<ViewPortUtil>().GetViewPort;
-        Debug.Log(viewport);
         rectTransform=viewport.GetComponent<RectTransform>();
         gridLayout = GetComponent<GridLayoutGroup>();
-        Debug.Log(rectTransform.rect.width);
         UpdateCellSize();
         UpdatespacingSize();
         UpdatePaddingBottom();

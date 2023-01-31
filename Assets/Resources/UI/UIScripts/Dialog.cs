@@ -12,13 +12,12 @@ public class Dialog : MonoBehaviour
 
     public void OnOk()
     {
-        Debug.Log("OK");
         // Destroy(this.gameObject);
     }
     public void OnCancel(){
         this.FixDialog?.Invoke(DialogResult.Cancel);
         Destroy(this.gameObject);
-        Debug.Log("cancel 完了");
+        
 
     }
 

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e368d3860b5037648bdb22aad32787e6, type: 3}
   m_Name: "\u306D\u3053\u3058\u3083\u3089\u3057"
   m_EditorClassIdentifier: 
-  id: 2
-  typeId: 1
+  id: 50
+  typeId: 2
   name: "\u306D\u3053\u3058\u3083\u3089\u3057"
   text: "\u3053\u308C\u306F\u306D\u3053\u3058\u3083\u3089\u3057"
   price: 1000

@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System;
 using System.Linq;
 using System.Collections;
@@ -74,6 +75,7 @@ public class MissionController : MonoBehaviour
 
     }
     public static void ClearValue(int key,int count){
+        
        
         if(dic==null){
             dic=new Dictionary<int,Mission>();
@@ -81,6 +83,11 @@ public class MissionController : MonoBehaviour
                 dic.Add(mission.id,mission);
             }
         }
+
+        if(!dic.ContainsKey(key)){
+         return;
+       }
+
         if(dic[key].MaxCount==dic[key].count){
             return;
         }

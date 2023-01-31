@@ -17,12 +17,12 @@ public class SidebarController : MonoBehaviour
         var root = GetComponent<UIDocument>().rootVisualElement;
         root.Q<Button>("btn").clicked += () =>
         {
-            Debug.Log("メニューボタン押下");
+            
             sidebar = root.Q<VisualElement>("sidebar");
             Vector2 offset = sidebar.layout.position;
             backgroumd = root.Q<VisualElement>("gray-background");
             pos = offset;
-            Debug.Log(pos);
+           
             backgroumd.RegisterCallback<PointerDownEvent>(pointer);
             if (flg)
             {

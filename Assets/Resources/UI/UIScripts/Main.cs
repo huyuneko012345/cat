@@ -28,11 +28,11 @@ public class Main : MonoBehaviour
     {
         this.mission = gameObject.AddComponent<MissionController>();
         this.myItemController = GetComponent<MyItemController>();
-            PlayerPrefs.DeleteKey(LAST_LOGIN_KEY);
-            lastLogin = PlayerPrefs.GetString(LAST_LOGIN_KEY,"2022/1/11");
-        
-        Debug.Log(lastLogin);
+
+        PlayerPrefs.DeleteKey(LAST_LOGIN_KEY);
+        lastLogin = PlayerPrefs.GetString(LAST_LOGIN_KEY, "2022/1/11");
         today = DateTimeString(System.DateTime.Now);
+
         if (!isLoginToday())
         {
             this.mission.pickMission();
@@ -98,7 +98,7 @@ public class Main : MonoBehaviour
 
         root.Q<Button>("help").clicked += () =>
         {
-           
+
             show(parent, dialog);
             GameObject contentBackGround = GameObject.Find("content-background");
             setDialogName(HELPDIALOGNAME);
@@ -144,7 +144,7 @@ public class Main : MonoBehaviour
             return true;
         }
         lastLogin = String.Copy(today);
-        PlayerPrefs.SetString(LAST_LOGIN_KEY,lastLogin);
+        PlayerPrefs.SetString(LAST_LOGIN_KEY, lastLogin);
         return false;
     }
 
