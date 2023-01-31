@@ -55,18 +55,26 @@ public class CreateShopItem : MonoBehaviour
     //     }
     //     return onChangeFP;
     // }
-    public Action<int> Init(int typeId=1)
-    {   var panel=GameObject.Find("ContentPanel").transform;
-        Transform tabTransform=Instantiate((GameObject)Resources.Load("UI/prefabs/Shop/ShopTab")).transform;
-        tabTransform.SetParent(panel,false);
-        Debug.Log(itemMasterData);
-        List<Item>itemList=new List<Item>(itemMasterData.GetItemList());
-        List<Item> itemTypeList=itemList.FindAll(item=>item.typeId==typeId);
+    public Action<int> Init(int typeId = 1)
+    {
+        var panel = GameObject.Find("ContentPanel").transform;
+        var shopTab = GameObject.Find("ItemTab(Clone)");
+        DeleteItem();
+        if (!shopTab)
+        {
+            Transform tabTransform = Instantiate((GameObject)Resources.Load("UI/prefabs/ItemTab")).transform;
+            tabTransform.SetParent(panel, false);
+        }
+
+        List<Item> itemList = new List<Item>(itemMasterData.GetItemList());
+        List<Item> itemTypeList = itemList.FindAll(item => item.typeId == typeId);
+        Debug.Log(String.Join(",",itemTypeList));
         Action<int> onChangeFP = (fp) => { };
 
         foreach (Item item in itemTypeList)
         {
             int id = item.GetId();
+            Debug.Log(item.name);
             Transform itemTransform = Instantiate((GameObject)Resources.Load(SHOP_ITEM_BUTTON)).transform;
             GameObject shopContent = GameObject.Find(CONTENT);
             itemTransform.SetParent(shopContent.transform, false);
@@ -93,6 +101,13 @@ public class CreateShopItem : MonoBehaviour
             };
         }
         return onChangeFP;
+    }
+    private void DeleteItem(){
+        var itembuttons=GameObject.FindGameObjectsWithTag("ShopItemButton");
+       foreach(var itemButton in itembuttons){
+         Destroy(itemButton);   
+       }
+       
     }
     private void ItemTextInit()
     {

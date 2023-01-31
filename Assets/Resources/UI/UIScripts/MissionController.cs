@@ -54,7 +54,6 @@ public class MissionController : MonoBehaviour
                 todayMissionList.Add(mission);
     }
     public void pickMission(){
-        Debug.Log("pick");
         List<int> idList=new List<int>();
         PlayerPrefs.DeleteKey(MISSION_KEY);
         todayMissionList=new List<Mission>();
@@ -71,10 +70,11 @@ public class MissionController : MonoBehaviour
         var strIds=String.Join(",",idList);
         PlayerPrefs.SetString(MISSION_KEY,strIds);
         PlayerPrefs.Save();
-        Debug.Log("ミッション保存   ");
+
 
     }
     public static void ClearValue(int key,int count){
+       
         if(dic==null){
             dic=new Dictionary<int,Mission>();
             foreach(Mission mission in todayMissionList){

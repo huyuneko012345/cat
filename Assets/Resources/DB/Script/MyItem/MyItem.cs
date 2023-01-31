@@ -9,7 +9,7 @@ public class MyItem : ScriptableObject
     public Item item;
     public int count;
 
-    public void addCount(int count){
+    public void addCount(int count=1){
         this.count+=count;
     }
 }

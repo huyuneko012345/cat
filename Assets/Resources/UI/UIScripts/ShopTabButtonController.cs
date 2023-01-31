@@ -15,7 +15,6 @@ public class ShopTabButtonController : MonoBehaviour
     {
         var button = gameObject.transform.Find("FoodButton");
         int id = button.GetComponent<HasType>().GetTypeId;
-                 Debug.Log(id);
 
         fPManager.Init(createShopItem.Init(id));
         

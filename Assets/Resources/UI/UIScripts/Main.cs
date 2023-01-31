@@ -60,7 +60,7 @@ public class Main : MonoBehaviour
             var content = GameObject.Find(CONTENT);
             content.AddComponent<GridSizeSetter>();
             CreateShopItem createShopItem = gameObject.GetComponent<CreateShopItem>();
-            fpManager.Init(createShopItem.Init(1));
+            fpManager.Init(createShopItem.Init());
         };
 
 
@@ -98,7 +98,7 @@ public class Main : MonoBehaviour
 
         root.Q<Button>("help").clicked += () =>
         {
-            Debug.Log("mission");
+           
             show(parent, dialog);
             GameObject contentBackGround = GameObject.Find("content-background");
             setDialogName(HELPDIALOGNAME);
@@ -110,7 +110,6 @@ public class Main : MonoBehaviour
     private void addView(string viewPath, string DialogName)
     {
         show(parent, dialog);
-
         GameObject contentBackGround = GameObject.Find(CONTETNTBACKGROUND);
         GameObject viewPrefab = (GameObject)Resources.Load(viewPath);
         Instantiate(viewPrefab, contentBackGround.transform);
