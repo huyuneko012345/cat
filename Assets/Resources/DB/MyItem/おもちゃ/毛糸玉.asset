@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d690ee82a6ff4c84381fad3cb90b54d9, type: 3}
   m_Name: "\u6BDB\u7CF8\u7389"
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: a875f4a2029b9f74dbdb30dee8d629bb, type: 2}
   count: 0

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Cat2
   m_EditorClassIdentifier: 
   _name: "\u30B3\u30DE"
-  personality: 
-  gender: "\u30AA\u30B9"
+  personality: "\u304A\u3063\u3068\u308A"
+  gender: "\u30E1\u30B9"
   hunger: 100
   favorability: 100
   mental: 100

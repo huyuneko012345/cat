@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 101
   typeId: 3
   name: "\u30AD\u30E3\u30C3\u30C8\u30BF\u30EF\u30FC2"
-  text: 
-  price: 0
-  image: {fileID: 0}
+  text: "\u306D\u3053\u304C\u904A\u3073\u307E\u3059"
+  price: 1750
+  image: {fileID: 21300000, guid: 3de425559412fdd4c9f0de54d362d820, type: 3}
   prefab: {fileID: 0}

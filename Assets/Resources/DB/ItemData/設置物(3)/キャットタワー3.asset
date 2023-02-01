@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e368d3860b5037648bdb22aad32787e6, type: 3}
   m_Name: "\u30AD\u30E3\u30C3\u30C8\u30BF\u30EF\u30FC3"
   m_EditorClassIdentifier: 
-  id: 0
-  typeId: 0
-  name: 
-  text: 
-  price: 0
-  image: {fileID: 0}
+  id: 102
+  typeId: 3
+  name: "\u30AD\u30E3\u30C3\u30C8\u30BF\u30EF\u30FC3"
+  text: "\u306D\u3053\u304C\u904A\u3073\u307E\u3059"
+  price: 2000
+  image: {fileID: 21300000, guid: e08fe6e1a009fd842be17d479e745990, type: 3}
   prefab: {fileID: 0}

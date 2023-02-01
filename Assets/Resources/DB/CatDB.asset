@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catDataList:
   - {fileID: 11400000, guid: 00bec7efa9823e64e923dea2e1d551b6, type: 2}
+  - {fileID: 11400000, guid: e66479c29f636e44aa020fdd72c5bb25, type: 2}
+  - {fileID: 11400000, guid: da15ee34ef1cb904ba46bf683c7565ec, type: 2}

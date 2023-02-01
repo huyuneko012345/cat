@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e368d3860b5037648bdb22aad32787e6, type: 3}
   m_Name: "\u5BB6"
   m_EditorClassIdentifier: 
-  id: 0
-  typeId: 0
-  name: 
-  text: 
+  id: 130
+  typeId: 3
+  name: "\u5BB6"
+  text: "\u732B\u304C\u304F\u3064\u308D\u304E\u307E\u3059"
   price: 0
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: bd34462c361d50142a40c9a346919820, type: 3}
   prefab: {fileID: 0}

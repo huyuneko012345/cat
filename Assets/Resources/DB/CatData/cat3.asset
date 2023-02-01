@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e2f03e94f95db41b1473860c18ca2c, type: 3}
   m_Name: cat3
   m_EditorClassIdentifier: 
-  _name: 
-  personality: 
-  gender: 
+  _name: "\u7425\u592A\u90CE"
+  personality: "\u305B\u3063\u304B\u3061"
+  gender: "\u30AA\u30B9"
   hunger: 0
   favorability: 0
   mental: 0
   age: 0
-  user: 
+  user: "\u308F\u308C"

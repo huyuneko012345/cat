@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d690ee82a6ff4c84381fad3cb90b54d9, type: 3}
   m_Name: "\u30AD\u30E3\u30C3\u30C8\u30BF\u30EF\u30FC3"
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: cef6aa5743e686643be0d7e02d6348b3, type: 2}
   count: 0
