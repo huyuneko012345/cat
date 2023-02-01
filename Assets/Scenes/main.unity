@@ -1115,6 +1115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuickItemCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5752592253439326375, guid: ce129568670360945b56f2632cc4a7bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5752592253439326378, guid: ce129568670360945b56f2632cc4a7bf, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -1220,7 +1224,6 @@ GameObject:
   - component: {fileID: 1610431406}
   - component: {fileID: 1610431405}
   - component: {fileID: 1610431407}
-  - component: {fileID: 1610431408}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -1350,7 +1353,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2055801097773452511, guid: 788d5e76fce67754d8243fbd6a06951d, type: 2}
   m_audioClip: {fileID: 8300000, guid: dcd970b7ab095df4f9d02a2106e1e75b, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1435,21 +1438,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1610431408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610431403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acaa16fd7a327be49aedd3545c1b65ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: 788d5e76fce67754d8243fbd6a06951d, type: 2}
-  bgmSlider: {fileID: 0}
-  seSlider: {fileID: 0}
 --- !u!1 &1811052174 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8499930883603989024, guid: e6390559bdfbadf40bc5ce665343b024, type: 3}
