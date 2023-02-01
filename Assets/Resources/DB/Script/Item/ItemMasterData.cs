@@ -14,6 +14,7 @@ public class ItemMasterData : ScriptableObject
     {
         if (dic == null)
         {
+            
             dic = new Dictionary<int, Item>();
             ItemMasterData itemMasterData = (ItemMasterData)Resources.Load("DB/ItemMasterData");
             foreach (Item data in itemMasterData.data)
