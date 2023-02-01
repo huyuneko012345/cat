@@ -21,6 +21,7 @@ public class ItemMasterData : ScriptableObject
                 dic.Add(data.id, data);
             }
         }
+        Debug.Log(key);
         return dic[key];
     }
     public static int GetLength(){
