@@ -29,9 +29,6 @@ public class FPManager : MonoBehaviour
         {
             SubFP(yesNoCanvas.GetComponent<ShowItemData>().GetPrice);
         });
-        //TODO あとで消す
-        //確認用
-        ChangeFP(10000);
         this.onChengeFP(LoadFP());
     }
     
@@ -51,7 +48,7 @@ public class FPManager : MonoBehaviour
         PlayerPrefs.Save();
         onChengeFP(PlayerPrefs.GetInt(FP_KEY, 0));
     }
-    private void addCoin(int fp)
+    public void addFP(int fp)
     {
         if (fp < 0)
         {

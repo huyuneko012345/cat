@@ -13,4 +13,8 @@ public class Mission : ScriptableObject
    public int count=0;
 
    public int fp=100;
+
+   public void ZeroCount(){
+      count=0;
+   }
 }

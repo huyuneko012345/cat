@@ -14,6 +14,7 @@ public class MyItemController : MonoBehaviour
 {
     [SerializeField]private MyItemDB myItemDB;
     [SerializeField]private GameObject buttonPrefab;
+    [SerializeField]private GameObject ItemescriptionCanvas;
     public void CreateMyItem(int typeId=1){
   GameObject content = GameObject.Find(CONTENT);
         
@@ -27,16 +28,21 @@ var panel = GameObject.Find("ContentPanel").transform;
         }
         List<MyItem> itemList = myItemDB.myItemList;
         List<MyItem> myItemTypeList=itemList.FindAll(item=>item.item.typeId==typeId);
-        Debug.Log(String.Join(",",myItemTypeList));
         foreach (MyItem myItem in myItemTypeList)
         {   if(myItem.count>=0){
-            Debug.Log(myItem.item.name);
+          int id=myItem.item.GetId();
             GameObject itemButton = Instantiate(buttonPrefab, content.transform);
-            TextMeshProUGUI name = itemButton.GetComponentInChildren<TextMeshProUGUI>();
-            var button = itemButton.transform.Find("Button");
-            Image img= button.GetComponent<Image>();
-            img.sprite=myItem.item.image;
-            name.text = $"{myItem.item.name}({myItem.count})";
+            itemButton.GetComponent<ShowItemData>().setItem(id);
+            
+            // TextMeshProUGUI name = itemButton.GetComponentInChildren<TextMeshProUGUI>();
+            var button = itemButton.transform.Find("Button").GetComponent<Button>();
+            button.onClick.AddListener(()=>{
+              OpenItemDescription(id);
+            });
+
+            // Image img= button.GetComponent<Image>();
+            // img.sprite=myItem.item.image;
+            // name.text = $"{myItem.item.name}({myItem.count})";
             }
         }
         }
@@ -63,5 +69,10 @@ var panel = GameObject.Find("ContentPanel").transform;
          Destroy(itemButton);   
        }
        
+    }
+    private void OpenItemDescription(int id)
+    {
+        ItemescriptionCanvas.SetActive(true);
+        ItemescriptionCanvas.GetComponent<ShowItemData>().setItem(id);
     }
 }

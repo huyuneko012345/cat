@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using System;
 using System.Linq;
 using System.Collections;
@@ -17,18 +16,33 @@ public class MissionController : MonoBehaviour
 
     private static Dictionary<int,Mission> dic=null;
 
-    private bool debugFlg=true;
-   
-    public void addMission()
+    private  FPManager fPManager;
+    private bool flg=true;
+    public void Awake()
     {
-    
+        fPManager=GameObject.Find("UIDocument").GetComponent<FPManager>();
+        
         var ids=PlayerPrefs.GetString(MISSION_KEY,"1,2,3,4,5").Split(",");
         if(todayMissionList==null){
+            todayMissionList=new List<Mission>();
             foreach(string id in ids){
         int key=int.Parse(id);
             GetMission(key);
         }
+        if(dic==null){
+            dic=new Dictionary<int,Mission>();
+            foreach(Mission mission in todayMissionList){
+                dic.Add(mission.id,mission);
+            }
         }
+        }
+        
+    }
+   
+    public void addMission()
+    {
+    
+        
         GameObject MissionPrefab = (GameObject)Resources.Load(MISSION);
         GameObject content = GameObject.Find(CONTENT);
         foreach(Mission mission in todayMissionList){
@@ -56,34 +70,29 @@ public class MissionController : MonoBehaviour
     }
     public void pickMission(){
         List<int> idList=new List<int>();
-        PlayerPrefs.DeleteKey(MISSION_KEY);
         todayMissionList=new List<Mission>();
         MissionDataBase missionDataBase=(MissionDataBase)Resources.Load("DB/MissionDB");
         List<Mission>missionList=new List<Mission>(missionDataBase.MissionDataList);
                 for(int i=0;i<5;i++){
         
         int index=UnityEngine.Random.Range(0,missionList.Count);
+        missionList[index].ZeroCount();
         todayMissionList.Add(missionList[index]);
         idList.Add(missionList[index].id);
         missionList.RemoveAt(index);
-        
                 }
+        todayMissionList.Sort((a,b)=>a.id-b.id);
+        idList.Sort((a,b)=>a-b);
+        
         var strIds=String.Join(",",idList);
         PlayerPrefs.SetString(MISSION_KEY,strIds);
         PlayerPrefs.Save();
 
 
     }
-    public static void ClearValue(int key,int count){
+    public void ClearValue(int key,int count){
         
        
-        if(dic==null){
-            dic=new Dictionary<int,Mission>();
-            foreach(Mission mission in todayMissionList){
-                dic.Add(mission.id,mission);
-            }
-        }
-
         if(!dic.ContainsKey(key)){
          return;
        }
@@ -91,11 +100,13 @@ public class MissionController : MonoBehaviour
         if(dic[key].MaxCount==dic[key].count){
             return;
         }
-        if(dic[key].MaxCount<dic[key].count+count){
+        if(dic[key].MaxCount<=dic[key].count+count){
             dic[key].count=dic[key].MaxCount;
+            int fp=dic[key].fp;
+            fPManager.addFP(fp);            
         }else{
+            Debug.Log(111);
             dic[key].count+=count;
-
         }
     }
 }

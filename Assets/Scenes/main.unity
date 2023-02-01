@@ -788,6 +788,7 @@ GameObject:
   - component: {fileID: 1067055537}
   - component: {fileID: 1067055538}
   - component: {fileID: 1067055539}
+  - component: {fileID: 1067055540}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -897,6 +898,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myItemDB: {fileID: 11400000, guid: 6c7ea457f38586147b3e98649ca2eab8, type: 2}
   buttonPrefab: {fileID: 2058155187166036719, guid: 3525470fa6dbc1a48bf0e42e068a97f4, type: 3}
+  ItemescriptionCanvas: {fileID: 5594649941771422275}
+--- !u!114 &1067055540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067055531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 129fc09dc525ead4d8c7a0da5f5f05fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1281387532
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,21 +26,18 @@ public class Main : MonoBehaviour
     private static string today;
     void Start()
     {
-        this.mission = gameObject.AddComponent<MissionController>();
+        this.mission = gameObject.GetComponent<MissionController>();
         this.myItemController = GetComponent<MyItemController>();
-
-        PlayerPrefs.DeleteKey(LAST_LOGIN_KEY);
         lastLogin = PlayerPrefs.GetString(LAST_LOGIN_KEY, "2022/1/11");
         today = DateTimeString(System.DateTime.Now);
 
+        this.fpManager = GetComponent<FPManager>();
+        this.fpManager.Init();
         if (!isLoginToday())
         {
             this.mission.pickMission();
-            MissionController.ClearValue(5, 1);
+            mission.ClearValue(5, 1);
         }
-
-        this.fpManager = GetComponent<FPManager>();
-        this.fpManager.Init();
     }
     private void Awake()
     {
@@ -120,7 +117,7 @@ public class Main : MonoBehaviour
     {
         var _dialog = Instantiate(dialog);
         _dialog.transform.SetParent(parent.transform, false);
-        _dialog.FixDialog = (res) => Debug.Log(res);
+        // _dialog.FixDialog = (res) => Debug.Log(res);
     }
     private void setDialogName(string name)
     {
