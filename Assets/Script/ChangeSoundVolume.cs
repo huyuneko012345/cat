@@ -12,12 +12,14 @@ public class ChangeSoundVolume : MonoBehaviour
 
 	private void Start()
 	{
+
 		audioMixer.GetFloat("BGM_Volume", out float bgmVolume);
 		bgmSlider.value = bgmVolume;
 		audioMixer.GetFloat("SE_Volume", out float seVolume);
 		seSlider.value = seVolume;
 
 	}
+	
 	public void SetBGM(float volume)
 	{
 		audioMixer.SetFloat("BGM_Volume", volume);
