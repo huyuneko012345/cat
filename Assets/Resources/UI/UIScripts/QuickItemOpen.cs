@@ -13,7 +13,12 @@ public class QuickItemOpen : MonoBehaviour
 
     /*[NonSerialized]*/public GameObject _prefab;
 
+    public GameObject cildButton;
+    public Transform parent;
+
+
     private bool flg=false;
+    private bool isOpen=false;
 public void PushDown(){
     
     sw.Start();    
@@ -23,8 +28,14 @@ public void PushUp(){
     
     sw.Stop();
     ts=sw.Elapsed;
-    if(isSec()){
-        Debug.Log("開いた");
+    if(!isSec()){
+        return;
+    }
+    if(isOpen){
+    for(int i=0;i<5;i++){
+        Transform clidTransform =(Transform)Instantiate(cildButton).transform;
+        clidTransform.SetParent(parent,false);
+    }
     }
 }
 
@@ -32,8 +43,6 @@ public void onClick(){
     // ShowItemData showItemData=GetComponent<ShowItemData>();
     // _prefab=showItemData.GetPrefab;
     flg=true;
-    Debug.Log("クリックされた");
-
 }
 void Awake()
 {
@@ -42,8 +51,10 @@ void Awake()
 
 public  bool isSec(){
     if(ts.Seconds>=2){
+        isOpen=true;
     return true;
     }
+    isOpen=false;
     return false;
 }
 void Update()
