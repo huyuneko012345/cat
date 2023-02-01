@@ -18,4 +18,4 @@ MonoBehaviour:
   text: "\u3053\u308C\u306F\u306D\u305A\u307F"
   price: 1000
   image: {fileID: 21300000, guid: 4944b80422141754c9df8254f163d6da, type: 3}
-  prefab: {fileID: 0}
+  prefab: {fileID: 100016, guid: 8b958a907a4745748a4180ce4e48f6cd, type: 3}
