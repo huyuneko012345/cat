@@ -29,10 +29,10 @@ var panel = GameObject.Find("ContentPanel").transform;
         List<MyItem> itemList = myItemDB.myItemList;
         List<MyItem> myItemTypeList=itemList.FindAll(item=>item.item.typeId==typeId);
         foreach (MyItem myItem in myItemTypeList)
-        {   if(myItem.count>=0){
+        {   if(myItem.count>0){
           int id=myItem.item.GetId();
             GameObject itemButton = Instantiate(buttonPrefab, content.transform);
-            itemButton.GetComponent<ShowItemData>().setItem(id);
+            itemButton.GetComponent<ShowItemData>().setMyItem(id,myItem.count);
             
             // TextMeshProUGUI name = itemButton.GetComponentInChildren<TextMeshProUGUI>();
             var button = itemButton.transform.Find("Button").GetComponent<Button>();

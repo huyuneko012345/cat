@@ -22,6 +22,15 @@ public class ShowItemData : MonoBehaviour
         this.image.sprite = item.image;
         this._prefab=item.prefab;
     }
+    public void setMyItem(int id,int count)
+    {
+        this.item = ItemMasterData.GetValue(id);
+        this.ItemName.text = $"{item.name}({count})";
+        this.text.text = item.text;
+        this.price.text = $"{item.price.ToString()}FP";
+        this.image.sprite = item.image;
+        this._prefab=item.prefab;
+    }
     public int GetPrice
     {
         get
