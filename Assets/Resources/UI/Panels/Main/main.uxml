@@ -10,7 +10,6 @@
     </ui:VisualElement>
     <ui:VisualElement name="left" picking-mode="Ignore" tabindex="1" style="translate: 0 0; transform-origin: center; width: 50%; left: 0;">
         <ui:VisualElement tabindex="1" name="sidebar" picking-mode="Ignore" style="left: -100%; transform-origin: center; translate: 0 0; background-color: rgb(255, 18, 0);">
-<<<<<<< HEAD
             <ui:VisualElement name="backGround" picking-mode="Ignore" style="width: 100%; height: 100%; position: absolute; background-color: rgb(255, 0, 0); color: rgba(210, 210, 210, 0);" />
             <ui:Button display-tooltip-when-elided="true" name="home" class="sidebar-button" style="background-color: rgb(0, 59, 255);">
                 <ui:VisualElement class="sidebar-img" style="background-image: url(&apos;project://database/Assets/Resources/UI/images/Home.png?fileID=2800000&amp;guid=7013d0a85455ada44a42ebd1e0594627&amp;type=3#Home&apos;); width: 22%; height: auto;" />
@@ -40,16 +39,6 @@
                 <ui:VisualElement style="width: 22%; -unity-background-scale-mode: stretch-to-fill; justify-content: space-between; align-items: center; background-image: url(&apos;project://database/Assets/Resources/UI/images/back.jpg?fileID=2800000&amp;guid=f7bd49b6b6738cc48bed413085e976b5&amp;type=3#back&apos;); height: 100%;" />
                 <ui:Label text="戻る" display-tooltip-when-elided="true" style="margin-left: 20%; background-color: rgba(0, 0, 0, 0); color: rgb(255, 255, 255); width: 20%; font-size: 60%;" />
             </ui:Button>
-=======
-            <ui:VisualElement name="backGround" picking-mode="Ignore" style="width: 100%; height: 100%; position: absolute; background-color: rgb(255, 126, 126); color: rgb(255, 0, 0); background-image: resource(&apos;UI/images/uiToolKit/サイドバー&apos;);" />
-            <ui:Button display-tooltip-when-elided="true" name="home" class="sidebar-button" style="-unity-font: resource(&apos;fonts/azukifont121/azuki&apos;); background-image: resource(&apos;UI/images/uiToolKit/ホーム&apos;); background-color: rgba(0, 59, 255, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
-            <ui:Button display-tooltip-when-elided="true" name="shop-button" class="sidebar-button" style="background-image: resource(&apos;UI/images/uiToolKit/ショップ&apos;); background-color: rgba(0, 59, 255, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
-            <ui:Button display-tooltip-when-elided="true" name="item" class="sidebar-button" style="background-image: resource(&apos;UI/images/uiToolKit/持ち物&apos;); background-color: rgba(0, 59, 255, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
-            <ui:Button display-tooltip-when-elided="true" name="mission" class="sidebar-button" style="background-image: resource(&apos;UI/images/uiToolKit/ミッション&apos;); background-color: rgba(0, 59, 255, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
-            <ui:Button display-tooltip-when-elided="true" name="setting" class="sidebar-button" style="background-color: rgba(0, 59, 255, 0); background-image: resource(&apos;UI/images/uiToolKit/設定&apos;); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
-            <ui:Button display-tooltip-when-elided="true" name="help" class="sidebar-button" style="background-image: resource(&apos;UI/images/uiToolKit/ヘルプ&apos;); background-color: rgba(0, 59, 255, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
-            <ui:Button display-tooltip-when-elided="true" name="back" class="sidebar-button" style="background-image: resource(&apos;UI/images/uiToolKit/ログアウト&apos;); background-color: rgba(0, 59, 255, 0); border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0;" />
->>>>>>> 1f68fe24b96e420eb94e7aa00a4ab60cb1c26109
         </ui:VisualElement>
         <ui:VisualElement name="menu-btn" tabindex="1" picking-mode="Ignore" style="background-image: url(&apos;project://database/Assets/Resources/UI/images/Menu.png?fileID=2800000&amp;guid=bbc6851c3f87fdb4cac1229620acdfb0&amp;type=3#Menu&apos;); width: 20%; height: 5%; -unity-background-scale-mode: scale-and-crop; position: absolute; flex-direction: row-reverse; top: 1%; translate: 0 0; transform-origin: left top; display: flex; left: 2%;">
             <ui:Button text="111&#10;" display-tooltip-when-elided="true" name="btn" enable-rich-text="true" tabindex="70" style="display: flex; visibility: visible; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0); left: auto; right: auto; overflow: visible; font-size: 0; color: rgba(27, 27, 27, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0);" />
