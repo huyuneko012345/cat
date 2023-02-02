@@ -13,8 +13,13 @@ public class QuickItemOpen : MonoBehaviour
 
     /*[NonSerialized]*/public GameObject _prefab;
 
-    public GameObject cildButton;
+    public GameObject childButton;
     public Transform parent;
+
+    [SerializeField]private RectTransform rectTransform;
+
+    [SerializeField]private MyItemDB myItemDB;
+
 
 
     private bool flg=false;
@@ -25,54 +30,42 @@ public void PushDown(){
 
 }
 public void PushUp(){
-    
+    Debug.Log("pushup");
     sw.Stop();
     ts=sw.Elapsed;
     if(!isSec()){
         return;
     }
-    if(isOpen){
-    for(int i=0;i<5;i++){
-        Transform clidTransform =(Transform)Instantiate(cildButton).transform;
-        clidTransform.SetParent(parent,false);
+    if(!isOpen){
+        Debug.Log("open");
+        List<MyItem> myItems=myItemDB.myItemList;
+    foreach(MyItem myItem in myItems){
+        Transform childTransform =(Transform)Instantiate(childButton).transform;
+        childTransform.SetParent(parent,false);
+        childTransform.GetComponent<QuickItemData>().setMyItem(myItem.item.id);
     }
+            isOpen=true;
+
+    }else{
+        Debug.Log("close");
+        var quickItemButtons=GameObject.FindGameObjectsWithTag("QuickChildButton");
+        foreach(var Button in quickItemButtons){
+            Destroy(Button);
+        }
+        isOpen=false;
     }
 }
 
-public void onClick(){
-    // ShowItemData showItemData=GetComponent<ShowItemData>();
-    // _prefab=showItemData.GetPrefab;
-    flg=true;
-}
 void Awake()
 {
     sw=new Di.Stopwatch();
 }
 
 public  bool isSec(){
-    if(ts.Seconds>=2){
-        isOpen=true;
+    if(ts.Seconds>=1){
     return true;
     }
-    isOpen=false;
     return false;
-}
-void Update()
-{
-    if(flg){
-        if(Input.GetMouseButtonDown(0)){
-        clickPosition=Input.mousePosition;
-        clickPosition.z=10f;
-        try{
-            Instantiate(_prefab,new Vector3(100,100,100),_prefab.transform.rotation);
-        }catch(NullReferenceException){
-            Debug.Log("生成できないよ");
-            return;
-        }
-        flg=false;
-       
-    }
-    }
 }
 }
 
