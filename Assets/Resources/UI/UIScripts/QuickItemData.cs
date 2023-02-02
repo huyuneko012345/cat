@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class QuickItemData : MonoBehaviour
 {
-    private MyItem item;
+    private MyItem myItem;
    [SerializeField]private Image sprite;
 
    private GameObject _prefab;
@@ -14,12 +14,23 @@ public class QuickItemData : MonoBehaviour
    [SerializeField]private int count;
     public void setMyItem(int id)
     {
-        this.item = MyItemDB.GetValue(id);
-       this.sprite.sprite=item.item.image;
-       this.count=item.count;
-        this._prefab=item.item.prefab;
+        this.myItem = MyItemDB.GetValue(id);
+       this.sprite.sprite=myItem.item.image;
+       this.count=myItem.count;
+        this._prefab=myItem.item.prefab;
     }
     public GameObject GetPrefab(){
         return _prefab;
     }
+    public MyItem GetMyItem(){
+        return this.myItem;
+    }
+    public void minusCount(int count=1){
+        myItem.minusCount(count);
+        this.count-=count;
+    }
+    public int GetCount(){
+        return this.count;
+    }
+    
 }
