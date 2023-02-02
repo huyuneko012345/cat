@@ -24,4 +24,5 @@
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="content" picking-mode="Ignore" tabindex="3" style="position: absolute; width: 100%; height: 100%;" />
+    
 </ui:UXML>
