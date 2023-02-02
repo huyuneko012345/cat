@@ -29,6 +29,7 @@ public class QuickItemOpen : MonoBehaviour
 
     private bool flg = false;
     private bool isOpen = false;
+    private const int X=4;
     public void PushDown()
     {
         sw.Reset();
@@ -37,7 +38,6 @@ public class QuickItemOpen : MonoBehaviour
     }
     public void PushUp()
     {
-        Debug.Log("pushup");
         sw.Stop();
         ts = sw.Elapsed;
         if (!isSec())
@@ -46,16 +46,16 @@ public class QuickItemOpen : MonoBehaviour
         }
         if (!isOpen)
         {
-            Debug.Log("open");
             List<MyItem> myItems = myItemDB.myItemList;
             myItems=myItems.FindAll((item)=>item.count>0);
+            
             foreach (MyItem myItem in myItems)
             {
                 Transform childTransform = (Transform)Instantiate(childButton).transform;
                 childTransform.SetParent(parent, false);
                 childTransform.GetComponent<QuickItemData>().setMyItem(myItem.item.id);
             }
-            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x * 6, rectTransform.sizeDelta.y);
+            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x * X, rectTransform.sizeDelta.y);
             image.color=new Color32(255,255,255,90);
             isOpen = true;
             
@@ -69,7 +69,7 @@ public class QuickItemOpen : MonoBehaviour
             {
                 Destroy(Button);
             }
-            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x / 6, rectTransform.sizeDelta.y);
+            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x / X, rectTransform.sizeDelta.y);
             image.color=new Color32(255,255,255,0);
             isOpen = false;
         }
