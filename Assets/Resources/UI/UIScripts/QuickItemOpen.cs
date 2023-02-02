@@ -14,7 +14,7 @@ public class QuickItemOpen : MonoBehaviour
     private Vector3 clickPosition;
 
     /*[NonSerialized]*/
-    public GameObject _prefab;
+   
 
     public GameObject childButton;
     public Transform parent;
@@ -31,7 +31,7 @@ public class QuickItemOpen : MonoBehaviour
     private bool isOpen = false;
     public void PushDown()
     {
-
+        sw.Reset();
         sw.Start();
 
     }
@@ -57,6 +57,7 @@ public class QuickItemOpen : MonoBehaviour
             rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x * 6, rectTransform.sizeDelta.y);
             image.color=new Color32(255,255,255,90);
             isOpen = true;
+            
 
         }
         else
@@ -79,8 +80,8 @@ public class QuickItemOpen : MonoBehaviour
     }
 
     public bool isSec()
-    {
-        if (ts.Seconds >= 1)
+    {   Debug.Log(ts.Milliseconds);
+        if (ts.Milliseconds >= 200)
         {
             return true;
         }

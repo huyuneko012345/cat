@@ -20,7 +20,6 @@ public class MyItemDB : ScriptableObject
                 dic.Add(data.item.id, data);
             }
         }
-        Debug.Log(key);
         return dic[key];
     }
     public void ClearItem(){
