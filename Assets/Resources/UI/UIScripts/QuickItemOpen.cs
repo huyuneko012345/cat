@@ -48,6 +48,7 @@ public class QuickItemOpen : MonoBehaviour
         {
             Debug.Log("open");
             List<MyItem> myItems = myItemDB.myItemList;
+            myItems=myItems.FindAll((item)=>item.count>0);
             foreach (MyItem myItem in myItems)
             {
                 Transform childTransform = (Transform)Instantiate(childButton).transform;

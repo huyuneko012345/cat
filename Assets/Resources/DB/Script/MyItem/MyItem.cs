@@ -12,4 +12,10 @@ public class MyItem : ScriptableObject
     public void addCount(int count=1){
         this.count+=count;
     }
+    public void minusCount(int count=1){
+        if(this.count<=0){
+            return;
+        }
+        this.count-=count;
+    }
 }
