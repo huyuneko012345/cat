@@ -147,7 +147,6 @@ GameObject:
   - component: {fileID: 4746935845473521380}
   - component: {fileID: 4746935845473521381}
   - component: {fileID: 4746935845473521386}
-  - component: {fileID: 4746935845473521377}
   - component: {fileID: 4746935845473521383}
   - component: {fileID: 4746935845473521382}
   - component: {fileID: 1293690907132511007}
@@ -262,22 +261,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4746935845473521377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4746935845473521384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f3714a578857084c8a1ddec9cd78372, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemName: {fileID: 4746935844876356308}
-  text: {fileID: 4746935844876356308}
-  price: {fileID: 4746935844876356308}
-  image: {fileID: 4746935845818084192}
 --- !u!114 &4746935845473521383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +335,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: 919132149155446097, guid: 7b4637b2ec244a849b61a3d95de7e276, type: 3}
+  childButton: {fileID: 0}
+  parent: {fileID: 0}
+  myItemDB: {fileID: 0}
 --- !u!114 &1293690907132511007
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class QuickItemData : MonoBehaviour
     private MyItem item;
    [SerializeField]private Image sprite;
 
-   [NonSerializedAttribute]private GameObject _prefab;
+   private GameObject _prefab;
 
    [SerializeField]private int count;
     public void setMyItem(int id)
@@ -18,5 +18,8 @@ public class QuickItemData : MonoBehaviour
        this.sprite.sprite=item.item.image;
        this.count=item.count;
         this._prefab=item.item.prefab;
+    }
+    public GameObject GetPrefab(){
+        return _prefab;
     }
 }
