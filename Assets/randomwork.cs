@@ -38,6 +38,7 @@ public class randomwork : MonoBehaviour
 
 
     public void judgetask(){
+        Debug.Log(interruptTask);
         if (interruptTask == false){
                    
                    //タスクの乱数抽選
