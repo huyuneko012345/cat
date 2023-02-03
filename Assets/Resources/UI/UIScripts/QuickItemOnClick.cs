@@ -30,7 +30,9 @@ public class QuickItemOnClick : MonoBehaviour
             mousePosition.z = 10.0f;
             try
             {
-                Instantiate(prefab, Camera.main.ScreenToWorldPoint(mousePosition), Quaternion.identity);
+                var obj= Instantiate(prefab, Camera.main.ScreenToWorldPoint(mousePosition), Quaternion.identity);
+                obj.AddComponent<BoxCollider>();
+                obj.AddComponent<GrabObject>();
                 quickItemData.minusCount();
             }
             finally
