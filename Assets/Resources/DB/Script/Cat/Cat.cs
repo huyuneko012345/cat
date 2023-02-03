@@ -14,6 +14,9 @@ public class Cat : ScriptableObject
     [Range(1,100)]public int mental;
     [Range(1,100)]public int age;
     public string user;
+    public bool interputTask;
+
+
 
 
 
