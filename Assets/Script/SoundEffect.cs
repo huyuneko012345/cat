@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class SoundEffect : MonoBehaviour
 {
-    AudioSource audioSource;
-    // Start is called before the first frame update
-    void Start()
+    public AudioSource audioSource;
+    [SerializeField] SoundEffect soundEffect ;
+    [SerializeField] AudioClip clip1;
+    [SerializeField] AudioClip clip2;
+    [SerializeField] AudioClip clip3;
+
+    public void RandomizeSfx( params AudioClip[] clips)
     {
-        audioSource = GetComponent<AudioSource>();
+        var randamIndex = Random.Range(0, clips.Length);
+        audioSource.PlayOneShot(clips[randamIndex]);
+
     }
 
-    // Update is called once per frame
-    public void PlayStart()
+    private void PlaySfx()
     {
-        audioSource.PlayOneShot(audioSource.clip);
-        
+        soundEffect.RandomizeSfx(clip1, clip2, clip3);
     }
 }

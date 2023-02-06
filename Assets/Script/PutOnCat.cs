@@ -7,6 +7,8 @@ using UnityEngine.XR.ARSubsystems;
 public class PutOnCat : MonoBehaviour
 {
     public GameObject catPrefab;
+    public AudioSource audioSource;
+    [SerializeField] AudioClip clip;
     GameObject spawnedObj;
     ARRaycastManager aRRaycastManager;
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
@@ -28,11 +30,7 @@ public class PutOnCat : MonoBehaviour
                 if(spawnedObj == null)
                 {
                     spawnedObj = Instantiate(catPrefab, hitPose.position, hitPose.rotation);
-                }
-                else
-                {
-                    spawnedObj.transform.position = hitPose.position;
-
+                    audioSource.PlayOneShot(clip);
                 }
             }
         }
