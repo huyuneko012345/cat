@@ -10,6 +10,8 @@ public class RandomVoice : MonoBehaviour
     [SerializeField] AudioClip clip3;
     [SerializeField] AudioClip clip4;
 
+    
+
     int rundom = 0;
     int randomidle = 0;
     System.Random r1 = new System.Random();
@@ -66,30 +68,11 @@ public class RandomVoice : MonoBehaviour
 
     void Start()
     {
-        print("Voice実行");
+        Debug.Log("Voice実行");
         catVoice();
     }
 
-    void Update()
-    {
-        switch (rundom)
-        {
-            case 1:
-
-                break;
-
-            case 2:
-
-                break;
-
-            case 3:
-
-                break;
-
-            case 4:
-
-                break;
-        }
-
+    void Update(){
+        Debug.Log("案山子万歳");
     }
 }
