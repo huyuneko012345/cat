@@ -490,6 +490,7 @@ GameObject:
   - component: {fileID: 1796959991786676488}
   - component: {fileID: 7089269648616321582}
   - component: {fileID: 7089269648616321577}
+  - component: {fileID: 3547704936325817380}
   m_Layer: 0
   m_Name: Cat_R_Gray
   m_TagString: Untagged
@@ -632,6 +633,23 @@ MonoBehaviour:
   cat: {fileID: 1455080794972178950}
   interruptTask: 0
   target: {fileID: 0}
+--- !u!114 &3547704936325817380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455080794972178950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58334dc155721fc4ca54c2f023124069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSource: {fileID: 1794361039289346390, guid: c6ac49e490da67840a1f3c43e9b6848d, type: 3}
+  clip1: {fileID: 8300000, guid: a73f7869988769c4aa2ceb293a896ce9, type: 3}
+  clip2: {fileID: 8300000, guid: ba591828535058c4182200e916215670, type: 3}
+  clip3: {fileID: 8300000, guid: 478619520e7ab904696e5ab669bc2a7b, type: 3}
+  clip4: {fileID: 8300000, guid: 704e65967e518744ea022d49a91f38ca, type: 3}
 --- !u!1 &1557552976753281219
 GameObject:
   m_ObjectHideFlags: 0

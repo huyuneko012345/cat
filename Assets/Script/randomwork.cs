@@ -10,7 +10,7 @@ public class randomwork : MonoBehaviour
 
     public Animator PlayerAnimator;
     private Vector3 targetpos;
-    public GameObject cat; 
+    public GameObject cat;
     public bool interruptTask = false;
     int rundom = 0;
 
@@ -24,166 +24,177 @@ public class randomwork : MonoBehaviour
 
     System.Random r2 = new System.Random();
 
-     private float speed = 1.0f;
+    private float speed = 1.0f;
 
-     public Transform target;
+    public Transform target;
 
-     private Transform position;
+    private Transform position;
 
-     private const float START_SECONDS = 10f;
+    private const float START_SECONDS = 10f;
 
-     private float INTERVA_SECONDS = 10f;
+    private float INTERVA_SECONDS = 10f;
 
-     private float count = 2;
+    private float count = 2;
 
 
-    public void judgetask(){
+    public void judgetask()
+    {
         Debug.Log(interruptTask);
-        if (interruptTask == false){
-                   
-                   //タスクの乱数抽選
-                   rundom = r1.Next(1,5);//から10
-                   
-                  switch(rundom){
-                    case 1://歩行
-                    //睡眠状態の解除
-                  this.PlayerAnimator.SetBool("Sleep",false);
-                   //お座り状態を解除
-                  this.PlayerAnimator.SetBool("Sit",false);
-                  //毛づくろい状態の解除
-                  this.PlayerAnimator.SetBool("Sit_action",false);
+        if (interruptTask == false)
+        {
 
-                    rundomX = r2.Next(-15,15);//-300から300
-                    rundomZ = r2.Next(-15,15);//-300から300
-                    
-                    target.transform.position = new Vector3(rundomX,1,rundomZ);
+            //タスクの乱数抽選
+            rundom = r1.Next(1, 5);//から10
+
+            switch (rundom)
+            {
+                case 1://歩行
+                       //睡眠状態の解除
+                    this.PlayerAnimator.SetBool("Sleep", false);
+                    //お座り状態を解除
+                    this.PlayerAnimator.SetBool("Sit", false);
+                    //毛づくろい状態の解除
+                    this.PlayerAnimator.SetBool("Sit_action", false);
+
+                    rundomX = r2.Next(-15, 15);//-300から300
+                    rundomZ = r2.Next(-15, 15);//-300から300
+
+                    target.transform.position = new Vector3(rundomX, 1, rundomZ);
                     this.PlayerAnimator.SetFloat("Speed", 1f);
-                    
-                    if (rundomX <0){
-                        rundomX = rundomX * -1 ;
+
+                    if (rundomX < 0)
+                    {
+                        rundomX = rundomX * -1;
                     }
 
-                    if (rundomZ <0){
-                        rundomZ = rundomZ * -1 ;
+                    if (rundomZ < 0)
+                    {
+                        rundomZ = rundomZ * -1;
                     }
-                    
-                    if (rundomX<=rundomZ){
+
+                    if (rundomX <= rundomZ)
+                    {
                         INTERVA_SECONDS = rundomZ + 2;
                         print(INTERVA_SECONDS);
-                    }else{
+                    }
+                    else
+                    {
                         INTERVA_SECONDS = rundomX + 2;
                         print(INTERVA_SECONDS);
                     }
-                    
-                    break;
-
-                    case 2://寝る
-
-                     //お座り状態を解除
-                     this.PlayerAnimator.SetBool("Sit",false);
-                     //毛づくろい状態の解除
-                  this.PlayerAnimator.SetBool("Sit_action",false);
-
-                    randomidle = r1.Next(20,25);//20秒～130秒間でランダムに睡眠時間を抽選
-                    
-                    print("すいみんちゅうニャ。。。"+randomidle);
-                    
-                    INTERVA_SECONDS = randomidle;
 
                     break;
 
-                    case 3://お座り
+                case 2://寝る
 
-                     //睡眠状態の解除
-                     this.PlayerAnimator.SetBool("Sleep",false);
-                     //毛づくろい状態の解除
-                     this.PlayerAnimator.SetBool("Sit_action",false);
+                    //お座り状態を解除
+                    this.PlayerAnimator.SetBool("Sit", false);
+                    //毛づくろい状態の解除
+                    this.PlayerAnimator.SetBool("Sit_action", false);
 
-                    randomidle = r1.Next(20,30);//20秒～30秒間でランダムにお座り時間を抽選
+                    randomidle = r1.Next(20, 25);//20秒～130秒間でランダムに睡眠時間を抽選
 
-                    print("おすわりちゅうニャ！"+randomidle);
+                    print("すいみんちゅうニャ。。。" + randomidle);
 
                     INTERVA_SECONDS = randomidle;
 
                     break;
 
-                    case 4:
+                case 3://お座り
 
                     //睡眠状態の解除
-                  this.PlayerAnimator.SetBool("Sleep",false);
+                    this.PlayerAnimator.SetBool("Sleep", false);
+                    //毛づくろい状態の解除
+                    this.PlayerAnimator.SetBool("Sit_action", false);
 
-                  randomidle = 10;//10秒間に毛づくろい時間を選択
+                    randomidle = r1.Next(20, 30);//20秒～30秒間でランダムにお座り時間を抽選
 
-                  print("けづくろいちゅうニャ！"+randomidle);
+                    print("おすわりちゅうニャ！" + randomidle);
 
-                  INTERVA_SECONDS = randomidle;
+                    INTERVA_SECONDS = randomidle;
+
+                    break;
+
+                case 4:
+
+                    //睡眠状態の解除
+                    this.PlayerAnimator.SetBool("Sleep", false);
+
+                    randomidle = 10;//10秒間に毛づくろい時間を選択
+
+                    print("けづくろいちゅうニャ！" + randomidle);
+
+                    INTERVA_SECONDS = randomidle;
 
 
                     break;
-                    
-                    }
-                  
-                  //待機モーション抽選繰り返し
-                  CancelInvoke();
-                  Invoke("judgetask",INTERVA_SECONDS);
-              }
+
+            }
+
+            //待機モーション抽選繰り返し
+            CancelInvoke();
+            Invoke("judgetask", INTERVA_SECONDS);
+        }
     }
 
     void Start()
     {
-      print("ここから");  
-      judgetask();
-      
+        print("ここから");
+        judgetask();
+
     }
-    
+
     // Update is called once per frame
     void Update()
     {
-        
-         switch(rundom){
-                    case 1://歩行
-                    var delta = target.position - cat.transform.position;
 
-                    if(delta == Vector3.zero){
-                        return;
-                    }
+        switch (rundom)
+        {
+            case 1://歩行
+                var delta = target.position - cat.transform.position;
 
-                    //進行方向の取得
-                    var rotation = Quaternion.LookRotation(delta, Vector3.up);
+                if (delta == Vector3.zero)
+                {
+                    return;
+                }
 
-                    //回転の反映
-                    transform.rotation = rotation;
+                //進行方向の取得
+                var rotation = Quaternion.LookRotation(delta, Vector3.up);
 
-                    //指定座標までの移動
-                    transform.position = Vector3.MoveTowards(cat.transform.position,target.position,speed * Time.deltaTime);
-                    if (cat.transform.position == target.position){
-                        this.PlayerAnimator.SetFloat("Speed", 0);
-                    } 
-                     
+                //回転の反映
+                transform.rotation = rotation;
 
-                    break;
-
-                    case 2://睡眠
+                //指定座標までの移動
+                transform.position = Vector3.MoveTowards(cat.transform.position, target.position, speed * Time.deltaTime);
+                if (cat.transform.position == target.position)
+                {
                     this.PlayerAnimator.SetFloat("Speed", 0);
-                    this.PlayerAnimator.SetBool("Sleep",true);
-                    break;
+                }
 
-                    case 3:
 
-                    this.PlayerAnimator.SetFloat("Speed",0);
-                    this.PlayerAnimator.SetBool("Sit",true);
+                break;
 
-                    break;
+            case 2://睡眠
+                this.PlayerAnimator.SetFloat("Speed", 0);
+                this.PlayerAnimator.SetBool("Sleep", true);
+                break;
 
-                    case 4:
+            case 3:
 
-                    this.PlayerAnimator.SetFloat("Speed",0);
-                    this.PlayerAnimator.SetBool("Sit",true);
-                    this.PlayerAnimator.SetBool("Sit_action",true);
-                    
-                    break;
+                this.PlayerAnimator.SetFloat("Speed", 0);
+                this.PlayerAnimator.SetBool("Sit", true);
 
-         }
-         
+                break;
+
+            case 4:
+
+                this.PlayerAnimator.SetFloat("Speed", 0);
+                this.PlayerAnimator.SetBool("Sit", true);
+                this.PlayerAnimator.SetBool("Sit_action", true);
+
+                break;
+
+        }
+
     }
 }
