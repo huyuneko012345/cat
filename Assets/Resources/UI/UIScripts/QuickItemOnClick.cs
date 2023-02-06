@@ -35,7 +35,7 @@ public class QuickItemOnClick : MonoBehaviour
             {
                 var obj= Instantiate(prefab, Camera.main.ScreenToWorldPoint(mousePosition), Quaternion.identity);
                 obj.AddComponent<BoxCollider>();
-                obj.AddComponent<GrabObject>();
+                obj.AddComponent<foodeating>();
                 quickItemData.minusCount();
                 quickItemData.isExist=true;
             }
