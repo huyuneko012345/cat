@@ -43,6 +43,9 @@ public class foodeating : MonoBehaviour
     void Start()
     {
         catdb.catDataList[0].interputTask = true;
+        catdb.catDataList[0].hunger = 100;
+        catdb.catDataList[0].favorability = +5;
+        catdb.catDataList[0].mental = +20;
         this.PlayerAnimator.SetFloat("Speed", 1f);
         Invoke("eatrepeat",Time.deltaTime+8);
         
