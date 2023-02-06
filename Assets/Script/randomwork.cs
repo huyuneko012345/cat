@@ -11,7 +11,7 @@ public class randomwork : MonoBehaviour
     public Animator PlayerAnimator;
     private Vector3 targetpos;
     public GameObject cat;
-    public bool interruptTask = false;
+    public CatDataBase catdb;
     int rundom = 0;
 
     int rundomX = 0;
@@ -39,8 +39,8 @@ public class randomwork : MonoBehaviour
 
     public void judgetask()
     {
-        Debug.Log(interruptTask);
-        if (interruptTask == false)
+        Debug.Log(catdb.catDataList[0].interputTask);
+        if (catdb.catDataList[0].interputTask == false)
         {
 
             //タスクの乱数抽選
