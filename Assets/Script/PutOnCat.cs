@@ -29,11 +29,6 @@ public class PutOnCat : MonoBehaviour
                 {
                     spawnedObj = Instantiate(catPrefab, hitPose.position, hitPose.rotation);
                 }
-                else
-                {
-                    spawnedObj.transform.position = hitPose.position;
-
-                }
             }
         }
         
