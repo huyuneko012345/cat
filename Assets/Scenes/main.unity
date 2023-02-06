@@ -156,6 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catPrefab: {fileID: 1455080794972178950, guid: 059971a7fb8b4014a8e3b32455914669, type: 3}
+  audioSource: {fileID: 1610431405}
+  clip: {fileID: 8300000, guid: a73f7869988769c4aa2ceb293a896ce9, type: 3}
 --- !u!114 &14637025
 MonoBehaviour:
   m_ObjectHideFlags: 0

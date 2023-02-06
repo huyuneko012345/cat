@@ -106,7 +106,7 @@ AudioMixerController:
   - guid: dd51034a4dd6501448a7deb671ecf3c5
     name: SE_Volume
   - guid: 5258f0071789bb644973efa65107cb52
-    name: MyExposedParam
+    name: Voice_Volume
   m_AudioMixerGroupViews:
   - guids:
     - 7c5b910490bc68d479dd2d80d9c476d8
