@@ -24,6 +24,9 @@ public class QuickItemOnClick : MonoBehaviour
         {
             return;
         }
+        if(quickItemData.isExist){
+            return;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             mousePosition = Input.mousePosition;
@@ -34,6 +37,7 @@ public class QuickItemOnClick : MonoBehaviour
                 obj.AddComponent<BoxCollider>();
                 obj.AddComponent<GrabObject>();
                 quickItemData.minusCount();
+                quickItemData.isExist=true;
             }
             finally
             {

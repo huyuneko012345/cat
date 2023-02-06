@@ -11,6 +11,9 @@ public class QuickItemData : MonoBehaviour
 
    private GameObject _prefab;
 
+   public bool isExist{get;set;}=false;
+   
+
    [SerializeField]private int count;
     public void setMyItem(int id)
     {
