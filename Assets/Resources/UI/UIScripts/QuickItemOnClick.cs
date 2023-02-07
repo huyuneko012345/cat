@@ -44,8 +44,7 @@ public class QuickItemOnClick : MonoBehaviour
 
             try
             {
-                var obj = Instantiate(prefab, Camera.main.ScreenToWorldPoint(mousePosition), Quaternion.identity);
-                obj.transform.position = new Vector3(obj.transform.position.x, 1f, obj.transform.position.z);
+                var obj = Instantiate(prefab, new Vector3(0, 0.0f, 2f), Quaternion.identity);
                 obj.AddComponent<BoxCollider>();
                 obj.AddComponent<GrabObject>();
                 if (quickItemData.GetMyItem().item.typeId == 1)
