@@ -23,8 +23,8 @@ public class catstatushchange : MonoBehaviour
      Console.WriteLine("時:"+nowTime.Hour);
      int diffelence = nowTime.Hour - nextTime.Hour;
      if (diffelence > 0){
-        //catdb.catDataList[0].
-
+        catdb.catDataList[0].Hunger - (8*diffelence);
+        nowTime = nextTime;
      }
     }
 }
