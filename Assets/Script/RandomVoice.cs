@@ -72,7 +72,5 @@ public class RandomVoice : MonoBehaviour
         catVoice();
     }
 
-    void Update(){
-        Debug.Log("案山子万歳");
-    }
+    
 }
