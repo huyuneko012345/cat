@@ -10,6 +10,9 @@ TagManager:
   - QuickChildButton
   - Chase cat
   - cat
+  - food
+  - item
+  - drink
   layers:
   - Default
   - TransparentFX
