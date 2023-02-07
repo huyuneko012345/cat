@@ -18,4 +18,4 @@ MonoBehaviour:
   text: "\u732B\u304C\u5BDD\u307E\u3059"
   price: 1280
   image: {fileID: 21300000, guid: 952a16a659ce3d347b445a7ec92f37c2, type: 3}
-  prefab: {fileID: 919132149155446097, guid: d0e71d8d8a77f7340ae9dbcfedea3f7d, type: 3}
+  prefab: {fileID: 7697951947250129556, guid: 1cc0ccd6f8f79894889a554ae88a84d2, type: 3}
