@@ -42,10 +42,17 @@ public class foodeating : MonoBehaviour
     
     void Start()
     {
+        catdb = (CatDataBase)Resources.Load("DB/CatDB");
+        cat = GameObject.Find("Cat_R_Gray(Clone)");
+        target = this.gameObject.transform;
+        PlayerAnimator = cat.GetComponent<Animator>(); 
         catdb.catDataList[0].interputTask = true;
         this.PlayerAnimator.SetFloat("Speed", 1f);
         Invoke("eatrepeat",Time.deltaTime+8);
-        
+        Debug.Log("猫"+cat);
+        Debug.Log("多気"+target);
+
+
     }
 
     void Update()
