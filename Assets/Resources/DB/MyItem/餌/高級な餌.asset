@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: "\u9AD8\u7D1A\u306A\u990C"
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 1085385a8eea75045aa3c99b840185d3, type: 2}
-  count: 0
+  count: 50

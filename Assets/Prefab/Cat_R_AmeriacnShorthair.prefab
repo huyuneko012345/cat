@@ -2819,7 +2819,7 @@ GameObject:
   - component: {fileID: 6071179752455627931}
   m_Layer: 0
   m_Name: Cat_R_AmeriacnShorthair
-  m_TagString: Untagged
+  m_TagString: cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

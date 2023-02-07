@@ -16,7 +16,7 @@ public class QuickItemOnClick : MonoBehaviour
     }
     void Awake()
     {
-        quickItemData=GetComponent<QuickItemData>();
+        quickItemData = GetComponent<QuickItemData>();
     }
     void Update()
     {
@@ -24,37 +24,45 @@ public class QuickItemOnClick : MonoBehaviour
         {
             return;
         }
-        if(quickItemData.isExist){
+        if (quickItemData.isExist)
+        {
             return;
         }
         if (Input.GetMouseButtonDown(0))
         {
             mousePosition = Input.mousePosition;
             mousePosition.z = 10.0f;
+            if (isCount())
+            {
+                return;
+            }
             try
             {
-                var obj= Instantiate(prefab, Camera.main.ScreenToWorldPoint(mousePosition), Quaternion.identity);
+                var obj = Instantiate(prefab, Camera.main.ScreenToWorldPoint(mousePosition), Quaternion.identity);
                 obj.AddComponent<BoxCollider>();
-                obj.AddComponent<foodeating>();
+                obj.AddComponent<GrabObject>();
+                if (quickItemData.GetMyItem().item.typeId == 1)
+                {
+                    obj.AddComponent<foodeating>();
+                }
                 quickItemData.minusCount();
-                quickItemData.isExist=true;
+                quickItemData.isExist = true;
             }
             finally
             {
                 createFlg = false;
                 prefab = null;
             }
-            Debug.Log(quickItemData.GetCount());
-            if(isCount()){
-                Destroy(this.gameObject);
-            }
+            
 
         }
     }
-    private bool isCount(){
-        if(quickItemData.GetCount()<=0){
+    private bool isCount()
+    {
+        if (quickItemData.GetCount() <= 0)
+        {
             return true;
         }
         return false;
     }
-    }
+}

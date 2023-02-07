@@ -34,7 +34,7 @@ public class randomwork : MonoBehaviour
 
     private float INTERVA_SECONDS = 10f;
 
-    private float count = 2;
+    private int count = 2;
 
     // 以下Voiceのやつ
     public AudioSource AudioSource;
@@ -64,7 +64,7 @@ public class randomwork : MonoBehaviour
             switch (rundom)
             {
                 case 1://歩行
-                       //睡眠状態の解除
+                    //睡眠状態の解除
                     this.PlayerAnimator.SetBool("Sleep", false);
                     //お座り状態を解除
                     this.PlayerAnimator.SetBool("Sit", false);
@@ -209,6 +209,20 @@ public class randomwork : MonoBehaviour
 
                 break;
 
+        }
+
+        if(catdb.catDataList[0].interputTask == true & count%2 == 0){
+            //睡眠状態の解除
+            this.PlayerAnimator.SetBool("Sleep", false);
+            //お座り状態を解除
+            this.PlayerAnimator.SetBool("Sit", false);
+            //毛づくろい状態の解除
+            this.PlayerAnimator.SetBool("Sit_action", false);
+
+            count = count+1;
+
+        }else if(catdb.catDataList[0].interputTask == false & count%2 == 1){
+            count = +1;
         }
 
     }
