@@ -9,6 +9,11 @@ public class Item : ScriptableObject
 {
 
     public int id;
+    /*
+    typeid  餌:1
+            おもちゃ:2
+            設置物:3
+    */
     public int typeId;
     public string name;
     public string text;
