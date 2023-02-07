@@ -48,11 +48,18 @@ public class foodeating : MonoBehaviour
         target = this.gameObject.transform;
         PlayerAnimator = cat.GetComponent<Animator>(); 
         catdb.catDataList[0].interputTask = true;
-        this.PlayerAnimator.SetFloat("Speed", 1f);
-        Invoke("eatrepeat",Time.deltaTime+8);
+        
         Debug.Log("猫"+cat);
         Debug.Log("多気"+target);
 
+        //睡眠状態の解除
+        this.PlayerAnimator.SetBool("Sleep", false);
+        //お座り状態を解除
+        this.PlayerAnimator.SetBool("Sit", false);
+        //毛づくろい状態の解除
+        this.PlayerAnimator.SetBool("Sit_action", false);
+        this.PlayerAnimator.SetFloat("Speed", 1f);
+        Invoke("eatrepeat",Time.deltaTime+8);
 
     }
 

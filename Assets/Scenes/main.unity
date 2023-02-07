@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 21986369}
   m_Layer: 0
   m_Name: Chase cat
-  m_TagString: Untagged
+  m_TagString: Chase cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -477,6 +477,7 @@ PrefabInstance:
     - target: {fileID: 2268315485864923324, guid: 059971a7fb8b4014a8e3b32455914669, type: 3}
       propertyPath: m_RootOrder
       value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2268315485864923324, guid: 059971a7fb8b4014a8e3b32455914669, type: 3}
       propertyPath: m_LocalPosition.x

@@ -146,22 +146,27 @@ public class randomwork : MonoBehaviour
 
             }
 
-            //待機モーション抽選繰り返し
-            CancelInvoke();
-            Invoke("judgetask", INTERVA_SECONDS);
+            
         }
+        //待機モーション抽選繰り返し
+        CancelInvoke();
+        Invoke("judgetask", INTERVA_SECONDS);
     }
 
     void Start()
     {
         print("ここから");
-        judgetask();
+        target = GameObject.FindGameObjectWithTag("Chase cat").transform;
+        
+        Invoke("judgetask", 10);
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (catdb.catDataList[0].interputTask == false){
+        
 
         switch (rundom)
         {
@@ -209,6 +214,7 @@ public class randomwork : MonoBehaviour
 
                 break;
 
+        }
         }
 
         if(catdb.catDataList[0].interputTask == true & count%2 == 0){

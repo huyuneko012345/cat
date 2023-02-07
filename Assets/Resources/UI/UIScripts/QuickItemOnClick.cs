@@ -24,7 +24,16 @@ public class QuickItemOnClick : MonoBehaviour
         {
             return;
         }
-        if (quickItemData.isExist)
+
+        if (isFood())
+        {
+            return;
+        }
+        if (isDrink())
+        {
+            return;
+        }
+        if (isItem())
         {
             return;
         }
@@ -32,13 +41,11 @@ public class QuickItemOnClick : MonoBehaviour
         {
             mousePosition = Input.mousePosition;
             mousePosition.z = 10.0f;
-            if (isCount())
-            {
-                return;
-            }
+
             try
             {
                 var obj = Instantiate(prefab, Camera.main.ScreenToWorldPoint(mousePosition), Quaternion.identity);
+                obj.transform.position = new Vector3(obj.transform.position.x, 1f, obj.transform.position.z);
                 obj.AddComponent<BoxCollider>();
                 obj.AddComponent<GrabObject>();
                 if (quickItemData.GetMyItem().item.typeId == 1)
@@ -46,23 +53,31 @@ public class QuickItemOnClick : MonoBehaviour
                     obj.AddComponent<foodeating>();
                 }
                 quickItemData.minusCount();
-                quickItemData.isExist = true;
             }
             finally
             {
                 createFlg = false;
                 prefab = null;
             }
-            
+
 
         }
     }
-    private bool isCount()
+
+    private bool isFood()
     {
-        if (quickItemData.GetCount() <= 0)
-        {
-            return true;
-        }
-        return false;
+        bool r = GameObject.FindGameObjectWithTag("food") != null ? true : false;
+        Debug.Log("isfood :" + r);
+        return r;
+    }
+    private bool isDrink()
+    {
+        bool r = GameObject.FindGameObjectWithTag("drink") != null ? true : false;
+        return r;
+    }
+    private bool isItem()
+    {
+        bool r = GameObject.FindGameObjectWithTag("item") != null ? true : false;
+        return r;
     }
 }
