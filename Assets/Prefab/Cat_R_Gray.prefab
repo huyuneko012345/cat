@@ -493,7 +493,7 @@ GameObject:
   - component: {fileID: 3547704936325817380}
   m_Layer: 0
   m_Name: Cat_R_Gray
-  m_TagString: Untagged
+  m_TagString: cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -632,8 +632,12 @@ MonoBehaviour:
   PlayerAnimator: {fileID: 7089269648616321582}
   cat: {fileID: 1455080794972178950}
   catdb: {fileID: 11400000, guid: df2f9b03a0111724ebf0c5f57b62157a, type: 2}
-  interruptTask: 0
   target: {fileID: 0}
+  AudioSource: {fileID: 0}
+  clip1: {fileID: 0}
+  clip2: {fileID: 0}
+  clip3: {fileID: 0}
+  clip4: {fileID: 0}
 --- !u!114 &3547704936325817380
 MonoBehaviour:
   m_ObjectHideFlags: 0
