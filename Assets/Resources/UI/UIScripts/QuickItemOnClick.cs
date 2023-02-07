@@ -32,6 +32,10 @@ public class QuickItemOnClick : MonoBehaviour
         {
             mousePosition = Input.mousePosition;
             mousePosition.z = 10.0f;
+            if (isCount())
+            {
+                return;
+            }
             try
             {
                 var obj = Instantiate(prefab, Camera.main.ScreenToWorldPoint(mousePosition), Quaternion.identity);
@@ -49,11 +53,7 @@ public class QuickItemOnClick : MonoBehaviour
                 createFlg = false;
                 prefab = null;
             }
-            Debug.Log(quickItemData.GetCount());
-            if (isCount())
-            {
-                Destroy(this.gameObject);
-            }
+            
 
         }
     }

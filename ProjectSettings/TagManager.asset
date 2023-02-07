@@ -9,6 +9,7 @@ TagManager:
   - cat
   - QuickChildButton
   - Chase cat
+  - cat
   layers:
   - Default
   - TransparentFX
