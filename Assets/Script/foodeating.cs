@@ -37,7 +37,7 @@ public class foodeating : MonoBehaviour
         
         this.PlayerAnimator.SetBool("Eating",false);
         catdb.catDataList[0].interputTask = false;
-        Destory (this.gameObject);
+        Destroy(this.gameObject);
 
     }
     
