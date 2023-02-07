@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 4921331269023678068}
   m_Layer: 0
   m_Name: cat huse ver2
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
