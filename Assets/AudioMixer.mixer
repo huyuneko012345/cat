@@ -111,7 +111,6 @@ AudioMixerController:
   - guids:
     - 7c5b910490bc68d479dd2d80d9c476d8
     - 81c5abfe9c6e62442922c95c9c831c66
-    - 19863bd822c7ce340af0a094d28e0a89
     - 8edddc3e93bc87840a6f90b4643572f2
     name: View
   m_CurrentViewIndex: 0
