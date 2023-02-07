@@ -6,6 +6,9 @@ TagManager:
   tags:
   - ShopItemButton
   - MyItemButton
+  - cat
+  - QuickChildButton
+  - Chase cat
   layers:
   - Default
   - TransparentFX

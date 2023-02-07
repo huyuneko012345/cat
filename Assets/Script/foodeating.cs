@@ -53,7 +53,6 @@ public class foodeating : MonoBehaviour
         Debug.Log("猫"+cat);
         Debug.Log("多気"+target);
 
-
     }
 
     void Update()

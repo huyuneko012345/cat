@@ -146,15 +146,18 @@ public class randomwork : MonoBehaviour
 
             }
 
-            //待機モーション抽選繰り返し
-            CancelInvoke();
-            Invoke("judgetask", INTERVA_SECONDS);
+            
         }
+        //待機モーション抽選繰り返し
+        CancelInvoke();
+        Invoke("judgetask", INTERVA_SECONDS);
     }
 
     void Start()
     {
         print("ここから");
+        target = GameObject.FindGameObjectWithTag("Chase cat").transform;
+        
         judgetask();
 
     }
