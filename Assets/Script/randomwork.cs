@@ -158,13 +158,15 @@ public class randomwork : MonoBehaviour
         print("ここから");
         target = GameObject.FindGameObjectWithTag("Chase cat").transform;
         
-        judgetask();
+        Invoke("judgetask", 10);
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (catdb.catDataList[0].interputTask == false){
+        
 
         switch (rundom)
         {
@@ -212,6 +214,7 @@ public class randomwork : MonoBehaviour
 
                 break;
 
+        }
         }
 
         if(catdb.catDataList[0].interputTask == true & count%2 == 0){
