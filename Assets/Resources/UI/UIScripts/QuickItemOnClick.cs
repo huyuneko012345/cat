@@ -1,3 +1,5 @@
+using System.Linq;
+using System.Security.Cryptography;
 using System.Globalization;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,18 +27,18 @@ public class QuickItemOnClick : MonoBehaviour
             return;
         }
 
-        if (isFood())
-        {
-            return;
-        }
-        if (isDrink())
-        {
-            return;
-        }
-        if (isItem())
-        {
-            return;
-        }
+        // if (isFood())
+        // {
+        //     return;
+        // }
+        // if (isDrink())
+        // {
+        //     return;
+        // }
+        // if (isItem())
+        // {
+        //     return;
+        // }
         if (Input.GetMouseButtonDown(0))
         {
             mousePosition = Input.mousePosition;
@@ -44,8 +46,22 @@ public class QuickItemOnClick : MonoBehaviour
 
             try
             {
-                var obj = Instantiate(prefab, Camera.main.ScreenToWorldPoint(mousePosition), Quaternion.identity);
-                obj.transform.position = new Vector3(obj.transform.position.x, 1f, obj.transform.position.z);
+                var obj = Instantiate(prefab, new Vector3(0, 0.0f, 2f), Quaternion.identity);
+                if (isFood() && obj.tag == "food")
+                {
+                    Destroy(obj);
+                    return;
+                }
+                if (isDrink() && obj.tag == "drink")
+                {
+                    Destroy(obj);
+                    return;
+                }
+                if (isItem() && obj.tag == "item")
+                {
+                    Destroy(obj);
+                    return;
+                }
                 obj.AddComponent<BoxCollider>();
                 obj.AddComponent<GrabObject>();
                 if (quickItemData.GetMyItem().item.typeId == 1)
@@ -64,20 +80,31 @@ public class QuickItemOnClick : MonoBehaviour
         }
     }
 
+
     private bool isFood()
     {
-        bool r = GameObject.FindGameObjectWithTag("food") != null ? true : false;
-        Debug.Log("isfood :" + r);
-        return r;
+
+        if (GameObject.FindGameObjectsWithTag("food").Count() <= 1)
+        {
+
+            return false;
+        }
+        return true;
     }
     private bool isDrink()
     {
-        bool r = GameObject.FindGameObjectWithTag("drink") != null ? true : false;
-        return r;
+        if (GameObject.FindGameObjectsWithTag("drink").Count() <= 1)
+        {
+            return false;
+        }
+        return true;
     }
     private bool isItem()
     {
-        bool r = GameObject.FindGameObjectWithTag("item") != null ? true : false;
-        return r;
+        if (GameObject.FindGameObjectsWithTag("item").Count() <= 1)
+        {
+            return false;
+        }
+        return true;
     }
 }
