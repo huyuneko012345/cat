@@ -543,6 +543,7 @@ GameObject:
   - component: {fileID: 696655430}
   - component: {fileID: 696655429}
   - component: {fileID: 696655434}
+  - component: {fileID: 696655435}
   m_Layer: 0
   m_Name: AR Camera
   m_TagString: MainCamera
@@ -692,6 +693,22 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &696655435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696655427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49b4cc203aa6414fae5c798d1d0e7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1 &760330003 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1426328898813038714, guid: 6a00bc23fc08479438a0ba1b439c43f2, type: 3}
@@ -1499,8 +1516,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.21635467, y: 0.4125292, z: 0.34443158}
-  m_Center: {x: -0.013931502, y: 0.17883672, z: -0.019331783}
+  m_Size: {x: 0.08787301, y: 0.18500182, z: 0.1858744}
+  m_Center: {x: 0.0021885391, y: 0.19298466, z: -0.026421398}
 --- !u!114 &1618873392
 MonoBehaviour:
   m_ObjectHideFlags: 0
