@@ -28,14 +28,14 @@ public class catstatushchange : MonoBehaviour
         //日付のまた越し判定
         if(nowTime.Day > befor.Day){
             
-            beforHour = nowTime.Hour + befor.Hour;
+            beforHour = nowTime.Minute + befor.Minute;
             //前回ログイン時と今回ログイン時の経過時間を計算
-            diffelence = beforHour - befor.Hour;
+            diffelence = beforHour - befor.Minute;
         }else{
             
-            beforHour = befor.Hour;
+            beforHour = befor.Minute;
             //前回ログイン時と今回ログイン時の経過時間を計算
-            diffelence = nowTime.Hour - beforHour;
+            diffelence = nowTime.Minute - beforHour;
         }
 
         
@@ -59,13 +59,13 @@ public class catstatushchange : MonoBehaviour
      nextTime = DateTime.Now;
      //日付のまた越し判定
         if(nextTime.Day > nowTime.Day){
-            beforHour = nowTime.Hour + nextTime.Hour;
+            beforHour = nowTime.Minute + nextTime.Minute;
             //前回と今回の経過時間を計算
-            diffelence = beforHour - nowTime.Hour;
+            diffelence = beforHour - nowTime.Minute;
         }else{
-            beforHour = nowTime.Hour;
+            beforHour = nowTime.Minute;
             //前回と今回の経過時間を計算
-            diffelence = nextTime.Hour - beforHour;
+            diffelence = nextTime.Minute - beforHour;
         }
 
         //日付をまたいだ場合diffelenceがマイナス値になるため補正
