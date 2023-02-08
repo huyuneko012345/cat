@@ -7,7 +7,6 @@ public class DetailController : MonoBehaviour, IPointerDownHandler
 {
     // Start is called before the first frame update
 
-    private bool detailFlg = false;
     [SerializeField] private GameObject DetailCanvas;
     // Update is called once per frame
     void Awake()
@@ -15,21 +14,13 @@ public class DetailController : MonoBehaviour, IPointerDownHandler
         if (this.DetailCanvas == null)
         {
             DetailCanvas = GameObject.Find("DetailCanvas");
+            DetailCanvas.SetActive(false);
         }
     }
     // クリック
     public void OnPointerDown(PointerEventData pointerEventData)
     {
-        
-        if (detailFlg)
-        {
-            detailFlg = false;
-        }
-        else
-        {
-            detailFlg = true;
-        }
-        this.DetailCanvas.SetActive(detailFlg);
+        this.DetailCanvas.SetActive(!DetailCanvas.activeSelf);
 
     }
 }
