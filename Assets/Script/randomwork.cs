@@ -35,20 +35,6 @@ public class randomwork : MonoBehaviour
     private float INTERVA_SECONDS = 10f;
 
     private int count = 2;
-
-    // 以下Voiceのやつ
-    public AudioSource AudioSource;
-    [SerializeField] AudioClip clip1;
-    [SerializeField] AudioClip clip2;
-    [SerializeField] AudioClip clip3;
-    [SerializeField] AudioClip clip4;
-
-    int voice_num = 0;
-
-    System.Random v1 = new System.Random();
-    System.Random v2 = new System.Random();
-
-    private float VOICE_SECONDS = 3f;
     
 
 
