@@ -23,6 +23,7 @@ public class RandomVoice : MonoBehaviour
     //猫の鳴き声を不定期に出すメソッド
     public void catVoice()
     {
+        
 
         //Voiceの抽選
         rundom = r1.Next(1, 4);//1~4の乱数
