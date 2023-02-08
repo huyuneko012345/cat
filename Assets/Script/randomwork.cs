@@ -69,7 +69,7 @@ public class randomwork : MonoBehaviour
                     rundomX = r2.Next(-15, 15);//-300から300
                     rundomZ = r2.Next(-15, 15);//-300から300
 
-                    target.transform.position = new Vector3(rundomX, 1, rundomZ);
+                    target.transform.position = new Vector3(rundomX, 0, rundomZ);
                     this.PlayerAnimator.SetFloat("Speed", 1f);
 
                     if (rundomX < 0)
