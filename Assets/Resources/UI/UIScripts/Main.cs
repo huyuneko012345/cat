@@ -46,7 +46,7 @@ public class Main : MonoBehaviour
         //     SceneManager.LoadScene("start");
         // }
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-        root.Q<Button>("home").clicked += () => Debug.Log("home");
+        // root.Q<Button>("home").clicked += () => Debug.Log("home");
 
         root.Q<Button>("back").clicked += () => SceneManager.LoadScene("start");
 
@@ -93,13 +93,13 @@ public class Main : MonoBehaviour
 
         };
 
-        root.Q<Button>("help").clicked += () =>
-        {
+        // root.Q<Button>("help").clicked += () =>
+        // {
 
-            show(parent, dialog);
-            GameObject contentBackGround = GameObject.Find("content-background");
-            setDialogName(HELPDIALOGNAME);
-        };
+        //     show(parent, dialog);
+        //     GameObject contentBackGround = GameObject.Find("content-background");
+        //     setDialogName(HELPDIALOGNAME);
+        // };
 
 
     }
