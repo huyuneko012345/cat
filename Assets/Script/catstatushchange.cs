@@ -57,10 +57,6 @@ public class catstatushchange : MonoBehaviour
     void Update()
     {
      nextTime = DateTime.Now;
-     //一フレームごとの時間情報
-     Console.WriteLine("時:"+nextTime.Hour);
-     //ログイン時の時間情報
-     Console.WriteLine("時:"+nowTime.Hour);
      //日付のまた越し判定
         if(nextTime.Day > nowTime.Day){
             beforHour = nowTime.Hour + nextTime.Hour;
