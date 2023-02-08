@@ -28,7 +28,7 @@ public class foodeating : MonoBehaviour
     public void eatrepeat2 (){
         
         this.PlayerAnimator.SetBool("Eating",true);
-        Invoke("eatrepeat3",6);
+        Invoke("eatrepeat3",3);
         
 
     }
@@ -37,6 +37,7 @@ public class foodeating : MonoBehaviour
         
         this.PlayerAnimator.SetBool("Eating",false);
         catdb.catDataList[0].interputTask = false;
+        catdb.catDataList[0].hunger = 100;
         Destroy(this.gameObject);
 
     }
@@ -59,7 +60,7 @@ public class foodeating : MonoBehaviour
         //毛づくろい状態の解除
         this.PlayerAnimator.SetBool("Sit_action", false);
         this.PlayerAnimator.SetFloat("Speed", 1f);
-        Invoke("eatrepeat",Time.deltaTime+8);
+        Invoke("eatrepeat",Time.deltaTime+6);
 
     }
 

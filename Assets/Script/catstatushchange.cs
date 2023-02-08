@@ -21,8 +21,7 @@ public class catstatushchange : MonoBehaviour
     void Start()
     {
         nowTime = DateTime.Now;
-        //string aaa = PlayerPrefs.GetString("KEY","2023/2/7 23:22:00");
-        string aaa = "2023/2/7 23:22:00";
+        string aaa = PlayerPrefs.GetString("KEY",nowTime.ToString());
         Debug.Log(aaa);
         DateTime befor = DateTime.Parse(aaa);
 
@@ -60,18 +59,14 @@ public class catstatushchange : MonoBehaviour
      nextTime = DateTime.Now;
      //一フレームごとの時間情報
      Console.WriteLine("時:"+nextTime.Hour);
-      Debug.Log("フレームｇと："+nextTime.Hour);
      //ログイン時の時間情報
      Console.WriteLine("時:"+nowTime.Hour);
-     Debug.Log("ログイン時:"+nowTime.Hour);
      //日付のまた越し判定
         if(nextTime.Day > nowTime.Day){
-            Debug.Log("logt");
             beforHour = nowTime.Hour + nextTime.Hour;
             //前回と今回の経過時間を計算
             diffelence = beforHour - nowTime.Hour;
         }else{
-            Debug.Log("logf");
             beforHour = nowTime.Hour;
             //前回と今回の経過時間を計算
             diffelence = nextTime.Hour - beforHour;
@@ -80,12 +75,10 @@ public class catstatushchange : MonoBehaviour
         //日付をまたいだ場合diffelenceがマイナス値になるため補正
         if(diffelence < 0){
             diffelence = diffelence*(-1);
-            Debug.Log("log2");
         }
 
      if (diffelence > 0){
         //ステータスの変更
-        Debug.Log("ふんふん:"+diffelence);
         catdb.catDataList[0].hunger= catdb.catDataList[0].hunger - (8*diffelence);
         catdb.catDataList[0].favorability= catdb.catDataList[0].favorability - (1*diffelence);
         catdb.catDataList[0].mental= catdb.catDataList[0].mental - (r1.Next(1, 11));
