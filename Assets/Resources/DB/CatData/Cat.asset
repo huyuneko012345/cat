@@ -17,7 +17,7 @@ MonoBehaviour:
   gender: "\u30AA\u30B9"
   hunger: 100
   favorability: 100
-  mental: 100
+  mental: 66
   age: 12
   user: "\u308F\u308C"
-  interputTask: 1
+  interputTask: 0
