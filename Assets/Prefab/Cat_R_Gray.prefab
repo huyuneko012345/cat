@@ -491,6 +491,7 @@ GameObject:
   - component: {fileID: 7089269648616321582}
   - component: {fileID: 7089269648616321577}
   - component: {fileID: 3547704936325817380}
+  - component: {fileID: 6555764481104636770}
   m_Layer: 0
   m_Name: Cat_R_Gray
   m_TagString: cat
@@ -655,6 +656,19 @@ MonoBehaviour:
   clip2: {fileID: 8300000, guid: ba591828535058c4182200e916215670, type: 3}
   clip3: {fileID: 8300000, guid: 478619520e7ab904696e5ab669bc2a7b, type: 3}
   clip4: {fileID: 8300000, guid: 704e65967e518744ea022d49a91f38ca, type: 3}
+--- !u!114 &6555764481104636770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455080794972178950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e8cf93d9a83b4b4dbb14dd8f522527b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  catdb: {fileID: 11400000, guid: df2f9b03a0111724ebf0c5f57b62157a, type: 2}
 --- !u!1 &1557552976753281219
 GameObject:
   m_ObjectHideFlags: 0
