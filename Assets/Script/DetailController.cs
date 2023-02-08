@@ -14,7 +14,7 @@ public class DetailController : MonoBehaviour, IPointerDownHandler
     {
         if (this.DetailCanvas == null)
         {
-            DetailCanvas = (GameObject)Resources.Load("UI/prefabs/DetailCanvas");
+            DetailCanvas = GameObject.Find("DetailCanvas");
         }
     }
     // クリック

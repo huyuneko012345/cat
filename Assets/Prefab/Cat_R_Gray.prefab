@@ -492,6 +492,8 @@ GameObject:
   - component: {fileID: 7089269648616321577}
   - component: {fileID: 3547704936325817380}
   - component: {fileID: 6555764481104636770}
+  - component: {fileID: 6739607058068458830}
+  - component: {fileID: 2733557684719687859}
   m_Layer: 0
   m_Name: Cat_R_Gray
   m_TagString: cat
@@ -634,11 +636,6 @@ MonoBehaviour:
   cat: {fileID: 1455080794972178950}
   catdb: {fileID: 11400000, guid: df2f9b03a0111724ebf0c5f57b62157a, type: 2}
   target: {fileID: 0}
-  AudioSource: {fileID: 0}
-  clip1: {fileID: 0}
-  clip2: {fileID: 0}
-  clip3: {fileID: 0}
-  clip4: {fileID: 0}
 --- !u!114 &3547704936325817380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,6 +666,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catdb: {fileID: 11400000, guid: df2f9b03a0111724ebf0c5f57b62157a, type: 2}
+  beforHour: 0
+--- !u!114 &6739607058068458830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455080794972178950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d338875a2fa6849b70e044a35fe27b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DetailCanvas: {fileID: 0}
+--- !u!65 &2733557684719687859
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455080794972178950}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.31808865, y: 0.3999114, z: 0.44524717}
+  m_Center: {x: -0.024841845, y: 0.14148498, z: -0.014495134}
 --- !u!1 &1557552976753281219
 GameObject:
   m_ObjectHideFlags: 0
