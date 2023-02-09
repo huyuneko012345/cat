@@ -35,9 +35,11 @@ public class Main : MonoBehaviour
         this.fpManager.Init();
         if (!isLoginToday())
         {
+            Debug.Log(0015);
             this.mission.pickMission();
-            mission.ClearValue(5, 1);
         }
+        mission.ClearValue(5, 1);
+
     }
     private void Awake()
     {
