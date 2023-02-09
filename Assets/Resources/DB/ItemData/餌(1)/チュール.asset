@@ -17,5 +17,5 @@ MonoBehaviour:
   name: "\u30C1\u30E5\u30FC\u30EB"
   text: "\u30C1\u30E5\u30FC\u30EB"
   price: 250
-  image: {fileID: 21300000, guid: 4944b80422141754c9df8254f163d6da, type: 3}
+  image: {fileID: 21300000, guid: fc1e88154154525469210b4ed047122e, type: 3}
   prefab: {fileID: 8066544906446638641, guid: bb9f39c384602164bada550cbae9f407, type: 3}
