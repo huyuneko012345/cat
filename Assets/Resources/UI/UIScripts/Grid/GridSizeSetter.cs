@@ -93,7 +93,16 @@ public class GridSizeSetter : MonoBehaviour
             return (int)(contentHeight * paddingButtomPer);
         }
     }
-
+void Update()
+{
+    viewport=GetComponent<ViewPortUtil>().GetViewPort;
+        rectTransform=viewport.GetComponent<RectTransform>();
+        gridLayout = GetComponent<GridLayoutGroup>();
+        UpdateCellSize();
+        UpdatespacingSize();
+        UpdatePaddingBottom();
+        UpdatePaddingTop(); 
+}
     void OnValidate()
     {
         viewport=GetComponent<ViewPortUtil>().GetViewPort;
