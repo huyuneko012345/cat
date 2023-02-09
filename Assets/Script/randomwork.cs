@@ -137,7 +137,7 @@ public class randomwork : MonoBehaviour
                     this.PlayerAnimator.SetBool("Drop", false);
                     
 
-                    randomidle = 10;//10秒間に毛づくろい時間を選択
+                    randomidle = 7;//7秒間に毛づくろい時間を選択
 
                     print("けづくろいちゅうニャ！" + randomidle);
 
@@ -198,6 +198,8 @@ public class randomwork : MonoBehaviour
                 //回転の反映
                 transform.rotation = rotation;
 
+                
+
                 //指定座標までの移動
                 transform.position = Vector3.MoveTowards(cat.transform.position, target.position, speed * Time.deltaTime);
                 if (cat.transform.position == target.position)
@@ -240,11 +242,18 @@ public class randomwork : MonoBehaviour
 
                 //回転の反映
                 transform.rotation = rotation2;
+                
+                
 
                 //指定座標までの移動
                 transform.position = Vector3.MoveTowards(cat.transform.position, target.position, speed * Time.deltaTime);
                 if (cat.transform.position == target.position)
                 {
+                    target.position = new Vector3(0, 0, 0);
+                    //進行方向の取得
+                    rotation2 = Quaternion.LookRotation(target.position, Vector3.up);
+                    //回転の反映
+                    transform.rotation = rotation2;
                     this.PlayerAnimator.SetFloat("Speed", 0);
                     this.PlayerAnimator.SetBool("Drop", true);
                 }
