@@ -94,6 +94,16 @@ public class GridSizeSetter : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        viewport=GetComponent<ViewPortUtil>().GetViewPort;
+        rectTransform=viewport.GetComponent<RectTransform>();
+        gridLayout = GetComponent<GridLayoutGroup>();
+        UpdateCellSize();
+        UpdatespacingSize();
+        UpdatePaddingBottom();
+        UpdatePaddingTop();
+    }
     void OnValidate()
     {
         viewport=GetComponent<ViewPortUtil>().GetViewPort;
@@ -103,7 +113,6 @@ public class GridSizeSetter : MonoBehaviour
         UpdatespacingSize();
         UpdatePaddingBottom();
         UpdatePaddingTop();
-
 
     }
 
