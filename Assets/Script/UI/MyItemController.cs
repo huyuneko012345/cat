@@ -20,12 +20,12 @@ public class MyItemController : MonoBehaviour
     public void CreateMyItem(int typeId=1){
   GameObject content = GameObject.Find(CONTENT);
         
-var panel = GameObject.Find("ContentPanel").transform;
-        var ItemTab = GameObject.Find("ItemTab(Clone)");
+var panel = GameObject.Find(CONTENT_PANEL).transform;
+        var ItemTab = GameObject.Find(ITEMTAB_CLONE);
         DeleteItem();
         if (!ItemTab)
         {
-            Transform tabTransform = Instantiate((GameObject)Resources.Load("UI/prefabs/ItemTab")).transform;
+            Transform tabTransform = Instantiate((GameObject)Resources.Load(ITEM_TAB)).transform;
             tabTransform.SetParent(panel, false);
         }
         List<MyItem> itemList = myItemDB.myItemList;
@@ -36,7 +36,7 @@ var panel = GameObject.Find("ContentPanel").transform;
             GameObject itemButton = Instantiate(buttonPrefab, content.transform);
             itemButton.GetComponent<ShowItemData>().setMyItem(id,myItem.count);
             
-            var button = itemButton.transform.Find("Button").GetComponent<Button>();
+            var button = itemButton.transform.Find(BUTTON).GetComponent<Button>();
             button.onClick.AddListener(()=>{
               OpenItemDescription(id);
             });
@@ -46,8 +46,9 @@ var panel = GameObject.Find("ContentPanel").transform;
         }
         }
 
+private const string TAG_NAME="MyItemButton";
     private void DeleteItem(){
-        var itembuttons=GameObject.FindGameObjectsWithTag("MyItemButton");
+        var itembuttons=GameObject.FindGameObjectsWithTag(TAG_NAME);
        foreach(var itemButton in itembuttons){
          Destroy(itemButton);   
        }

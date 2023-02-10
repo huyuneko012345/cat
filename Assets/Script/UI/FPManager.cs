@@ -48,7 +48,7 @@ public class FPManager : MonoBehaviour
     {
         PlayerPrefs.SetInt(FP_KEY, fp);
         PlayerPrefs.Save();
-        onChengeFP(PlayerPrefs.GetInt(FP_KEY, 0));
+        onChengeFP(PlayerPrefs.GetInt(FP_KEY, DEFAULT_FP));
     }
     public void addFP(int fp)
     {
@@ -58,13 +58,14 @@ public class FPManager : MonoBehaviour
         }
         ChangeFP(LoadFP() + fp);
     }
+    private const int LOWERLIMIT=0;
     private void SubFP(int fp)
     {
-        if (fp < 0)
+        if (fp < LOWERLIMIT)
         {
             return;
         }
-        if (LoadFP() - fp < 0)
+        if (LoadFP() - fp < LOWERLIMIT)
         {
             return;
         }

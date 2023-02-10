@@ -14,17 +14,18 @@ using UnityEngine.UI;
 public class MissionController : MonoBehaviour
 {
     private const string MISSION_KEY="Mission";
+    private const string DEFAULTMISSION="1,2,3,4,5";
+    private const string MISSION_DB_PATH="DB/MissionDB";
     private static List<Mission>todayMissionList=null;
-
     private static Dictionary<int,Mission> dic=null;
 
     private  FPManager fPManager;
     private bool flg=true;
     public void Awake()
     {
-        fPManager=GameObject.Find("UIDocument").GetComponent<FPManager>();
+        fPManager=GameObject.Find(UIDOCUMENT).GetComponent<FPManager>();
         
-        var ids=PlayerPrefs.GetString(MISSION_KEY,"1,2,3,4,5").Split(",");
+        var ids=PlayerPrefs.GetString(MISSION_KEY,DEFAULTMISSION).Split(",");
         if(todayMissionList==null){
             todayMissionList=new List<Mission>();
             foreach(string id in ids){
@@ -54,7 +55,7 @@ public class MissionController : MonoBehaviour
         var buttom=missionPanel.transform.GetChild(1).GetChild(1);
         TextMeshProUGUI missionName= top.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>(); 
         TextMeshProUGUI progressRate= top.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>(); 
-        Slider slider=buttom.transform.Find("Slider").GetComponent<Slider>();
+        Slider slider=buttom.transform.Find(SLIDER).GetComponent<Slider>();
         slider.maxValue=mission.MaxCount;
         slider.value=mission.count;
 
@@ -64,14 +65,14 @@ public class MissionController : MonoBehaviour
 
     }
     private void GetMission(int key){
-         MissionDataBase missionDataBase=(MissionDataBase)Resources.Load("DB/MissionDB");
+         MissionDataBase missionDataBase=(MissionDataBase)Resources.Load(MISSION_DB_PATH);
                 Mission mission=missionDataBase.MissionDataList.Find(m=>m.id==key);
                 todayMissionList.Add(mission);
     }
     public void pickMission(){
         List<int> idList=new List<int>();
         todayMissionList=new List<Mission>();
-        MissionDataBase missionDataBase=(MissionDataBase)Resources.Load("DB/MissionDB");
+        MissionDataBase missionDataBase=(MissionDataBase)Resources.Load(MISSION_DB_PATH);
         List<Mission>missionList=new List<Mission>(missionDataBase.MissionDataList);
                 for(int i=0;i<5;i++){
         
@@ -105,7 +106,6 @@ public class MissionController : MonoBehaviour
             int fp=dic[key].fp;
             fPManager.addFP(fp);            
         }else{
-            Debug.Log(111);
             dic[key].count+=count;
         }
     }

@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 /*スタート画面からメイン画面を制御する*/
 public class StartMenu : MonoBehaviour
 {
+   private const string START="start";
+   private const string MAIN="main";
    private void Awake() {
     VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-    root.Q<Button>("start").clicked += ()=> SceneManager.LoadScene("main");
+    root.Q<Button>(START).clicked += ()=> SceneManager.LoadScene(MAIN);
    }
 }

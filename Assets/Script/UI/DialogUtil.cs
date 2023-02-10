@@ -30,11 +30,18 @@ public sealed class DialogUtil
         public static readonly string MISSION=BASEPATH+MISSIONBASE+"Mission";
         public static readonly string SettingView=BASEPATH+SETTINGBASE+"SettingView";
         public static readonly string SETTING=BASEPATH+SETTINGBASE+"Setting";
+        public static readonly string ITEM_TAB=BASEPATH+"ItemTab";
 
     }
     public static class PrefabName{
         public static readonly string CONTETNTBACKGROUND="content-background";
         public static readonly string CONTENT="Content";
+            public const string NAME="name";
+            public const string UIDOCUMENT="UIDocument";
+            public const string SLIDER="Slider";
+            public const string CONTENT_PANEL="ContentPanel";
+            public const string ITEMTAB_CLONE="ItemTab(Clone)";
+            public const string BUTTON="Button";
 
     }
 

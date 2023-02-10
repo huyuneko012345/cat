@@ -11,19 +11,21 @@ public class SidebarController : MonoBehaviour
     private Vector3 pos;
     private bool flg = false;
 
-    [SerializeField] public float speed = 10f;
+    private const string BTN="btn";
+    private const string SIDEBAR="sidebar";
+    private const string GRAYBACKGROUND="gray-background";
     /// <summary>
     ///　サイドバーを左右に動かすクラス
     /// </summary>
     void Awake()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
-        root.Q<Button>("btn").clicked += () =>
+        root.Q<Button>(BTN).clicked += () =>
         {
             
-            sidebar = root.Q<VisualElement>("sidebar");
+            sidebar = root.Q<VisualElement>(SIDEBAR);
             Vector2 offset = sidebar.layout.position;
-            backgroumd = root.Q<VisualElement>("gray-background");
+            backgroumd = root.Q<VisualElement>(GRAYBACKGROUND);
             pos = offset;
            
             backgroumd.RegisterCallback<PointerDownEvent>(pointer);
@@ -41,16 +43,17 @@ public class SidebarController : MonoBehaviour
         
 
     }
+    private const int SPEED=100;
     void moveLeft(){
             //サイドバー戻す
-                sidebar.experimental.animation.Position(pos, 1000);
+                sidebar.experimental.animation.Position(pos, SPEED);
                 backgroumd.style.display = DisplayStyle.None;
 
                 flg = false;
         }
     void moveRight(){
         //サイドバー表示
-                sidebar.experimental.animation.Position(-pos, 1000);
+                sidebar.experimental.animation.Position(-pos, SPEED);
                 backgroumd.style.display = DisplayStyle.Flex;
 
                 flg = true;
