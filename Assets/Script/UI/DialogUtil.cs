@@ -36,7 +36,7 @@ public sealed class DialogUtil
     public static class PrefabName{
         public static readonly string CONTETNTBACKGROUND="content-background";
         public static readonly string CONTENT="Content";
-            public const string NAME="name";
+            public const string NAME="Name";
             public const string UIDOCUMENT="UIDocument";
             public const string SLIDER="Slider";
             public const string CONTENT_PANEL="ContentPanel";
