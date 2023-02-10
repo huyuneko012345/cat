@@ -6,16 +6,14 @@ using Di = System.Diagnostics;
 using System;
 
 
+/// <summary>
+///クイックアイテムをオープンする
+/// </summary>
 public class QuickItemOpen : MonoBehaviour
 {
     Di.Stopwatch sw;
-
     TimeSpan ts;
     private Vector3 clickPosition;
-
-    /*[NonSerialized]*/
-   
-
     public GameObject childButton;
     public Transform parent;
 
@@ -29,7 +27,7 @@ public class QuickItemOpen : MonoBehaviour
 
     private bool flg = false;
     private bool isOpen = false;
-    private const int X=4;
+    private const int X = 4;
     public void PushDown()
     {
         sw.Reset();
@@ -47,8 +45,8 @@ public class QuickItemOpen : MonoBehaviour
         if (!isOpen)
         {
             List<MyItem> myItems = myItemDB.myItemList;
-            myItems=myItems.FindAll((item)=>item.count>0);
-            
+            myItems = myItems.FindAll((item) => item.count > 0);
+
             foreach (MyItem myItem in myItems)
             {
                 Transform childTransform = (Transform)Instantiate(childButton).transform;
@@ -56,9 +54,9 @@ public class QuickItemOpen : MonoBehaviour
                 childTransform.GetComponent<QuickItemData>().setMyItem(myItem.item.id);
             }
             rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x * X, rectTransform.sizeDelta.y);
-            image.color=new Color32(255,255,255,90);
+            image.color = new Color32(255, 255, 255, 90);
             isOpen = true;
-            
+
 
         }
         else
@@ -70,7 +68,7 @@ public class QuickItemOpen : MonoBehaviour
                 Destroy(Button);
             }
             rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x / X, rectTransform.sizeDelta.y);
-            image.color=new Color32(255,255,255,0);
+            image.color = new Color32(255, 255, 255, 0);
             isOpen = false;
         }
     }
@@ -81,7 +79,8 @@ public class QuickItemOpen : MonoBehaviour
     }
 
     public bool isSec()
-    {   Debug.Log(ts.Milliseconds);
+    {
+        Debug.Log(ts.Milliseconds);
         if (ts.Milliseconds >= 200)
         {
             return true;

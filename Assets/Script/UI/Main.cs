@@ -41,12 +41,11 @@ public class Main : MonoBehaviour
     }
     private void Awake()
     {
-        //今日ログインしていない場合はスタート画面に戻る用
-        // if(!isLoginToday()){
-        //     SceneManager.LoadScene("start");
-        // }
+        // 今日ログインしていない場合はスタート画面に戻る用
+        if(!isLoginToday()){
+            SceneManager.LoadScene("start");
+        }
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-        // root.Q<Button>("home").clicked += () => Debug.Log("home");
 
         root.Q<Button>("back").clicked += () => SceneManager.LoadScene("start");
 
@@ -55,7 +54,6 @@ public class Main : MonoBehaviour
 
             addView(SHOP_VIEW, SHOPDIALOGNAME);
             var content = GameObject.Find(CONTENT);
-            content.AddComponent<GridSizeSetter>();
             CreateShopItem createShopItem = gameObject.GetComponent<CreateShopItem>();
             fpManager.Init(createShopItem.Init());
         };
@@ -92,14 +90,6 @@ public class Main : MonoBehaviour
             Instantiate(MissionPrefab, content.transform);
 
         };
-
-        // root.Q<Button>("help").clicked += () =>
-        // {
-
-        //     show(parent, dialog);
-        //     GameObject contentBackGround = GameObject.Find("content-background");
-        //     setDialogName(HELPDIALOGNAME);
-        // };
 
 
     }

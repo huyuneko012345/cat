@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 画面に表示するステータス情報を保持するクラス
+/// </summary>
 public class Showstatus : MonoBehaviour
 {
     [SerializeField]private Slider hungerSlider;

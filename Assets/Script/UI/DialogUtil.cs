@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+///　ダイアログ名、prefabのパスなどを管理する
+/// </summary>
 public sealed class DialogUtil
 {
     public static class DialogName{

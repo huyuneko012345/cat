@@ -4,7 +4,9 @@ using System;
 using UnityEngine;
 using UI = UnityEngine.UI;
 using UnityEngine.UIElements;
-
+/// <summary>
+/// fpを管理するクラス
+/// </summary>
 public class FPManager : MonoBehaviour
 {
     private const string FP_KEY = "Coin";

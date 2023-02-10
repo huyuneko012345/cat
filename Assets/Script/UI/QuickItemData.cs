@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+///クイックアイテムを制御するクラス
+/// </summary>
 public class QuickItemData : MonoBehaviour
 {
     private MyItem myItem;

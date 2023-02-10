@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
-using static SizeSetterUtils.PrefabName;
+
 [ExecuteAlways]
+/// <summary>
+///　グリッドサイズを%で調節する
+/// </summary>
 public class GridSizeSetter : MonoBehaviour
 {
      private const int MINNUM = 0;
@@ -17,6 +20,8 @@ public class GridSizeSetter : MonoBehaviour
 
     [Range(MINNUM, MAXNUM)][SerializeField] private float paddingTopPer = 0.2f;
     [Range(MINNUM, MAXNUM)][SerializeField] private float paddingButtomPer = 0.2f;
+
+    [SerializeField]private GameObject viewport;
 
 
     private float CellHeight
@@ -56,7 +61,7 @@ public class GridSizeSetter : MonoBehaviour
     }
 
 
-    private GameObject viewport;
+    
     private RectTransform rectTransform;
     private GridLayoutGroup gridLayout;
 
@@ -96,7 +101,6 @@ public class GridSizeSetter : MonoBehaviour
 
     void Update()
     {
-        viewport=GetComponent<ViewPortUtil>().GetViewPort;
         rectTransform=viewport.GetComponent<RectTransform>();
         gridLayout = GetComponent<GridLayoutGroup>();
         UpdateCellSize();
@@ -106,7 +110,7 @@ public class GridSizeSetter : MonoBehaviour
     }
     void OnValidate()
     {
-        viewport=GetComponent<ViewPortUtil>().GetViewPort;
+       
         rectTransform=viewport.GetComponent<RectTransform>();
         gridLayout = GetComponent<GridLayoutGroup>();
         UpdateCellSize();

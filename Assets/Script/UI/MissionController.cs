@@ -8,7 +8,9 @@ using static DialogUtil.PrefabName;
 using TMPro;
 using UnityEngine.UI;
 
-
+/// <summary>
+///　ミッション画面を制御する
+/// </summary>
 public class MissionController : MonoBehaviour
 {
     private const string MISSION_KEY="Mission";
@@ -38,11 +40,9 @@ public class MissionController : MonoBehaviour
         }
         
     }
-   
+    
     public void addMission()
     {
-    
-        
         GameObject MissionPrefab = (GameObject)Resources.Load(MISSION);
         GameObject content = GameObject.Find(CONTENT);
         foreach(Mission mission in todayMissionList){

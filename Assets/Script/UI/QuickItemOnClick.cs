@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*クイックアイテムボタンを押下した際の処理*/
 public class QuickItemOnClick : MonoBehaviour
 {
     private Vector3 mousePosition;
@@ -27,18 +28,7 @@ public class QuickItemOnClick : MonoBehaviour
             return;
         }
 
-        // if (isFood())
-        // {
-        //     return;
-        // }
-        // if (isDrink())
-        // {
-        //     return;
-        // }
-        // if (isItem())
-        // {
-        //     return;
-        // }
+
         if (Input.GetMouseButtonDown(0))
         {
             mousePosition = Input.mousePosition;

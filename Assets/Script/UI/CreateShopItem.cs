@@ -6,8 +6,9 @@ using System;
 using static DialogUtil.FIlePath;
 using static DialogUtil.PrefabName;
 using TMPro;
-
-
+/// <summary>
+///ショップアイテムを生成する
+/// </summary>
 public class CreateShopItem : MonoBehaviour
 {
     [SerializeField] private int[] itemIds;

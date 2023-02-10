@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-
+/*サイドバーの動きを制御するクラス*/
 public class SidebarController : MonoBehaviour
 {
     private VisualElement sidebar;
@@ -12,6 +12,9 @@ public class SidebarController : MonoBehaviour
     private bool flg = false;
 
     [SerializeField] public float speed = 10f;
+    /// <summary>
+    ///　サイドバーを左右に動かすクラス
+    /// </summary>
     void Awake()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;

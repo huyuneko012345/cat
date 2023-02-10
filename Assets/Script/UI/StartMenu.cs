@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
+/*スタート画面からメイン画面を制御する*/
 public class StartMenu : MonoBehaviour
 {
    private void Awake() {
