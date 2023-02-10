@@ -39,7 +39,8 @@ public class foodeating : MonoBehaviour
         catdb.catDataList[0].interputTask = false;
         catdb.catDataList[0].hunger = 100;
         Destroy(this.gameObject);
-
+        MissionController mi = GameObject.Find("UIDocument").GetComponent<MissionController>();
+        mi.ClearValue(2,1);
     }
     
     void Start()
