@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+///　猫クリックするとステータスが表示される
+/// </summary>
 public class DetailController : MonoBehaviour, IPointerDownHandler
 {
     // Start is called before the first frame update

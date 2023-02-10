@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// objをフリックするとobjがフリックした方向に移動する
+/// </summary>
 public class FlickScript : MonoBehaviour
 {
     public Camera camera;

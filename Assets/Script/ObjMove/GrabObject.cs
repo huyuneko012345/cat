@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// objをつかむことが出来る
+/// </summary>
 public class GrabObject : MonoBehaviour
 {
     BoxCollider boxCollider;
