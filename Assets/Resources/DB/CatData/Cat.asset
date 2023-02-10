@@ -15,9 +15,9 @@ MonoBehaviour:
   _name: "\u306D\u3053"
   personality: "\u71B1\u8840"
   gender: "\u30AA\u30B9"
-  hunger: 50
-  favorability: 50
-  mental: 50
-  age: 15
+  hunger: 100
+  favorability: 100
+  mental: 66
+  age: 12
   user: "\u308F\u308C"
   interputTask: 0

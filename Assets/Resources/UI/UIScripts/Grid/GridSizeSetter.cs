@@ -12,8 +12,8 @@ public class GridSizeSetter : MonoBehaviour
 
     [Range(MINNUM, MAXNUM)][SerializeField] private float CellWidthPer = 0.8f;
     [Range(MINNUM, MAXNUM)][SerializeField] private float CellHeightPer = 0.3f;
-    [Range(MINNUM, MAXNUM)][SerializeField] private float spacingWidthPer = 0.1f;
-    [Range(MINNUM, MAXNUM)][SerializeField] private float spacingHeightPer = 0.2f;
+    [Range(MINNUM, MAXNUM)][SerializeField] private float spacingWidthPer = 0.005f;
+    [Range(MINNUM, MAXNUM)][SerializeField] private float spacingHeightPer = 0.005f;
 
     [Range(MINNUM, MAXNUM)][SerializeField] private float paddingTopPer = 0.2f;
     [Range(MINNUM, MAXNUM)][SerializeField] private float paddingButtomPer = 0.2f;
@@ -112,7 +112,6 @@ void Update()
         UpdatespacingSize();
         UpdatePaddingBottom();
         UpdatePaddingTop();
-
 
     }
 

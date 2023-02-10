@@ -28,7 +28,7 @@ public class foodeating : MonoBehaviour
     public void eatrepeat2 (){
         
         this.PlayerAnimator.SetBool("Eating",true);
-        Invoke("eatrepeat3",6);
+        Invoke("eatrepeat3",3);
         
 
     }
@@ -37,15 +37,31 @@ public class foodeating : MonoBehaviour
         
         this.PlayerAnimator.SetBool("Eating",false);
         catdb.catDataList[0].interputTask = false;
+        catdb.catDataList[0].hunger = 100;
+        Destroy(this.gameObject);
 
     }
     
     void Start()
     {
+        catdb = (CatDataBase)Resources.Load("DB/CatDB");
+        cat = GameObject.FindGameObjectWithTag("cat");
+        target = this.gameObject.transform;
+        PlayerAnimator = cat.GetComponent<Animator>(); 
         catdb.catDataList[0].interputTask = true;
-        this.PlayerAnimator.SetFloat("Speed", 1f);
-        Invoke("eatrepeat",Time.deltaTime+8);
         
+        Debug.Log("猫"+cat);
+        Debug.Log("多気"+target);
+
+        //睡眠状態の解除
+        this.PlayerAnimator.SetBool("Sleep", false);
+        //お座り状態を解除
+        this.PlayerAnimator.SetBool("Sit", false);
+        //毛づくろい状態の解除
+        this.PlayerAnimator.SetBool("Sit_action", false);
+        this.PlayerAnimator.SetFloat("Speed", 1f);
+        Invoke("eatrepeat",Time.deltaTime+6);
+
     }
 
     void Update()

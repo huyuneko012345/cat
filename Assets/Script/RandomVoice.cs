@@ -23,6 +23,13 @@ public class RandomVoice : MonoBehaviour
     System.Random interval = new System.Random();
 
     //インターバル時間の初期値
+
+
+    int rundom = 0;
+    int randomidle = 0;
+    System.Random r1 = new System.Random();
+    System.Random r2 = new System.Random();
+
     private float INTERVA_SECONDS = 10f;
 
 
@@ -32,6 +39,7 @@ public class RandomVoice : MonoBehaviour
     /// </summary>
     public void catVoice()
     {
+        
 
         //Voiceの抽選
         voice_rundom = voice_set.Next(1, 4);//1~4の乱数

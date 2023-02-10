@@ -6,6 +6,13 @@ TagManager:
   tags:
   - ShopItemButton
   - MyItemButton
+  - cat
+  - QuickChildButton
+  - Chase cat
+  - cat
+  - food
+  - item
+  - drink
   layers:
   - Default
   - TransparentFX

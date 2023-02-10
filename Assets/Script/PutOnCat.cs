@@ -16,6 +16,8 @@ public class PutOnCat : MonoBehaviour
     void Start()
     {
         aRRaycastManager = GetComponent<ARRaycastManager>();
+        Debug.Log("Start");
+        print("すあたーと");
         
     }
 
@@ -29,7 +31,9 @@ public class PutOnCat : MonoBehaviour
                 Pose hitPose = hits[0].pose;
                 if(spawnedObj == null)
                 {
+                    
                     spawnedObj = Instantiate(catPrefab, hitPose.position, hitPose.rotation);
+                    Debug.Log("座標="+transform.localEulerAngles.y);
                     audioSource.PlayOneShot(clip);
                 }
             }
