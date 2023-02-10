@@ -49,7 +49,7 @@ public class FlickScript : MonoBehaviour
             float swipeDistanceZ = releasePos.z - touchPos.z;
             float powerZ = swipeDistanceZ * powerPerPixel;
 
-
+            //powerをマイナスにさせないため
             if (powerX < 0)
             {
                 powerX *= -1;
