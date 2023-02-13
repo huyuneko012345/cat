@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
-
+/// <summary>
+///　ダイアログを制御する
+/// </summary>
 public class Dialog : MonoBehaviour
 {
     public enum DialogResult

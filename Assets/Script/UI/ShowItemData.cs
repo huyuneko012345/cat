@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// 画面に表示するアイテム情報を保持するクラス
+/// </summary>
 public class ShowItemData : MonoBehaviour
 {
     private Item item;

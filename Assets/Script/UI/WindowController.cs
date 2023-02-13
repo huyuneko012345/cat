@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*YesNoCanvasを制御する*/
 public class WindowController : MonoBehaviour
 {
     [SerializeField]private MyItemDB myItemDB;

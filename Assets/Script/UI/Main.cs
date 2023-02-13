@@ -28,8 +28,8 @@ public class Main : MonoBehaviour
     {
         this.mission = gameObject.GetComponent<MissionController>();
         this.myItemController = GetComponent<MyItemController>();
-        lastLogin = PlayerPrefs.GetString(LAST_LOGIN_KEY, "2022/1/11");
         today = DateTimeString(System.DateTime.Now);
+        lastLogin = PlayerPrefs.GetString(LAST_LOGIN_KEY, today.ToString());
 
         this.fpManager = GetComponent<FPManager>();
         this.fpManager.Init();
@@ -39,29 +39,36 @@ public class Main : MonoBehaviour
             mission.ClearValue(5, 1);
         }
     }
+    private const string START="start";
+    private  const string BACK="back";
+
+    private const string SHOP_BUTTON="shop-button";
+    private const string ITEM="item";
+    private const string MISSION="mission";
+    private const string SETTING="setting";
+
     private void Awake()
     {
-        //今日ログインしていない場合はスタート画面に戻る用
-        // if(!isLoginToday()){
-        //     SceneManager.LoadScene("start");
-        // }
+        // 今日ログインしていない場合はスタート画面に戻る用
+        if (!isLoginToday())
+        {
+            SceneManager.LoadScene(START);
+        }
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-        // root.Q<Button>("home").clicked += () => Debug.Log("home");
 
-        root.Q<Button>("back").clicked += () => SceneManager.LoadScene("start");
+        root.Q<Button>(BACK).clicked += () => SceneManager.LoadScene(START);
 
-        root.Q<Button>("shop-button").clicked += () =>
+        root.Q<Button>(SHOP_BUTTON).clicked += () =>
         {
 
             addView(SHOP_VIEW, SHOPDIALOGNAME);
             var content = GameObject.Find(CONTENT);
-            content.AddComponent<GridSizeSetter>();
             CreateShopItem createShopItem = gameObject.GetComponent<CreateShopItem>();
             fpManager.Init(createShopItem.Init());
         };
 
 
-        root.Q<Button>("item").clicked += () =>
+        root.Q<Button>(ITEM).clicked += () =>
         {
 
             addView(MYITEM_VIEW, ITEMSDIALOGNAME);
@@ -75,7 +82,7 @@ public class Main : MonoBehaviour
 
         };
 
-        root.Q<Button>("mission").clicked += () =>
+        root.Q<Button>(MISSION).clicked += () =>
         {
             addView(MISSIONVIEW, MISSONDIALOGNAME);
             mission.addMission();
@@ -84,22 +91,14 @@ public class Main : MonoBehaviour
 
         };
 
-        root.Q<Button>("setting").clicked += () =>
+        root.Q<Button>(SETTING).clicked += () =>
         {
             addView(SettingView, SETTINGDIALOGNAME);
             GameObject MissionPrefab = (GameObject)Resources.Load(SETTING);
-            GameObject content = GameObject.Find("Content");
+            GameObject content = GameObject.Find(CONTENT);
             Instantiate(MissionPrefab, content.transform);
 
         };
-
-        // root.Q<Button>("help").clicked += () =>
-        // {
-
-        //     show(parent, dialog);
-        //     GameObject contentBackGround = GameObject.Find("content-background");
-        //     setDialogName(HELPDIALOGNAME);
-        // };
 
 
     }
@@ -119,9 +118,10 @@ public class Main : MonoBehaviour
         _dialog.transform.SetParent(parent.transform, false);
         // _dialog.FixDialog = (res) => Debug.Log(res);
     }
+    
     private void setDialogName(string name)
     {
-        GameObject nameObj = GameObject.Find("Name");
+        GameObject nameObj = GameObject.Find(NAME);
         TextMeshProUGUI _text = nameObj.GetComponent<TextMeshProUGUI>();
         _text.text = name;
     }

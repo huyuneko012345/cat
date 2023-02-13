@@ -9,7 +9,9 @@ using static DialogUtil.PrefabName;
 
 
 using TMPro;
-
+/// <summary>
+/// 持ち物画面を制御する
+/// </summary>
 public class MyItemController : MonoBehaviour
 {
     [SerializeField]private MyItemDB myItemDB;
@@ -18,12 +20,12 @@ public class MyItemController : MonoBehaviour
     public void CreateMyItem(int typeId=1){
   GameObject content = GameObject.Find(CONTENT);
         
-var panel = GameObject.Find("ContentPanel").transform;
-        var ItemTab = GameObject.Find("ItemTab(Clone)");
+var panel = GameObject.Find(CONTENT_PANEL).transform;
+        var ItemTab = GameObject.Find(ITEMTAB_CLONE);
         DeleteItem();
         if (!ItemTab)
         {
-            Transform tabTransform = Instantiate((GameObject)Resources.Load("UI/prefabs/ItemTab")).transform;
+            Transform tabTransform = Instantiate((GameObject)Resources.Load(ITEM_TAB)).transform;
             tabTransform.SetParent(panel, false);
         }
         List<MyItem> itemList = myItemDB.myItemList;
@@ -34,37 +36,19 @@ var panel = GameObject.Find("ContentPanel").transform;
             GameObject itemButton = Instantiate(buttonPrefab, content.transform);
             itemButton.GetComponent<ShowItemData>().setMyItem(id,myItem.count);
             
-            // TextMeshProUGUI name = itemButton.GetComponentInChildren<TextMeshProUGUI>();
-            var button = itemButton.transform.Find("Button").GetComponent<Button>();
+            var button = itemButton.transform.Find(BUTTON).GetComponent<Button>();
             button.onClick.AddListener(()=>{
               OpenItemDescription(id);
             });
 
-            // Image img= button.GetComponent<Image>();
-            // img.sprite=myItem.item.image;
-            // name.text = $"{myItem.item.name}({myItem.count})";
+            
             }
         }
         }
-    // public void addMyItem(Item item){
-    //     MyItemDB myItemDB=(MyItemDB)Resources.Load("DB/MyItemDB");
-    //     foreach(MyItem myItem in myItemDB.myItemList){
-    //         if(item.GetId()==myItem.item.GetId()){
-    //             myItem.addCount(1);
-    //             return;
-    //         }
-    //         var obj=ScriptableObject.CreateInstance<MyItem>();
-    //         obj.item=item;
-    //         obj.count=1;
-    //         string fileName=$"{item.name}.asset";
-    //         string path="Assets/Resources/DB/MyItem";
 
-    //     }
-        
-
-    // }
+private const string TAG_NAME="MyItemButton";
     private void DeleteItem(){
-        var itembuttons=GameObject.FindGameObjectsWithTag("MyItemButton");
+        var itembuttons=GameObject.FindGameObjectsWithTag(TAG_NAME);
        foreach(var itemButton in itembuttons){
          Destroy(itemButton);   
        }
