@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 using System;
 
-
+/// <summary>
+/// 猫待機状態での猫のモーションを決定し実行するクラス
+/// </summary>
 public class randomwork : MonoBehaviour
 {
 
@@ -37,14 +39,16 @@ public class randomwork : MonoBehaviour
     private int count = 2;
 
     private int rnd = 5;
-    
 
-
+    /// <summary>
+    /// 猫のタスクを乱数で決定するメソッド
+    /// </summary>
     public void judgetask()
     {
         Debug.Log(catdb.catDataList[0].interputTask);
         if (catdb.catDataList[0].interputTask == false)
         {
+            //猫の好感度が80以上だった場合タスクを追加
             if(catdb.catDataList[0].favorability >= 80 && rnd == 5){
                 rnd++;
             }else if(catdb.catDataList[0].favorability < 80 && rnd == 6){
@@ -167,6 +171,9 @@ public class randomwork : MonoBehaviour
         Invoke("judgetask", INTERVA_SECONDS);
     }
 
+    /// <summary>
+    /// ゲーム機同時に猫を10秒間待機させるメソッド
+    /// </summary>
     void Start()
     {
         print("ここから");
@@ -176,7 +183,9 @@ public class randomwork : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// 決定したタスクの内野を実行するメソッド
+    /// </summary>
     void Update()
     {
         if (catdb.catDataList[0].interputTask == false){

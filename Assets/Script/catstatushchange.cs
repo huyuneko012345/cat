@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-
+/// <summary>
+/// 時間経過に伴いキャットデータベースの内を変更するクラス
+/// </summary>
 public class catstatushchange : MonoBehaviour
 {
 
@@ -18,24 +20,29 @@ public class catstatushchange : MonoBehaviour
     public int beforHour;
     System.Random r1 = new System.Random();
 
+    /// <summary>
+    ///前回ログアウト時間から今回ログイン時間までの時間を計算し、キャットデータベースの内容を変更する。
+    /// </summary>
     void Start()
     {
+        //ログイン時間の取得
         nowTime = DateTime.Now;
-        string aaa = PlayerPrefs.GetString("KEY",nowTime.ToString());
-        Debug.Log(aaa);
-        DateTime befor = DateTime.Parse(aaa);
+        //前回ログアウト時間の取得
+        string timekeep = PlayerPrefs.GetString("KEY",nowTime.ToString());
+        Debug.Log(timekeep);
+        DateTime befor = DateTime.Parse(timekeep);
 
         //日付のまた越し判定
         if(nowTime.Day > befor.Day){
             
-            beforHour = nowTime.Minute + befor.Minute;
+            beforHour = nowTime.Hour + befor.Hour;
             //前回ログイン時と今回ログイン時の経過時間を計算
-            diffelence = beforHour - befor.Minute;
+            diffelence = beforHour - befor.Hour;
         }else{
             
-            beforHour = befor.Minute;
+            beforHour = befor.Hour;
             //前回ログイン時と今回ログイン時の経過時間を計算
-            diffelence = nowTime.Minute - beforHour;
+            diffelence = nowTime.Hour - beforHour;
         }
 
         
@@ -54,18 +61,21 @@ public class catstatushchange : MonoBehaviour
         beforTime = nowTime;
     }
 
+    /// <summary>
+    /// 経過時間に伴うステータスの変更を行うメソッド
+    /// </summary>
     void Update()
     {
      nextTime = DateTime.Now;
      //日付のまた越し判定
         if(nextTime.Day > nowTime.Day){
-            beforHour = nowTime.Minute + nextTime.Minute;
+            beforHour = nowTime.Hour + nextTime.Hour;
             //前回と今回の経過時間を計算
-            diffelence = beforHour - nowTime.Minute;
+            diffelence = beforHour - nowTime.Hour;
         }else{
-            beforHour = nowTime.Minute;
+            beforHour = nowTime.Hour;
             //前回と今回の経過時間を計算
-            diffelence = nextTime.Minute - beforHour;
+            diffelence = nextTime.Hour - beforHour;
         }
 
         //日付をまたいだ場合diffelenceがマイナス値になるため補正
